@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import ProductLabel, { Item } from './ProductLabel'
+import Link from 'next/link'
 
 export default function ProductCard({
   fullWidth,
@@ -9,19 +10,21 @@ export default function ProductCard({
   item: Item
 }) {
   return (
-    <div className="mb-6">
-      <div
-        className={`relative ${
-          fullWidth ? 'w-full' : 'w-[180px]'
-        } aspect-video`}
-      >
-        <Image
-          src={item?.img || '/forest-image.jpeg'}
-          alt={item?.name || 'Product Image'}
-          fill
-          className="rounded-md"
-        />
-      </div>
+    <div className="mb-2">
+      <Link href={`${item.shopLink}/${item.id}`}>
+        <div
+          className={`relative ${
+            fullWidth ? 'w-full' : 'w-[180px]'
+          } aspect-video`}
+        >
+          <Image
+            src={item?.img || '/forest-image.jpeg'}
+            alt={item?.name || 'Product Image'}
+            fill
+            className="rounded-2xl"
+          />
+        </div>
+      </Link>
       <ProductLabel item={item} />
     </div>
   )
