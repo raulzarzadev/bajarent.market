@@ -2,7 +2,7 @@ import Image from 'next/image'
 import ProductLabel, { Item } from './ItemLabel'
 import Link from 'next/link'
 
-export default function ProductCard({
+export default function ItemCard({
   fullWidth,
   item
 }: {
