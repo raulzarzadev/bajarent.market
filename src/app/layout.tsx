@@ -17,11 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={'inter.className'}>
         <nav className="sticky top-0 z-10 bg-white">
           <Navbar />
         </nav>
-        {children}
+        <main className=" max-w-[480px] mx-auto">{children}</main>
       </body>
     </html>
   )
