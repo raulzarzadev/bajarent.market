@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 export type Item = {
-  [x: string]: ReactNode
   id: string
   name?: string
   shopName?: string
@@ -9,8 +8,9 @@ export type Item = {
   shortInfo?: string
   img?: string
   itemLink?: string
+  description?: string
 }
-export default function ItemLabel({ item }: { item: Item }) {
+export default function ItemLa({ item }: { item: Item }) {
   return (
     <div className="flex flex-col w-full h-full">
       <Link href={`${item.shopLink}/${item?.id}`}>
