@@ -7,6 +7,16 @@ export const getShop = cache(async (shop: string) => {
   return item
 })
 
+export const getShops = cache(async () => {
+  const items = await ServiceShops.getVisibleInMarket()
+  return items
+})
+
+export const getItems = cache(async () => {
+  const items = await ServiceCategories.getVisibleInMarket()
+  return items
+})
+
 export const getShopItems = cache(async (id: string) => {
   const shop = await ServiceShops.get(id)
   const items = await ServiceCategories.getByShop(shop.id)

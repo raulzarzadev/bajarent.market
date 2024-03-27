@@ -1,8 +1,5 @@
-import { ServiceShops } from '@/firebase/ServiceShops'
-import { items, shops } from '../../../DATA'
 import ShopHome from '@/components/ShopHome'
 import { getShop } from '../utils'
-import { Metadata, ResolvingMetadata } from 'next'
 
 export type Shop = {
   id: string

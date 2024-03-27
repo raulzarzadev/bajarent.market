@@ -12,11 +12,6 @@ export async function generateMetadata(
   // read route params
   const id = params.shop
 
-  // fetch data
-  //const product = await fetch(`https://.../${id}`).then((res) => res.json())
-
-  // optionally access and extend (rather than replace) parent metadata
-  //const previousImages = (await parent).openGraph?.images || []
   return {
     title: id
     // openGraph: {

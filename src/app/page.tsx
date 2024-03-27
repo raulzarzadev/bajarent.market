@@ -1,29 +1,8 @@
 import Hero from '@/components/Hero'
 import ItemsList from '@/components/ItemList'
-import { items } from '../../DATA'
 import { Item } from '@/components/ItemLabel'
 import { Shop } from './[shop]/page'
-export const getItems = async () => {
-  const res = await fetch('http://localhost:3000/api/items')
-  // The return value is *not* serialized
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
-  const data = await res.json()
-  return data
-}
-
-export const getShops = async () => {
-  const res = await fetch('http://localhost:3000/api/shops')
-  // The return value is *not* serialized
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
-  }
-  const data = await res.json()
-  return data
-}
+import { getItems, getShops } from './utils'
 
 async function getData() {
   const items = await getItems()
