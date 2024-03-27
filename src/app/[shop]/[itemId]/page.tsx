@@ -1,6 +1,5 @@
 import ShopInfo from '@/components/ShopInfo'
 import { items, shops } from '../../../../DATA'
-import ShopItemInfo from '@/components/ShopItemInfo'
 import ItemCard from '@/components/ItemCard'
 
 export default function ShopItem({
