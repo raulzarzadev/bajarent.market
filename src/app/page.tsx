@@ -23,7 +23,7 @@ export default async function Home() {
         shopName: shop?.name,
         shopVisible: !!shop?.marketVisible,
         shop,
-        shopLink: `/${shop?.link}`,
+        shopLink: `${shop?.link}`,
         img: item.img
       }
     })
