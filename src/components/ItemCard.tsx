@@ -10,18 +10,18 @@ export default function ItemCard({
   item: Item
 }) {
   return (
-    <div className="mb-2">
-      <Link href={`${item.shopLink}/${item.id}`}>
+    <div>
+      <Link href={`/${item.shopLink}/${item.id}`}>
         <div
-          className={`relative ${
+          className={`relative  ${
             fullWidth ? 'w-full' : 'w-[180px]'
-          } aspect-video`}
+          } aspect-video `}
         >
           <Image
             src={item?.img || '/forest-image.jpeg'}
             alt={item?.name || 'Product Image'}
             fill
-            className="rounded-2xl"
+            className="rounded-2xl object-cover object-center  "
           />
         </div>
       </Link>

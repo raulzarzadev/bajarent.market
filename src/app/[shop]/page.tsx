@@ -1,8 +1,8 @@
-import ItemsList from '@/components/ItemList'
-import Image from 'next/image'
-import Link from 'next/link'
+import { ServiceShops } from '@/firebase/ServiceShops'
 import { items, shops } from '../../../DATA'
 import ShopHome from '@/components/ShopHome'
+import { getShop } from '../utils'
+import { Metadata, ResolvingMetadata } from 'next'
 
 export type Shop = {
   id: string
@@ -10,15 +10,16 @@ export type Shop = {
   link: string
   description: string
   img: string
+  marketVisible: boolean
 }
-export default function Shop({
+
+export default async function Shop({
   params: { shop }
 }: {
   params: { shop: string }
 }) {
-  const shopData: Shop | undefined = shops?.find(
-    (s) => s.id === shop || s.link === `/${shop}`
-  )
+  const shopData = await getShop(shop)
+
   if (!shopData) {
     return <div>Shop not found</div>
   }

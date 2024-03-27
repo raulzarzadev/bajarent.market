@@ -6,9 +6,11 @@ export type Item = {
   shopName?: string
   shopLink?: string
   shortInfo?: string
+  storeId?: string
   img?: string
   itemLink?: string
   description?: string
+  shopVisible?: boolean
 }
 export default function ItemLa({ item }: { item: Item }) {
   return (
@@ -19,7 +21,7 @@ export default function ItemLa({ item }: { item: Item }) {
       <div className="flex items-start flex-wrap">
         {item?.shopName && (
           <Link
-            href={item?.shopLink || '/'}
+            href={`/${item?.shopLink}`}
             className="bg-green-500 text-white px-2 py-1 rounded-2xl text-nowrap max-w-full  "
           >
             <p className="text-center truncate">{item?.shopName}</p>

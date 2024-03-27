@@ -1,10 +1,10 @@
 import ProductCard from './ItemCard'
-import { items } from '../../DATA'
+import { Item } from './ItemLabel'
 
-export default function Hero() {
+export default function Hero({ item }: { item: Item }) {
   return (
     <div className="w-full aspect-video  mx-auto ">
-      <ProductCard fullWidth item={items[0]} />
+      <ProductCard fullWidth item={item} />
     </div>
   )
 }
