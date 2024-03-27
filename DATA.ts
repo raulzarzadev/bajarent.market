@@ -61,32 +61,32 @@ export const items: Item[] = [
 ]
 
 export const shops: Shop[] = [
-  {
-    link: '/lavarenta',
-    name: 'Lavarenta',
-    description: 'Renta de lavadoras para el mercado local.',
-    img: '/forest-image.jpeg',
-    id: '1'
-  },
-  {
-    link: '/nomadas',
-    name: 'Nomadas',
-    description: 'Hostal para viajeros en la Paz BCS.',
-    img: '/forest-image.jpeg',
-    id: '2'
-  },
-  {
-    link: '/peaceful-forests-rentals',
-    name: 'Peaceful Forests Rentals',
-    description: 'Renta de patinetas en la Paz BCS.',
-    img: '/forest-image.jpeg',
-    id: '3'
-  },
-  {
-    link: '/tim',
-    name: 'TIM rent a bike',
-    description: 'Renta de patinetas en la Paz BCS.',
-    img: '/forest-image.jpeg',
-    id: '4'
-  }
+  // {
+  //   link: '/lavarenta',
+  //   name: 'Lavarenta',
+  //   description: 'Renta de lavadoras para el mercado local.',
+  //   img: '/forest-image.jpeg',
+  //   id: '1'
+  // },
+  // {
+  //   link: '/nomadas',
+  //   name: 'Nomadas',
+  //   description: 'Hostal para viajeros en la Paz BCS.',
+  //   img: '/forest-image.jpeg',
+  //   id: '2'
+  // },
+  // {
+  //   link: '/peaceful-forests-rentals',
+  //   name: 'Peaceful Forests Rentals',
+  //   description: 'Renta de patinetas en la Paz BCS.',
+  //   img: '/forest-image.jpeg',
+  //   id: '3'
+  // },
+  // {
+  //   link: '/tim',
+  //   name: 'TIM rent a bike',
+  //   description: 'Renta de patinetas en la Paz BCS.',
+  //   img: '/forest-image.jpeg',
+  //   id: '4'
+  // }
 ]
