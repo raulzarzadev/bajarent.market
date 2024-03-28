@@ -11,10 +11,11 @@ async function getData() {
   return { items, shops }
 }
 export default async function Home() {
-  const data = await getData()
-  const formatItems: Item[] = data.items
+  const { items, shops } = await getData()
+
+  const formatItems: Item[] = items
     .map((item: Item) => {
-      const shop: Shop = data.shops.find(
+      const shop: Shop = shops.find(
         (shop: { id: any }) => shop.id === item.storeId
       )
       return {
@@ -30,6 +31,8 @@ export default async function Home() {
     .filter((item: Item) => item?.shopVisible)
   return (
     <main className="flex min-h-screen flex-col  justify-between ">
+      tiendas: {items?.length || 0}
+      items: {items?.length || 0}
       <Hero item={formatItems[0]} />
       <ItemsList items={formatItems} />
     </main>
