@@ -1,12 +1,24 @@
 'use client'
 import { Formik } from 'formik'
 import InputText from './InputText'
+import { Item } from './ItemLabel'
+import { Shop } from '@/app/[shop]/page'
+import Button from './Button'
 
-export default function FormRentNow({ item, shop }) {
+export default function FormRentNow({
+  item,
+  shop
+}: {
+  item: Item
+  shop: Shop
+}) {
   return (
     <div>
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{
+          storeId: shop.id,
+          itemId: item.id
+        }}
         validate={(values) => {
           const errors = {}
           // if (!values.email) {
@@ -30,25 +42,19 @@ export default function FormRentNow({ item, shop }) {
           isSubmitting
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit}>
-            <InputText name="name" placeholder="Buenos dias" />
-            <button type="submit" disabled={false}>
-              Submit
-            </button>
+          <form onSubmit={handleSubmit} className="grid gap-2 mb-16">
+            <InputText name="name" label="Nombre" />
+            <InputText name="phone" label="Teléfono" />
+            <InputText
+              name="address"
+              label="Dirección"
+              helperText="Calle, entre calles y numero"
+            />
+            <InputText name="references" label="References" />
+            <Button type="submit" label="Rentar" disabled={isSubmitting} />
           </form>
         )}
       </Formik>
-      {/* <form>
-        <div className="grid gap-2">
-          <input type="text" placeholder="Nombre" />
-          <input type="text" placeholder="teléfono" />
-          <input type="text" placeholder="dirección" />
-          <input type="text" placeholder="referecias de la casa" />
-          <input type="text" placeholder="ubicación" />
-          <input type="text" placeholder="Fecha " />
-        </div>
-        <button>Ordenar</button>
-      </form> */}
     </div>
   )
 }

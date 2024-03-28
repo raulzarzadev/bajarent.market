@@ -31,3 +31,15 @@ body {
     text-wrap: balance;
   }
 } */
+
+@layer components {
+  .h1 {
+    @apply text-center text-2xl font-bold my-2;
+  }
+  .h2 {
+    @apply text-center text-xl font-bold my-2;
+  }
+  .helperText {
+    @apply text-xs opacity-70;
+  }
+}

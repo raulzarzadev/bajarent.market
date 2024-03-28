@@ -12,7 +12,13 @@ export type Item = {
   description?: string
   shopVisible?: boolean
 }
-export default function ItemLabel({ item }: { item: Item }) {
+export default function ItemLabel({
+  item,
+  showDescription
+}: {
+  item: Item
+  showDescription?: boolean
+}) {
   return (
     <div className="flex flex-col w-full h-full">
       <Link href={`/${item.shopLink}/${item?.id}`}>
@@ -27,10 +33,9 @@ export default function ItemLabel({ item }: { item: Item }) {
             <p className="text-center truncate">{item?.shopName}</p>
           </Link>
         )}
-        {item?.shortInfo && (
-          <div className="ml-2 ">
-            <p>{item?.shortInfo}</p>
-          </div>
+        {item?.shortInfo && <p className="text-pretty">{item?.shortInfo}</p>}
+        {item?.description && showDescription && (
+          <p className="text-pretty">{item?.description}</p>
         )}
       </div>
     </div>

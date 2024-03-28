@@ -3,6 +3,7 @@ import ItemCard from '@/components/ItemCard'
 import { getShopItem } from '@/app/utils'
 import Link from 'next/link'
 import FormRentNow from '@/components/FormRentNow'
+import theme from '@/theme'
 
 export default async function ShopItem({
   params
@@ -16,7 +17,8 @@ export default async function ShopItem({
       {!item && <h1>Item no encontrado</h1>}
       {item && (
         <>
-          <ItemCard item={item} fullWidth />
+          <ItemCard item={item} fullWidth showDescription />
+          <h1 className={'h1'}>Renta ahora!</h1>
           <FormRentNow item={item} shop={shop} />
         </>
       )}

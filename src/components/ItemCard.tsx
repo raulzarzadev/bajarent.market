@@ -4,10 +4,12 @@ import Link from 'next/link'
 
 export default function ItemCard({
   fullWidth,
-  item
+  item,
+  showDescription
 }: {
   fullWidth?: boolean
   item: Item
+  showDescription?: boolean
 }) {
   return (
     <div>
@@ -25,7 +27,7 @@ export default function ItemCard({
           />
         </div>
       </Link>
-      <ProductLabel item={item} />
+      <ProductLabel item={item} showDescription={showDescription} />
     </div>
   )
 }
