@@ -1,6 +1,5 @@
 import ShopInfo from '@/components/ShopInfo'
-import { shops } from '../../../../DATA'
-import { getShop, getShopItem } from '@/app/utils'
+import { getShopItem } from '@/app/utils'
 
 export default async function RentNowShop({
   params: { slug }
@@ -9,7 +8,7 @@ export default async function RentNowShop({
 }) {
   const shopLink = slug[0]
   const itemId = slug[1]
-  const { shop, item } = await getShopItem(shopLink, itemId)
+  const { shop } = await getShopItem(shopLink, itemId)
 
   return (
     <div>
