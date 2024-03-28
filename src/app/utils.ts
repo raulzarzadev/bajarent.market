@@ -25,8 +25,8 @@ export const getShopItems = cache(async (id: string) => {
     shop,
     shopId: shop.id,
     shopName: shop.name,
-    shopImg: shop.img,
-    shopLink: shop.link
+    shopImg: shop?.img,
+    shopLink: shop?.link
   }))
 })
 
@@ -38,8 +38,8 @@ export const getShopItem = cache(async (shopId: string, itemId: string) => {
     shop,
     shopId: shop.id,
     shopName: shop.name,
-    shopImg: shop.img,
-    shopLink: shop.link
+    shopImg: shop?.img,
+    shopLink: shop?.link
   }
   return { item: itemData, shop }
 })

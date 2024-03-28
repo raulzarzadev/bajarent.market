@@ -11,7 +11,7 @@ export default function ItemCard({
 }) {
   return (
     <div>
-      <Link href={`/${item?.shopLink}/${item?.id}`}>
+      <Link href={`/${item?.shopLink || ''}/${item?.id}`}>
         <div
           className={`relative  ${
             fullWidth ? 'w-full' : 'w-[180px]'

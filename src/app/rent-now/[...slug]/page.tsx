@@ -6,7 +6,7 @@ export default async function RentNowShop({
 }: {
   params: { slug: string[] }
 }) {
-  const shopLink = slug[0]
+  const shopLink = slug[0] || ''
   const itemId = slug[1]
   const { shop } = await getShopItem(shopLink, itemId)
 
