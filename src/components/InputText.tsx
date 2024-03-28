@@ -3,23 +3,29 @@ export type InputTextProps = {
   label?: string
   name: string
   helperText?: string
+  errorText?: string
 } & React.InputHTMLAttributes<HTMLInputElement>
-const InputText = ({ label, helperText, ...props }: InputTextProps) => {
-  const [field, meta, helpers] = useField(props)
+const InputText = ({
+  label,
+  helperText,
+  errorText,
+  ...props
+}: InputTextProps) => {
   return (
     <div>
       <label className="grid">
         {label}
         <input
           className="border border-gray-500 border-opacity-50 rounded-md p-1 "
-          {...field}
           {...props}
         />
-        <label className={'helperText'}>{helperText}</label>
+        {helperText && !errorText && (
+          <label className={'helperText'}>{helperText}</label>
+        )}
+        {errorText && (
+          <label className={'helperText text-error'}>{errorText}</label>
+        )}
       </label>
-      {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
-      ) : null}
     </div>
   )
 }

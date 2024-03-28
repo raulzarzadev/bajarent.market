@@ -1,9 +1,9 @@
 'use client'
 import { Formik } from 'formik'
-import InputText from './InputText'
 import { Item } from './ItemLabel'
 import { Shop } from '@/app/[shop]/page'
 import Button from './Button'
+import FormikInputText from './FormikInputText'
 
 export default function FormRentNow({
   item,
@@ -43,14 +43,14 @@ export default function FormRentNow({
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit} className="grid gap-2 mb-16">
-            <InputText name="name" label="Nombre" />
-            <InputText name="phone" label="Teléfono" />
-            <InputText
+            <FormikInputText name="name" label="Nombre" />
+            <FormikInputText name="phone" label="Teléfono" />
+            <FormikInputText
               name="address"
               label="Dirección"
               helperText="Calle, entre calles y numero"
             />
-            <InputText name="references" label="References" />
+            <FormikInputText name="references" label="References" />
             <Button type="submit" label="Rentar" disabled={isSubmitting} />
           </form>
         )}
