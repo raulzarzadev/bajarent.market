@@ -1,9 +1,7 @@
 import ShopInfo from '@/components/ShopInfo'
 import ItemCard from '@/components/ItemCard'
 import { getShopItem } from '@/app/utils'
-import Link from 'next/link'
 import FormRentNow from '@/components/FormRentNow'
-import theme from '@/theme'
 
 export default async function ShopItem({
   params
