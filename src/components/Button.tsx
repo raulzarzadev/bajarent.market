@@ -14,7 +14,11 @@ const Button = ({ label, ...props }: ButtonProps) => {
         py-2
         px-4
         rounded
+        disabled:bg-gray-500
+        disabled:cursor-not-allowed
+        disabled:opacity-50
       "
+        {...props}
       >
         {label}
       </button>

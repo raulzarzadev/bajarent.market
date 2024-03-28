@@ -4,21 +4,35 @@ import { Item } from './ItemLabel'
 import { Shop } from '@/app/[shop]/page'
 import Button from './Button'
 import FormikInputText from './FormikInputText'
+import ItemPrices from './ItemPrices'
+import { PriceType } from '@/types/PriceType'
+import OrderType from '@/types/OrderType'
 
 export default function FormRentNow({
   item,
-  shop
-}: {
+  shop,
+  prices = []
+}: //prices
+{
   item: Item
   shop: Shop
+  prices: PriceType[]
 }) {
+  const initialValues: Pick<
+    OrderType,
+    'address' | 'storeId' | 'references' | 'phone'
+  > & { categoryId: string; priceSelected: string } = {
+    storeId: shop.id,
+    categoryId: item.id,
+    address: '',
+    references: '',
+    phone: '',
+    priceSelected: ''
+  }
   return (
     <div>
       <Formik
-        initialValues={{
-          storeId: shop.id,
-          itemId: item.id
-        }}
+        initialValues={initialValues}
         validate={(values) => {
           const errors = {}
           // if (!values.email) {
@@ -39,10 +53,19 @@ export default function FormRentNow({
       >
         {({
           handleSubmit,
-          isSubmitting
+          isSubmitting,
+          setValues,
+          values
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit} className="grid gap-2 mb-16">
+            <ItemPrices
+              itemId={item.id}
+              prices={prices}
+              onPrice={(priceId) => {
+                setValues({ ...values, priceSelected: priceId })
+              }}
+            />
             <FormikInputText name="name" label="Nombre" />
             <FormikInputText name="phone" label="Teléfono" />
             <FormikInputText

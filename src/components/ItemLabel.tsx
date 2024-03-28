@@ -18,11 +18,13 @@ export type Item = {
 export default function ItemLabel({
   item,
   showDescription,
-  showPrices
+  showPrices,
+  prices
 }: {
   item: Item
   showDescription?: boolean
   showPrices?: boolean
+  prices?: PriceType[]
 }) {
   return (
     <div className="flex flex-col w-full h-full">
@@ -42,7 +44,7 @@ export default function ItemLabel({
         {showDescription && item?.description && (
           <p className="text-pretty">{item?.description}</p>
         )}
-        {showPrices && <ItemPrices itemId={item.id} />}
+        {showPrices && <ItemPrices itemId={item.id} prices={prices || []} />}
       </div>
     </div>
   )
