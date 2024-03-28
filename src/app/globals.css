@@ -31,3 +31,36 @@ body {
     text-wrap: balance;
   }
 } */
+
+@layer components {
+  .h1 {
+    @apply text-center text-2xl font-bold my-2;
+  }
+  .h2 {
+    @apply text-center text-xl font-bold my-1;
+  }
+  .h3 {
+    @apply text-center text-lg font-bold;
+  }
+  .helperText {
+    @apply text-xs opacity-70;
+  }
+  .card {
+    @apply shadow-md rounded-lg p-2;
+  }
+}
+
+@layer theme {
+  .primary {
+    @apply bg-blue-400 text-white;
+  }
+  .secondary {
+    @apply bg-gray-400 text-black;
+  }
+  .error {
+    @apply bg-red-400 text-white;
+  }
+  .text-error {
+    @apply text-red-400;
+  }
+}

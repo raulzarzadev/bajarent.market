@@ -1,13 +1,20 @@
 import Image from 'next/image'
 import ProductLabel, { Item } from './ItemLabel'
 import Link from 'next/link'
+import { PriceType } from '@/types/PriceType'
 
 export default function ItemCard({
   fullWidth,
-  item
+  item,
+  showDescription,
+  showPrices,
+  prices
 }: {
   fullWidth?: boolean
   item: Item
+  showDescription?: boolean
+  showPrices?: boolean
+  prices?: PriceType[]
 }) {
   return (
     <div>
@@ -25,7 +32,12 @@ export default function ItemCard({
           />
         </div>
       </Link>
-      <ProductLabel item={item} />
+      <ProductLabel
+        item={item}
+        showDescription={showDescription}
+        showPrices={showPrices}
+        prices={prices}
+      />
     </div>
   )
 }

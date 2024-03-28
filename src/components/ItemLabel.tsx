@@ -1,4 +1,7 @@
+import { getItemPrices } from '@/app/utils'
+import { PriceType } from '@/types/PriceType'
 import Link from 'next/link'
+import ItemPrices from './ItemPrices'
 
 export type Item = {
   id: string
@@ -12,7 +15,17 @@ export type Item = {
   description?: string
   shopVisible?: boolean
 }
-export default function ItemLabel({ item }: { item: Item }) {
+export default function ItemLabel({
+  item,
+  showDescription,
+  showPrices,
+  prices
+}: {
+  item: Item
+  showDescription?: boolean
+  showPrices?: boolean
+  prices?: PriceType[]
+}) {
   return (
     <div className="flex flex-col w-full h-full">
       <Link href={`/${item?.shopLink || ''}/${item?.id}`}>
@@ -27,11 +40,11 @@ export default function ItemLabel({ item }: { item: Item }) {
             <p className="text-center truncate">{item?.shopName}</p>
           </Link>
         )}
-        {item?.shortInfo && (
-          <div className="ml-2 ">
-            <p>{item?.shortInfo}</p>
-          </div>
+        {item?.shortInfo && <p className="text-pretty">{item?.shortInfo}</p>}
+        {showDescription && item?.description && (
+          <p className="text-pretty">{item?.description}</p>
         )}
+        {showPrices && <ItemPrices itemId={item.id} prices={prices || []} />}
       </div>
     </div>
   )

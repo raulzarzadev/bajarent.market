@@ -1,5 +1,7 @@
 import { ServiceCategories } from '@/firebase/ServiceCategories'
+import { ServicePrices } from '@/firebase/ServicePrices'
 import { ServiceShops } from '@/firebase/ServiceShops'
+import { PriceType } from '@/types/PriceType'
 
 export const getShop = async (shop: string) => {
   const item = await ServiceShops.getShopVisible(shop)
@@ -32,6 +34,7 @@ export const getShopItems = async (id: string) => {
 export const getShopItem = async (shopId: string, itemId: string) => {
   const shop = await getShop(shopId || '')
   const item = await ServiceCategories.get(itemId)
+  const prices = await getItemPrices(itemId)
   const itemData = {
     ...item,
     shop,
@@ -40,5 +43,9 @@ export const getShopItem = async (shopId: string, itemId: string) => {
     shopImg: shop?.img,
     shopLink: shop?.link
   }
-  return { item: itemData, shop }
+  return { item: itemData, shop, prices }
+}
+export const getItemPrices = async (itemId: string): Promise<PriceType[]> => {
+  const prices = await ServicePrices.getByItem(itemId)
+  return prices
 }
