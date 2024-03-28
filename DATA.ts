@@ -2,62 +2,62 @@ import { Shop } from '@/app/[shop]/page'
 import { Item } from '@/components/ItemLabel'
 
 export const items: Item[] = [
-  {
-    id: '1',
-    name: 'Lavadora',
-    shopName: 'Lavarenta',
-    shopLink: '/lavarenta',
-    shortInfo: 'Short info about product 1',
-    img: '/forest-image.jpeg'
-  },
-  {
-    id: '2',
-    name: 'Patineta',
-    shopName: 'Peaceful Forests Rentals',
-    shopLink: '/peaceful-forests-rentals',
-    shortInfo: 'Short info about product 2',
-    img: '/forest-image.jpeg'
-  },
-  {
-    id: '3',
-    name: 'Bicicleta de montaña',
-    shopName: 'TIM rent a bike',
-    shopLink: '/tim',
-    shortInfo: '$200 x día',
-    img: '/forest-image.jpeg'
-  },
-  {
-    id: '4',
-    name: 'Casa de campo',
-    shopName: 'Nomadas',
-    shopLink: '/nomadas',
-    shortInfo: 'Short info about product 4',
-    img: '/forest-image.jpeg'
-  },
-  {
-    id: '5',
-    name: 'Habitación compartida',
-    shopName: 'Nomadas',
-    shopLink: '/nomadas',
-    shortInfo: 'Short info about product 4',
-    img: '/forest-image.jpeg'
-  },
-  {
-    id: '6',
-    name: 'Habitación compartida',
-    shopName: 'Paceful Forests Rentals',
-    shopLink: '/peaceful-forests-rentals',
-    shortInfo: 'Short info about product 4',
-    img: '/forest-image.jpeg'
-  },
-  {
-    id: '7',
-    name: 'Casa de campo',
-    shopName: 'Nomadas',
-    shopLink: '/nomadas',
-    shortInfo: 'Short info about product 4',
-    img: '/forest-image.jpeg'
-  }
+  // {
+  //   id: '1',
+  //   name: 'Lavadora',
+  //   shopName: 'Lavarenta',
+  //   shopLink: '/lavarenta',
+  //   shortInfo: 'Short info about product 1',
+  //   img: '/forest-image.jpeg'
+  // },
+  // {
+  //   id: '2',
+  //   name: 'Patineta',
+  //   shopName: 'Peaceful Forests Rentals',
+  //   shopLink: '/peaceful-forests-rentals',
+  //   shortInfo: 'Short info about product 2',
+  //   img: '/forest-image.jpeg'
+  // },
+  // {
+  //   id: '3',
+  //   name: 'Bicicleta de montaña',
+  //   shopName: 'TIM rent a bike',
+  //   shopLink: '/tim',
+  //   shortInfo: '$200 x día',
+  //   img: '/forest-image.jpeg'
+  // },
+  // {
+  //   id: '4',
+  //   name: 'Casa de campo',
+  //   shopName: 'Nomadas',
+  //   shopLink: '/nomadas',
+  //   shortInfo: 'Short info about product 4',
+  //   img: '/forest-image.jpeg'
+  // },
+  // {
+  //   id: '5',
+  //   name: 'Habitación compartida',
+  //   shopName: 'Nomadas',
+  //   shopLink: '/nomadas',
+  //   shortInfo: 'Short info about product 4',
+  //   img: '/forest-image.jpeg'
+  // },
+  // {
+  //   id: '6',
+  //   name: 'Habitación compartida',
+  //   shopName: 'Paceful Forests Rentals',
+  //   shopLink: '/peaceful-forests-rentals',
+  //   shortInfo: 'Short info about product 4',
+  //   img: '/forest-image.jpeg'
+  // },
+  // {
+  //   id: '7',
+  //   name: 'Casa de campo',
+  //   shopName: 'Nomadas',
+  //   shopLink: '/nomadas',
+  //   shortInfo: 'Short info about product 4',
+  //   img: '/forest-image.jpeg'
+  // }
 ]
 
 export const shops: Shop[] = [

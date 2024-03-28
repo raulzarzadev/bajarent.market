@@ -1,5 +1,4 @@
 import ShopInfo from '@/components/ShopInfo'
-import { items, shops } from '../../../../DATA'
 import ItemCard from '@/components/ItemCard'
 import { getShopItem } from '@/app/utils'
 import Link from 'next/link'

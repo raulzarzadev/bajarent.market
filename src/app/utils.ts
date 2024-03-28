@@ -31,7 +31,7 @@ export const getShopItems = cache(async (id: string) => {
 })
 
 export const getShopItem = cache(async (shopId: string, itemId: string) => {
-  const shop = await getShop(shopId)
+  const shop = await getShop(shopId || '')
   const item = await ServiceCategories.get(itemId)
   const itemData = {
     ...item,
