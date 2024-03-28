@@ -27,6 +27,7 @@ import {
 } from 'firebase/firestore'
 
 export class FirebaseCRUD {
+  dateType: 'date' | 'number' | 'timestamp'
   static uploadFile(
     files: FileList | null,
     setURL: ((url: string) => void) | undefined
@@ -41,6 +42,7 @@ export class FirebaseCRUD {
     this.collectionName = collectionName
     this.db = firebaseDB
     this.storage = firebaseStorage
+    this.dateType = 'date'
   }
 
   /**
@@ -420,8 +422,23 @@ export class FirebaseCRUD {
     } // The document  not exist
     const data = doc.data()
 
-    const res = data
-    // console.log(res)
+    //* Format all fields from timestamp to date
+    const res = convertTimestamps(data)
+
+    function convertTimestamps(data: any): any {
+      return Object.keys(data).reduce((acc: any, key) => {
+        let value = data[key]
+        if (value instanceof Timestamp) {
+          acc[key] = value.toDate()
+        } else if (typeof value === 'object' && value !== null) {
+          acc[key] = convertTimestamps(value)
+        } else {
+          acc[key] = value
+        }
+        return acc
+      }, {})
+    }
+
     if (res) {
       return { ...res, id }
     } else {
