@@ -12,10 +12,10 @@ export type Item = {
   description?: string
   shopVisible?: boolean
 }
-export default function ItemLa({ item }: { item: Item }) {
+export default function ItemLabel({ item }: { item: Item }) {
   return (
     <div className="flex flex-col w-full h-full">
-      <Link href={`${item.shopLink}/${item?.id}`}>
+      <Link href={`/${item.shopLink}/${item?.id}`}>
         <h1 className="font-bold text-2xl ">{item?.name}</h1>
       </Link>
       <div className="flex items-start flex-wrap">
