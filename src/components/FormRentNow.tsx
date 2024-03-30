@@ -7,6 +7,7 @@ import FormikInputText from './FormikInputText'
 import ItemPrices from './ItemPrices'
 import { PriceType } from '@/types/PriceType'
 import OrderType from '@/types/OrderType'
+import FormikInputPhone from './FormikInputPhone'
 
 export default function FormRentNow({
   item,
@@ -67,12 +68,9 @@ export default function FormRentNow({
               }}
             />
             <FormikInputText name="name" label="Nombre" />
-            <FormikInputText name="phone" label="Teléfono" />
-            <FormikInputText
-              name="address"
-              label="Dirección"
-              helperText="Calle, entre calles y numero"
-            />
+            {/* <FormikInputText name="phone" label="Teléfono" /> */}
+            <FormikInputText name="address" label="Dirección" />
+            <FormikInputPhone name="phone" label="Teléfono" />
             <FormikInputText name="references" label="References" />
             <Button type="submit" label="Rentar" disabled={isSubmitting} />
           </form>
