@@ -42,7 +42,7 @@ body {
   .h3 {
     @apply text-center text-lg font-bold;
   }
-  .helperText {
+  .text-helper {
     @apply text-xs opacity-70;
   }
   .card {

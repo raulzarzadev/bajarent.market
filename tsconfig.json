@@ -26,7 +26,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/rent-now/[...shop]"
+    "src/app/rent-now/[...shop]",
+    "src/components/Icons"
   ],
   "exclude": ["node_modules", ".next/**/*"]
 }

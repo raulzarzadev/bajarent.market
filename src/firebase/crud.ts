@@ -172,7 +172,7 @@ export class FirebaseCRUD {
     const currentUser = getAuth().currentUser
     return {
       updatedAt: new Date(),
-      updatedBy: currentUser?.uid
+      updatedBy: currentUser?.uid || ''
     }
   }
 

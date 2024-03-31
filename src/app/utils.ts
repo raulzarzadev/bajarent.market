@@ -1,6 +1,9 @@
 import { ServiceCategories } from '@/firebase/ServiceCategories'
+import { ServiceOrders } from '@/firebase/ServiceOrders'
 import { ServicePrices } from '@/firebase/ServicePrices'
 import { ServiceShops } from '@/firebase/ServiceShops'
+import { ServiceStores } from '@/firebase/ServiceStores'
+import OrderType from '@/types/OrderType'
 import { PriceType } from '@/types/PriceType'
 
 export const getShop = async (shop: string) => {
@@ -48,4 +51,28 @@ export const getShopItem = async (shopId: string, itemId: string) => {
 export const getItemPrices = async (itemId: string): Promise<PriceType[]> => {
   const prices = await ServicePrices.getByItem(itemId)
   return prices
+}
+
+export const postOrder = async (order: OrderType) => {
+  try {
+    if (!order.storeId) console.error('No storeId provided')
+    const store = await ServiceStores.get(order?.storeId)
+    const currentFolio = store?.currentFolio || 0
+    const nextFolio = currentFolio + 1
+    order.folio = nextFolio
+    order.marketOrder = true
+    const orderCreated = await ServiceOrders.create(order)
+    const storeUpdated = await ServiceStores.update(store.id, {
+      currentFolio: nextFolio
+    })
+    order.id = orderCreated.res.id
+
+    return { orderCreated: order, storeUpdated }
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const getOrder = async ({ orderId }: { orderId?: string }) => {
+  if (orderId) return await ServiceOrders.get(orderId)
 }

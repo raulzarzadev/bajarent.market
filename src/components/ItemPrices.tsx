@@ -42,14 +42,15 @@ const ItemPrices = ({
               handleSelectPrice(price.id)
             }
           }}
+          className="w-[120px] h-full"
         >
           <div
-            className={`primary card capitalize border-2 ${
+            className={`primary card capitalize border-2 h-full flex flex-col justify-between ${
               selected === price.id ? 'border-gray-700 ' : 'border-transparent'
             }`}
           >
-            <h2 className="h3">{price.title}</h2>
-            <p>{formatter.format(price.amount)}</p>
+            <h2 className=" ">{price.title}</h2>
+            <p className="h3">{formatter.format(price.amount)}</p>
           </div>
         </button>
       ))}
