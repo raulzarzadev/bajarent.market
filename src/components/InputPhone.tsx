@@ -24,7 +24,6 @@ const InputPhone = ({
       placeholder={label}
       value={_value}
       onChange={handleChange}
-      //preferredCountries={['MX', 'US', 'CA']}
       countries={['MX', 'US', 'CA', 'CO', 'PE', 'AR', 'CL', 'BR']}
     />
   )

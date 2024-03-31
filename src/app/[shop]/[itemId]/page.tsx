@@ -17,7 +17,12 @@ export default async function ShopItem({
         <>
           <ItemCard item={item} fullWidth showDescription prices={prices} />
           <h1 className={'h1'}>Renta ahora!</h1>
-          <FormRentNow item={item} shop={shop} prices={prices} />
+          <FormRentNow
+            item={item}
+            shop={shop}
+            prices={prices}
+            // onSubmit={onSubmit}
+          />
         </>
       )}
     </div>

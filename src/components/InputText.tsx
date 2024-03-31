@@ -20,10 +20,10 @@ const InputText = ({
           {...props}
         />
         {helperText && !errorText && (
-          <label className={'helperText'}>{helperText}</label>
+          <label className={'text-helper'}>{helperText}</label>
         )}
         {errorText && (
-          <label className={'helperText text-error'}>{errorText}</label>
+          <label className={'text-helper text-error'}>{errorText}</label>
         )}
       </label>
     </div>

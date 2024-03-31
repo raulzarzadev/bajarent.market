@@ -5,6 +5,8 @@ import StoreType from './StoreType'
 // import PaymentType from './PaymentType'
 
 type OrderBase = {
+  marketOrder?: boolean
+
   note: string
 
   folio: number

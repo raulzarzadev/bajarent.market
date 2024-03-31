@@ -1,35 +1,87 @@
 'use client'
+
 import { Formik } from 'formik'
 import { Item } from './ItemLabel'
 import { Shop } from '@/app/[shop]/page'
-import Button from './Button'
 import FormikInputText from './FormikInputText'
 import ItemPrices from './ItemPrices'
 import { PriceType } from '@/types/PriceType'
-import OrderType from '@/types/OrderType'
+import OrderType, { order_status, order_type } from '@/types/OrderType'
 import FormikInputPhone from './FormikInputPhone'
+import Modal from './Modal'
+import { useState } from 'react'
+import Button from './Button'
+import Link from 'next/link'
+
+export type OrderNowProps = Pick<
+  OrderType,
+  'address' | 'storeId' | 'references' | 'phone' | 'scheduledAt' | 'fullName'
+> & { categoryId: string; priceSelected: string }
 
 export default function FormRentNow({
   item,
   shop,
   prices = []
-}: //prices
-{
+}: {
   item: Item
   shop: Shop
-  prices: PriceType[]
+  prices?: PriceType[]
 }) {
-  const initialValues: Pick<
-    OrderType,
-    'address' | 'storeId' | 'references' | 'phone'
-  > & { categoryId: string; priceSelected: string } = {
-    storeId: shop.id,
-    categoryId: item.id,
+  const initialValues: OrderNowProps = {
+    storeId: shop?.id,
+    categoryId: item?.id,
     address: '',
     references: '',
     phone: '',
-    priceSelected: ''
+    priceSelected: '',
+    scheduledAt: new Date(),
+    fullName: ''
   }
+
+  const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
+
+  const onSubmit = async (values: OrderNowProps) => {
+    const priceSelected = prices.find((p) => p.id === values.priceSelected)
+
+    const newOrder: Partial<OrderType> & { categoryId: string } = {
+      fullName: values.fullName,
+      storeId: values.storeId,
+      address: values.address,
+      references: values.references,
+      phone: values.phone,
+      scheduledAt: values.scheduledAt || new Date(),
+      categoryId: item?.id,
+      status: order_status.PENDING,
+      type: order_type.DELIVERY_RENT,
+      item: {
+        categoryName: item?.name,
+        priceQty: 1,
+        priceSelectedId: values.priceSelected,
+        priceSelected: priceSelected
+      }
+    }
+    try {
+      return await fetch('/api/orders', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newOrder)
+      })
+        .then((res) => {
+          return res.json()
+        })
+        .then((data) => {
+          const order = data?.orderCreated
+          setOrderCreated(order as OrderType)
+        })
+    } catch (error) {
+      console.error(error)
+      return error
+    }
+  }
+  console.log({ orderCreated })
+
   return (
     <div>
       <Formik
@@ -45,11 +97,8 @@ export default function FormRentNow({
           // }
           // return errors
         }}
-        onSubmit={(values, { setSubmitting }) => {
-          setTimeout(() => {
-            alert(JSON.stringify(values, null, 2))
-            setSubmitting(false)
-          }, 400)
+        onSubmit={async (values: OrderNowProps, { setSubmitting }) => {
+          return await onSubmit(values)
         }}
       >
         {({
@@ -57,22 +106,79 @@ export default function FormRentNow({
           isSubmitting,
           setValues,
           values
+
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit} className="grid gap-2 mb-16">
+          <form onSubmit={handleSubmit} className="grid gap-2 mb-16 w-full">
             <ItemPrices
-              itemId={item.id}
+              itemId={item?.id || ''}
               prices={prices}
               onPrice={(priceId) => {
                 setValues({ ...values, priceSelected: priceId })
               }}
             />
-            <FormikInputText name="name" label="Nombre" />
+            <FormikInputText
+              name="fullName"
+              label="Nombre"
+              helperText="Ejemplo: Juan Perez"
+            />
             {/* <FormikInputText name="phone" label="Teléfono" /> */}
-            <FormikInputText name="address" label="Dirección" />
             <FormikInputPhone name="phone" label="Teléfono" />
-            <FormikInputText name="references" label="References" />
-            <Button type="submit" label="Rentar" disabled={isSubmitting} />
+            <FormikInputText
+              name="neighborhood"
+              label="Colonia "
+              helperText="Ejemplo: Centro, San Pedro, etc."
+            />
+            <FormikInputText
+              name="address"
+              label="Dirección"
+              helperText="Calle, Numero y entre calles"
+            />
+            <FormikInputText
+              name="references"
+              label="References"
+              helperText="Ejemplo: Hay un camión de carga enfrente"
+            />
+            <FormikInputText
+              type="datetime-local"
+              name="scheduleAt"
+              label="Fecha "
+              helperText="Puede cambiar sin previo aviso."
+            />
+            <Modal
+              title="Confirmar orden"
+              openLabel="Rentar"
+              confirmLabel="Rentar"
+            >
+              {orderCreated && (
+                <>
+                  <p>Orden generada con folio: {orderCreated?.folio}</p>
+                  <p>Status:{orderCreated?.status}</p>
+                  <Link href={`/orders?orderId=${orderCreated?.id}`}>
+                    Ver orden
+                  </Link>
+                </>
+              )}
+              {!orderCreated && (
+                <>
+                  <p>Su orden se genera de forma automatica.</p>
+                  <p>
+                    Pronto una persona de nuestro equípo se pondra en contacto
+                    contigo para verificar tus datos
+                  </p>
+                </>
+              )}
+              <div className="my-6 flex w-full justify-center">
+                <Button
+                  disabled={isSubmitting}
+                  label="Rentar"
+                  onClick={async () => {
+                    handleSubmit()
+                  }}
+                ></Button>
+              </div>
+            </Modal>
+            {/* <Button type="submit" label="Rentar" disabled={isSubmitting} /> */}
           </form>
         )}
       </Formik>
