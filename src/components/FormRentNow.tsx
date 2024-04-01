@@ -12,6 +12,7 @@ import Modal from './Modal'
 import { useState } from 'react'
 import Button from './Button'
 import Link from 'next/link'
+import FormikInputFile from './FormikInputFile'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -159,6 +160,8 @@ export default function FormRentNow({
                 helperText="Puede cambiar sin previo aviso."
               />
             )}
+
+            {/* {marketForm?.imageId && <FormikInputFile name="imageID" />} */}
 
             <Modal
               title="Confirmar orden"
