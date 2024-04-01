@@ -31,7 +31,7 @@ const ItemPrices = ({
   }
 
   return (
-    <div className="flex justify-center w-full my-4 flex-wrap gap-2">
+    <div className="flex justify-center w-full my-4 flex-wrap gap-2 ">
       {prices.map((price) => (
         <button
           key={price.id}
@@ -42,7 +42,7 @@ const ItemPrices = ({
               handleSelectPrice(price.id)
             }
           }}
-          className="w-[120px] h-full"
+          className="w-[120px] h-20"
         >
           <div
             className={`primary card capitalize border-2 h-full flex flex-col justify-between ${
