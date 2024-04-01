@@ -11,7 +11,7 @@ export function priceTimeInSeconds(time: TimePriceType): number {
   const timeArray = time.split(' ')
   const timeNumber = parseInt(timeArray[0])
   const timeUnit = timeArray[1]
-  const units = {
+  const unitsInSeconds = {
     second: 1,
     minute: 60,
     hour: 3600,
@@ -19,19 +19,24 @@ export function priceTimeInSeconds(time: TimePriceType): number {
     week: 604800,
     month: 2628000,
     year: 31536000
-  }
-  return timeNumber * units[timeUnit]
+  } as const
+  type UnitsType = keyof typeof unitsInSeconds
+  return timeNumber * unitsInSeconds[timeUnit as UnitsType]
 }
 
-export default function expireDate(
-  time: TimePriceType,
-  startedAt: Date | Timestamp,
-  price?: Partial<PriceType>,
+export function expireDate({
+  startedAt,
+  price,
+  priceQty
+}: {
+  startedAt: Date | Timestamp
+  price?: Partial<PriceType>
   priceQty?: number
-): Date | null {
-  if (!price) return startedAt as Date
+}): Date | null {
+  if (!price) return null
+  if (!startedAt) return null
   const startedAtDate = asDate(startedAt)
-  if (startedAtDate === null) return null
+  if (!startedAtDate) return null
   const [qty, unit] = price?.time?.split(' ') || ['', '']
   const QTY = parseInt(qty) * (priceQty || 1)
   if (unit === 'year') {
@@ -59,16 +64,5 @@ export default function expireDate(
     const expireDate = addDays(startedAtDate, QTY)
     return expireDate
   }
-  console.error('dont unit match')
-  // if time does not exist return null
-  if (!time || !startedAt) return null
-  // if time does not have a number return null
-
-  if (!startedAtDate) return null
-  const timeInSeconds = priceTimeInSeconds(time)
-
-  const expireDate = new Date(
-    asDate(startedAt)?.getTime() + timeInSeconds * 1000
-  )
-  return expireDate
+  return null
 }

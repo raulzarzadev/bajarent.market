@@ -37,27 +37,28 @@ export const dateFormat = (
   })
   return res
 }
+const shortUnitSymbol = {
+  xSeconds: 's',
+  xMinutes: 'm',
+  xHours: 'h',
+  xDays: 'd',
+  xWeeks: 'S',
+  xMonths: 'M'
+} as const
+type UnitsType = keyof typeof shortUnitSymbol
 
 const customLocale = {
   ...es,
   formatDistance: (
-    token: string,
+    token: FormatDistanceToken,
     count: number,
     options?: { addSuffix?: boolean; comparison?: number }
   ) => {
-    const units = {
-      xSeconds: 's',
-      xMinutes: 'm',
-      xHours: 'h',
-      xDays: 'd',
-      xWeeks: 'S',
-      xMonths: 'M'
-    }
-    const unit = units[token]
+    const unit = shortUnitSymbol[token as UnitsType]
     if (!unit) {
       throw new Error(`Invalid time unit: ${token}`)
     }
-    const days = count * options.comparison
+    const days = count * (options?.comparison || 1)
     return options?.addSuffix
       ? days < 0
         ? 'hace ' + count + ' ' + unit
@@ -100,12 +101,3 @@ export const asDate = (
   return null
 }
 export default asDate
-
-export function isLastWeek(date) {
-  const lastWeek = {
-    start: startOfWeek(subWeeks(new Date(), 1)),
-    end: endOfWeek(subWeeks(new Date(), 1))
-  }
-
-  return isWithinInterval(date, lastWeek)
-}
