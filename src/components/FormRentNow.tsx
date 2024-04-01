@@ -80,7 +80,6 @@ export default function FormRentNow({
       return error
     }
   }
-  console.log({ orderCreated })
 
   return (
     <div>

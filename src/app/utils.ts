@@ -7,18 +7,30 @@ import OrderType from '@/types/OrderType'
 import { PriceType } from '@/types/PriceType'
 
 export const getShop = async (shop: string) => {
-  const item = await ServiceShops.getShopVisible(shop)
-  return item
+  try {
+    const item = await ServiceShops.getShopVisible(shop)
+    return item
+  } catch (error) {
+    console.error({ error })
+  }
 }
 
 export const getShops = async () => {
-  const items = await ServiceShops.getVisibleInMarket()
-  return items
+  try {
+    const items = await ServiceShops.getVisibleInMarket()
+    return items
+  } catch (error) {
+    console.error({ error })
+  }
 }
 
 export const getItems = async () => {
-  const items = await ServiceCategories.getVisibleInMarket()
-  return items
+  try {
+    const items = await ServiceCategories.getVisibleInMarket()
+    return items
+  } catch (error) {
+    console.error({ error })
+  }
 }
 
 export const getShopItems = async (id: string) => {
@@ -41,8 +53,8 @@ export const getShopItem = async (shopId: string, itemId: string) => {
   const itemData = {
     ...item,
     shop,
-    shopId: shop.id,
-    shopName: shop.name,
+    shopId: shop?.id,
+    shopName: shop?.name,
     shopImg: shop?.img,
     shopLink: shop?.link
   }
