@@ -11,11 +11,11 @@ async function getData() {
   return { items, shops }
 }
 export default async function Home() {
-  const { items, shops } = await getData()
+  const { items = [], shops = [] } = await getData()
 
   const formatItems: Item[] = items
     .map((item: Item) => {
-      const shop: Shop = shops.find(
+      const shop: Shop = shops?.find(
         (shop: { id: any }) => shop.id === item.storeId
       )
       return {
