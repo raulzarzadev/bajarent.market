@@ -31,7 +31,7 @@ export default function ItemLabel({
 }) {
   return (
     <div className="flex items-center max-w-full flex-1">
-      <Link href={`/${item?.shopLink || ''}/${item?.id}`}>
+      <Link href={`/${item?.shopLink || ''}`}>
         <Avatar src={item?.shopImg || ''} label={item.shopName} size="sm" />
       </Link>
       <div className="flex flex-col w-full h-full ml-2 max-w-full overflow-hidden ">
