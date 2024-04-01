@@ -25,14 +25,17 @@ export default async function Home() {
         shopVisible: !!shop?.marketVisible,
         shop,
         shopLink: `${shop?.link}`,
-        img: item.img
+        img: item.img,
+        shopImg: shop?.img
       }
     })
     .filter((item: Item) => item?.shopVisible)
   return (
     <main className="flex min-h-screen flex-col  justify-start">
-      tiendas: {items?.length || 0}
-      items: {items?.length || 0}
+      <div className="flex justify-center">
+        <p className="mr-2">Tiendas: {shops?.length || 0}</p>
+        <p className="">Articulos: {items?.length || 0}</p>
+      </div>
       <Hero item={formatItems[0]} />
       <ItemsList items={formatItems} />
     </main>

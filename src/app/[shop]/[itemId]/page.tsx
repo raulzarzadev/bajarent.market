@@ -18,7 +18,7 @@ export default async function ShopItem({
           <ItemCard item={item} fullWidth showDescription prices={prices} />
           <h1 className={'h1'}>Renta ahora!</h1>
           <FormRentNow
-            item={item}
+            item={{ ...item, shopImg: shop.img }}
             shop={shop}
             prices={prices}
             // onSubmit={onSubmit}

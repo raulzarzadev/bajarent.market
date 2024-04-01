@@ -28,7 +28,7 @@ export default function ItemCard({
             src={item?.img || '/forest-image.jpeg'}
             alt={item?.name || 'Product Image'}
             fill
-            className="rounded-2xl object-cover object-center  "
+            className="rounded-2xl object-cover object-center shadow-sm shadow-slate-400 "
           />
         </div>
       </Link>
