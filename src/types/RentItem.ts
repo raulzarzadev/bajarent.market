@@ -9,6 +9,18 @@ export type CategoryBase = {
   description: string
   prices: Partial<PriceType>[]
   storeId: string
+  img?: string
+  marketVisible?: boolean
+  marketForm?: {
+    price?: boolean
+    fullName?: boolean
+    phone?: boolean
+    neighborhood?: boolean
+    address?: boolean
+    references?: boolean
+    imageId?: boolean
+    scheduledAt?: boolean
+  }
 }
 
 export type CategoryType = CategoryBase & BaseType
