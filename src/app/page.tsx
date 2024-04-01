@@ -30,7 +30,7 @@ export default async function Home() {
     })
     .filter((item: Item) => item?.shopVisible)
   return (
-    <main className="flex min-h-screen flex-col  justify-between ">
+    <main className="flex min-h-screen flex-col  justify-start">
       tiendas: {items?.length || 0}
       items: {items?.length || 0}
       <Hero item={formatItems[0]} />
