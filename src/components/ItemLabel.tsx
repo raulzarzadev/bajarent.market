@@ -15,7 +15,7 @@ export type Item = {
   itemLink?: string
   description?: string
   shopVisible?: boolean
-  marketForm: CategoryBase['marketForm']
+  marketForm?: CategoryBase['marketForm']
 }
 export default function ItemLabel({
   item,
