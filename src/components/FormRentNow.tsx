@@ -81,6 +81,8 @@ export default function FormRentNow({
     }
   }
 
+  const marketForm = item?.marketForm
+
   return (
     <div>
       <Formik
@@ -109,41 +111,55 @@ export default function FormRentNow({
           /* and other goodies */
         }) => (
           <form onSubmit={handleSubmit} className="grid gap-2 mb-16 w-full">
-            <ItemPrices
-              itemId={item?.id || ''}
-              prices={prices}
-              onPrice={(priceId) => {
-                setValues({ ...values, priceSelected: priceId })
-              }}
-            />
-            <FormikInputText
-              name="fullName"
-              label="Nombre"
-              helperText="Ejemplo: Juan Perez"
-            />
-            {/* <FormikInputText name="phone" label="Teléfono" /> */}
-            <FormikInputPhone name="phone" label="Teléfono" />
-            <FormikInputText
-              name="neighborhood"
-              label="Colonia "
-              helperText="Ejemplo: Centro, San Pedro, etc."
-            />
-            <FormikInputText
-              name="address"
-              label="Dirección"
-              helperText="Calle, Numero y entre calles"
-            />
-            <FormikInputText
-              name="references"
-              label="References"
-              helperText="Ejemplo: Hay un camión de carga enfrente"
-            />
-            <FormikInputText
-              type="datetime-local"
-              name="scheduleAt"
-              label="Fecha "
-              helperText="Puede cambiar sin previo aviso."
-            />
+            {marketForm?.price && (
+              <ItemPrices
+                itemId={item?.id || ''}
+                prices={prices}
+                onPrice={(priceId) => {
+                  setValues({ ...values, priceSelected: priceId })
+                }}
+              />
+            )}
+            {marketForm?.fullName && (
+              <FormikInputText
+                name="fullName"
+                label="Nombre"
+                helperText="Ejemplo: Juan Perez"
+              />
+            )}
+            {marketForm?.phone && (
+              <FormikInputPhone name="phone" label="Teléfono" />
+            )}
+            {marketForm?.neighborhood && (
+              <FormikInputText
+                name="neighborhood"
+                label="Colonia "
+                helperText="Ejemplo: Centro, San Pedro, etc."
+              />
+            )}
+            {marketForm?.address && (
+              <FormikInputText
+                name="address"
+                label="Dirección"
+                helperText="Calle, Numero y entre calles"
+              />
+            )}
+            {marketForm?.references && (
+              <FormikInputText
+                name="references"
+                label="References"
+                helperText="Ejemplo: Hay un camión de carga enfrente"
+              />
+            )}
+            {marketForm?.scheduledAt && (
+              <FormikInputText
+                type="datetime-local"
+                name="scheduleAt"
+                label="Fecha "
+                helperText="Puede cambiar sin previo aviso."
+              />
+            )}
+
             <Modal
               title="Confirmar orden"
               openLabel="Rentar"

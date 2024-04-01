@@ -2,6 +2,7 @@ import { getItemPrices } from '@/app/utils'
 import { PriceType } from '@/types/PriceType'
 import Link from 'next/link'
 import ItemPrices from './ItemPrices'
+import { CategoryBase, RentItem } from '@/types/RentItem'
 
 export type Item = {
   id: string
@@ -14,6 +15,7 @@ export type Item = {
   itemLink?: string
   description?: string
   shopVisible?: boolean
+  marketForm: CategoryBase['marketForm']
 }
 export default function ItemLabel({
   item,
