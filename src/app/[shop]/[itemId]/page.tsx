@@ -10,7 +10,7 @@ export default async function ShopItem({
 }) {
   const { item, shop, prices } = await getShopItem(params.shop, params.itemId)
   return (
-    <div>
+    <div className="p-2">
       <ShopInfo shop={shop} />
       {!item && <h1>Item no encontrado</h1>}
       {item && (
