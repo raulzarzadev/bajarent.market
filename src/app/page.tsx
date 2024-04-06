@@ -3,7 +3,7 @@ import ItemsList from '@/components/ItemList'
 import { Item } from '@/components/ItemLabel'
 import { Shop } from './[shop]/page'
 import { getItems, getShops } from './utils'
-
+export const revalidate = 360
 async function getData() {
   const items = await getItems()
   const shops = await getShops()
@@ -36,7 +36,7 @@ export default async function Home() {
         <p className="mr-2">Tiendas: {shops?.length || 0}</p>
         <p className="">Articulos: {items?.length || 0}</p>
       </div>
-      <Hero item={formatItems[0]} />
+      {/* <Hero item={formatItems[0]} /> */}
       <ItemsList items={formatItems} />
     </main>
   )

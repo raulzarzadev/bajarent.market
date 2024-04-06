@@ -8,18 +8,18 @@ const nextConfig = {
         port: ''
       }
     ]
-  },
-  headers: () => [
-    {
-      source: '/',
-      headers: [
-        {
-          key: 'Cache-Control',
-          value: 'no-store'
-        }
-      ]
-    }
-  ]
+  }
+  // headers: () => [
+  //   {
+  //     source: '/',
+  //     headers: [
+  //       {
+  //         key: 'Cache-Control',
+  //         value: 'no-store'
+  //       }
+  //     ]
+  //   }
+  // ]
 }
 
 export default nextConfig
