@@ -13,6 +13,9 @@ import { useState } from 'react'
 import Button from './Button'
 import Link from 'next/link'
 import FormikInputFile from './FormikInputFile'
+import { isValidPhoneNumber } from 'react-phone-number-input'
+import InputCode from './InputCode'
+import CodeSignUp from './CodeSignup'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -125,11 +128,15 @@ export default function FormRentNow({
               <FormikInputText
                 name="fullName"
                 label="Nombre"
-                helperText="Ejemplo: Juan Perez"
+                helperText="*Ejemplo: Juan Perez"
               />
             )}
             {marketForm?.phone && (
-              <FormikInputPhone name="phone" label="Teléfono" />
+              <FormikInputPhone
+                name="phone"
+                label="Teléfono"
+                helperText="*Numero de teléfono válido"
+              />
             )}
             {marketForm?.neighborhood && (
               <FormikInputText
@@ -167,6 +174,9 @@ export default function FormRentNow({
               title="Confirmar orden"
               openLabel="Rentar"
               confirmLabel="Rentar"
+              openDisabled={
+                !isValidPhoneNumber(values?.phone || '') || !values.fullName
+              }
             >
               {orderCreated && (
                 <>
@@ -179,11 +189,12 @@ export default function FormRentNow({
               )}
               {!orderCreated && (
                 <>
-                  <p>Su orden se genera de forma automatica.</p>
+                  <CodeSignUp />
+                  {/* <p>Su orden se genera de forma automatica.</p>
                   <p>
                     Pronto una persona de nuestro equípo se pondra en contacto
                     contigo para verificar tus datos
-                  </p>
+                  </p> */}
                 </>
               )}
               <div className="my-6 flex w-full justify-center">
@@ -196,6 +207,18 @@ export default function FormRentNow({
                 ></Button>
               </div>
             </Modal>
+            <div>
+              {!isValidPhoneNumber(values?.phone || '') && (
+                <p className="text-helper text-error ">
+                  *Es necesario un número de teléfono válido.
+                </p>
+              )}
+              {!values.fullName && (
+                <p className="text-helper text-error ">
+                  *Es necesario un nombre.
+                </p>
+              )}
+            </div>
             {/* <Button type="submit" label="Rentar" disabled={isSubmitting} /> */}
           </form>
         )}

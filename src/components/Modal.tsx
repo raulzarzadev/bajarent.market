@@ -8,6 +8,7 @@ export default function Modal({
   openLabel = 'Abrir modal',
   confirmLabel = 'Confirmar',
   title = 'Título',
+  openDisabled = false,
   content,
   text,
   openIcon,
@@ -19,6 +20,7 @@ export default function Modal({
 }: {
   title: string
   openLabel?: string
+  openDisabled?: boolean
   openIcon?: IconName
   openColor?: 'error' | 'success' | 'warning' | 'info'
   confirmLabel?: string
@@ -36,9 +38,10 @@ export default function Modal({
   return (
     <>
       <button
+        disabled={openDisabled}
         type="button"
         onClick={() => setOpen(true)}
-        className={`inline-flex justify-center px-4 py-2 text-sm font-semibold text-white bg-blue-400 rounded-md hover:bg-blue-600`}
+        className={`inline-flex justify-center px-4 py-2 text-sm font-semibold text-white bg-blue-400 rounded-md hover:bg-blue-600 disabled:bg-gray-500 disabled:cursor-none disabled:opacity-40`}
       >
         {openLabel}
       </button>

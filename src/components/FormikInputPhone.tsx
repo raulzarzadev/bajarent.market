@@ -13,7 +13,7 @@ const FormikInputPhone = ({ label, helperText, ...props }: InputTextProps) => {
         label={label}
         value={field.value}
         setValue={helpers.setValue}
-        helperText="Ingresa tu número de teléfono"
+        helperText={helperText}
         {...props}
       />
     </div>
