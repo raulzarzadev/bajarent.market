@@ -32,7 +32,7 @@ const Avatar = ({
             widows: sizes[size],
             height: sizes[size]
           }}
-          className="bg-gray-300 rounded-full flex justify-center items-center font-bold text-lg uppercase shadow-md shadow-slate-600"
+          className="bg-gray-300 rounded-full flex justify-center items-center font-bold text-lg uppercase shadow-md shadow-slate-600 aspect-square"
         >
           {label?.substring(0, 2)}
         </div>

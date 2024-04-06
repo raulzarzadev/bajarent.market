@@ -6,7 +6,8 @@ const Button = ({ label, ...props }: ButtonProps) => {
   return (
     <div>
       <button
-        className="
+        {...props}
+        className={`
         bg-blue-500
         hover:bg-blue-700
         text-white
@@ -17,8 +18,8 @@ const Button = ({ label, ...props }: ButtonProps) => {
         disabled:bg-gray-500
         disabled:cursor-not-allowed
         disabled:opacity-50
-      "
-        {...props}
+        
+        ${props.className}`}
       >
         {label}
       </button>

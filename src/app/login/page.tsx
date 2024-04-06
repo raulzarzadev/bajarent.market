@@ -1,7 +1,9 @@
+import FormSignIn from '@/components/FormSignIn'
+
 export default function Login() {
   return (
     <div>
-      <h1>Proximamente</h1>
+      <FormSignIn name={''} phone={''} />
     </div>
   )
 }

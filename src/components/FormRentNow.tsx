@@ -10,12 +10,10 @@ import OrderType, { order_status, order_type } from '@/types/OrderType'
 import FormikInputPhone from './FormikInputPhone'
 import Modal from './Modal'
 import { useState } from 'react'
-import Button from './Button'
-import Link from 'next/link'
-import FormikInputFile from './FormikInputFile'
 import { isValidPhoneNumber } from 'react-phone-number-input'
-import InputCode from './InputCode'
-import CodeSignUp from './CodeSignup'
+import FormSignIn from './FormSignIn'
+import { useAuth } from '@/context/authContext'
+import UserType from '@/types/UserType'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -31,18 +29,21 @@ export default function FormRentNow({
   shop: Shop
   prices?: PriceType[]
 }) {
+  const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
+
+  const { user } = useAuth()
+  if (user === undefined) return <div>Espere un momento</div>
+
   const initialValues: OrderNowProps = {
     storeId: shop?.id,
     categoryId: item?.id,
     address: '',
     references: '',
-    phone: '',
+    phone: user?.phone || '',
     priceSelected: '',
     scheduledAt: new Date(),
-    fullName: ''
+    fullName: user?.fullName || user?.name || ''
   }
-
-  const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
 
   const onSubmit = async (values: OrderNowProps) => {
     const priceSelected = prices.find((p) => p.id === values.priceSelected)
@@ -87,6 +88,8 @@ export default function FormRentNow({
 
   const marketForm = item?.marketForm
 
+  const disabledUserField = !!user
+
   return (
     <div>
       <Formik
@@ -129,6 +132,7 @@ export default function FormRentNow({
                 name="fullName"
                 label="Nombre"
                 helperText="*Ejemplo: Juan Perez"
+                disabled={disabledUserField}
               />
             )}
             {marketForm?.phone && (
@@ -136,6 +140,7 @@ export default function FormRentNow({
                 name="phone"
                 label="Teléfono"
                 helperText="*Numero de teléfono válido"
+                disabled={disabledUserField}
               />
             )}
             {marketForm?.neighborhood && (
@@ -178,34 +183,7 @@ export default function FormRentNow({
                 !isValidPhoneNumber(values?.phone || '') || !values.fullName
               }
             >
-              {orderCreated && (
-                <>
-                  <p>Orden generada con folio: {orderCreated?.folio}</p>
-                  <p>Status:{orderCreated?.status}</p>
-                  <Link href={`/orders?orderId=${orderCreated?.id}`}>
-                    Ver orden
-                  </Link>
-                </>
-              )}
-              {!orderCreated && (
-                <>
-                  <CodeSignUp />
-                  {/* <p>Su orden se genera de forma automatica.</p>
-                  <p>
-                    Pronto una persona de nuestro equípo se pondra en contacto
-                    contigo para verificar tus datos
-                  </p> */}
-                </>
-              )}
-              <div className="my-6 flex w-full justify-center">
-                <Button
-                  disabled={isSubmitting}
-                  label="Rentar"
-                  onClick={async () => {
-                    handleSubmit()
-                  }}
-                ></Button>
-              </div>
+              <FormSignIn name={values.fullName} phone={values.phone} />
             </Modal>
             <div>
               {!isValidPhoneNumber(values?.phone || '') && (

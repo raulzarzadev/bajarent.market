@@ -1,4 +1,6 @@
+import { useAuth } from '@/context/authContext'
 import Link from 'next/link'
+import MenuProfile from './MenuProfile'
 
 export default function Navbar() {
   return (
@@ -18,9 +20,7 @@ export default function Navbar() {
         <Link href="https://admin.bajarent.app" className="font-bold">
           admin
         </Link>
-        <Link href="/login" className="font-bold">
-          Login
-        </Link>
+        <MenuProfile />
       </div>
     </nav>
   )
