@@ -6,13 +6,13 @@ const Avatar = ({
   size = 'md',
   className
 }: {
-  src: string
+  src?: string
   label?: string
   size?: 'sm' | 'md' | 'lg'
   className?: string
 }) => {
   const sizes = {
-    sm: 34,
+    sm: 32,
     md: 48,
     lg: 96
   }

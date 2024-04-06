@@ -3,6 +3,8 @@
 import { useAuth } from '@/context/authContext'
 import MenuMain from './MenuMain'
 import { logout } from '@/firebase/auth'
+import Avatar from './Avatar'
+import Icon from './Icon'
 
 const MenuProfile = () => {
   const { user } = useAuth()
@@ -34,7 +36,18 @@ const MenuProfile = () => {
             }
           }
         ]}
-      />
+      >
+        {user === undefined && (
+          <div className="w-8  aspect-square rounded-full bg-gray-500"></div>
+        )}
+        {user === null && (
+          <div className="w-8  aspect-square rounded-full justify-center items-center flex">
+            <Icon icon="profileAdd" />
+          </div>
+        )}
+        {user?.image && <Avatar src={user.image} size="sm" />}
+        {user && !user.image && <Avatar label={user.name} size="sm" />}
+      </MenuMain>
     </div>
   )
 }

@@ -19,7 +19,7 @@ const FormCode = ({
           onSubmit(values)
         }}
       >
-        {({ values, handleSubmit }) => {
+        {({ handleSubmit }) => {
           return (
             <>
               <FormikInputCode name="code" />

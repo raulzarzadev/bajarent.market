@@ -183,7 +183,18 @@ export default function FormRentNow({
                 !isValidPhoneNumber(values?.phone || '') || !values.fullName
               }
             >
-              <FormSignIn name={values.fullName} phone={values.phone} />
+              {!user && (
+                <FormSignIn name={values.fullName} phone={values.phone} />
+              )}
+              {user && (
+                <button
+                  disabled
+                  type="submit"
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Rentar
+                </button>
+              )}
             </Modal>
             <div>
               {!isValidPhoneNumber(values?.phone || '') && (

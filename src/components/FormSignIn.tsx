@@ -25,7 +25,7 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
   }, [])
 
   useEffect(() => {
-    if (user && window.location.href === '/login') {
+    if (user && window.location.pathname === '/login') {
       window.location.href = '/profile'
     }
   }, [user])
@@ -43,7 +43,6 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
           }}
         >
           {({ values, handleSubmit }) => {
-            console.log({ values })
             return (
               <div className="grid gap-2">
                 <FormikInputText name="name" label="Name" />

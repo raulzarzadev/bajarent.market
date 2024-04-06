@@ -1,14 +1,14 @@
 import { Menu, Transition } from '@headlessui/react'
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { Fragment } from 'react'
 import Icon, { IconName } from './Icon'
 import Link from 'next/link'
-import Avatar from './Avatar'
 
 export default function MenuMain({
   label,
   options = [],
   icon,
-  image
+  image,
+  children
 }: {
   icon: IconName
   label: string
@@ -20,16 +20,13 @@ export default function MenuMain({
     visible: boolean
     onClick?: () => void
   }[]
+  children: React.ReactNode
 }) {
   return (
-    <div className=" top-16 w-56 text-right">
+    <div className=" ">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex w-full justify-center rounded-md items-end  px-4 py-2 text-sm font-medium  hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
-            {label}
-            {/* <Icon icon="down" size={22} /> */}
-            <Avatar size="sm" src={image || ''} label={label} />
-          </Menu.Button>
+          <Menu.Button>{children}</Menu.Button>
         </div>
         <Transition
           as={Fragment}
