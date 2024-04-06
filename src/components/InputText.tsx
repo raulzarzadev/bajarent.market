@@ -15,10 +15,7 @@ const InputText = ({
     <div>
       <label className="grid">
         {label}
-        <input
-          className="border border-gray-500 border-opacity-50 rounded-md p-1 "
-          {...props}
-        />
+        <input className="input " {...props} />
         {helperText && !errorText && (
           <label className={'text-helper'}>{helperText}</label>
         )}

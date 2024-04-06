@@ -48,6 +48,9 @@ body {
   .card {
     @apply shadow-md rounded-lg p-2;
   }
+  .input {
+    @apply border border-gray-500 border-opacity-50 rounded-md p-1;
+  }
 }
 
 @layer theme {
