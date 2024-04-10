@@ -1,13 +1,27 @@
-export type ButtonProps = {
+export type ButtonBaseProps = {
   label: string
   variant?: 'outline' | 'solid' | 'ghost'
   color?: 'primary' | 'secondary' | 'error'
+  linkComponent?: React.ElementType
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
+
+type LinkButtonProps = ButtonBaseProps & {
+  href: string
+  linkComponent: React.ElementType
+}
+
+type RegularButtonProps = ButtonBaseProps & {
+  linkComponent?: never
+  href?: never
+}
+
+type ButtonProps = LinkButtonProps | RegularButtonProps
 
 const Button = ({
   label,
   variant = 'solid',
   color = 'primary',
+  linkComponent: LinkComponent,
   ...props
 }: ButtonProps) => {
   const variants = {
@@ -32,8 +46,7 @@ const Button = ({
     text-blue-500
     hover:bg-blue-500
     hover:text-white
-    border 
-    border-blue-500
+    border-none
   `
   }
 
@@ -57,6 +70,29 @@ const Button = ({
     border-red-500
     
   `
+  }
+  if (LinkComponent) {
+    return (
+      <LinkComponent
+        {...props}
+        className={`
+    ${variants[variant]}
+    ${colors[color]}
+    font-semibold
+    py-2
+    px-4
+    rounded
+    disabled:bg-gray-500
+    disabled:cursor-not-allowed
+    disabled:opacity-50
+    ${props.className}
+    uppercase
+    `}
+        {...props}
+      >
+        {label}
+      </LinkComponent>
+    )
   }
 
   return (
