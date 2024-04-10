@@ -112,13 +112,13 @@ export const onSendCode = ({
     // @ts-ignore
     window.confirmationResult
       .confirm(code)
-      .then((result) => {
+      .then((result: any) => {
         // User signed in successfully.
         console.log({ result })
         // console.log({ user })
         // ...
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.error({ error })
         // setError(
         //   `¡Ups! Algo no salio bien. Codigo:  ${fbErrorToCode(error).code}`

@@ -18,8 +18,8 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
   useEffect(() => {
     // @ts-ignore
     window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
-      callback: (response) => {
-        //console.log({ response })
+      callback: (response: any) => {
+        console.log({ response })
       }
     })
   }, [])

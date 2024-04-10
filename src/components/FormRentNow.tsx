@@ -14,6 +14,7 @@ import { isValidPhoneNumber } from 'react-phone-number-input'
 import FormSignIn from './FormSignIn'
 import { useAuth } from '@/context/authContext'
 import UserType from '@/types/UserType'
+import Button from './Button'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -187,13 +188,22 @@ export default function FormRentNow({
                 <FormSignIn name={values.fullName} phone={values.phone} />
               )}
               {user && (
-                <button
-                  disabled
-                  type="submit"
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  Rentar
-                </button>
+                <div>
+                  <p>Nombre: {values.fullName}</p>
+                  <p>Teléfono: {values.phone}</p>
+                  <p>Dirección: {values.address}</p>
+                  <p>Referencias: {values.references}</p>
+
+                  <p>{values.priceSelected}</p>
+                  <Button
+                    label="Confirmar renta"
+                    disabled={
+                      !isValidPhoneNumber(values?.phone || '') ||
+                      !values.fullName
+                    }
+                    variant="solid"
+                  />
+                </div>
               )}
             </Modal>
             <div>
