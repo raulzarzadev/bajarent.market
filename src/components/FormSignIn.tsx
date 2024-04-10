@@ -12,7 +12,6 @@ import { useAuth } from '@/context/authContext'
 
 const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
   const [haveACode, setHaveACode] = useState(false)
-  const [recaptchaValid, setRecaptchaValid] = useState(false)
   const { user } = useAuth()
 
   useEffect(() => {
