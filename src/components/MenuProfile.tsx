@@ -21,6 +21,12 @@ const MenuProfile = () => {
             icon: 'profileAdd'
           },
           {
+            label: 'Mis rentas',
+            href: '/my-rents',
+            visible: !!user,
+            icon: 'list'
+          },
+          {
             label: 'Perfil',
             href: '/profile',
             visible: !!user,

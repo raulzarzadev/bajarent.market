@@ -14,6 +14,7 @@ const MyRents = () => {
             <th>Estado</th>
             <th>Item</th>
             <th>Opción</th>
+            <th>Precio</th>
           </tr>
         </thead>
         <tbody>
@@ -23,6 +24,7 @@ const MyRents = () => {
               <td>{rent.status}</td>
               <td>{rent.item.categoryName}</td>
               <td>{rent.item.priceSelected?.title}</td>
+              <td>{rent.item.priceSelected?.amount}</td>
             </tr>
           ))}
         </tbody>
