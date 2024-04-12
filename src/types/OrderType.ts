@@ -91,6 +91,8 @@ type OrderBase = {
   //payments: PaymentType[]
 
   priority?: number
+
+  categoryId?: string
 }
 
 export enum order_status {

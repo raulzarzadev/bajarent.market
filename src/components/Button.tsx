@@ -68,6 +68,7 @@ const Button = ({
     hover:bg-red-700
     border
     border-red-500
+    text-red-500
     
   `
   }
@@ -98,10 +99,9 @@ const Button = ({
   }
 
   return (
-    <div>
-      <button
-        {...props}
-        className={`
+    <button
+      {...props}
+      className={`
         ${variants[variant]}
         ${colors[color]}
         font-semibold
@@ -117,10 +117,9 @@ const Button = ({
         ${props.className}
         uppercase
         `}
-      >
-        {label}
-      </button>
-    </div>
+    >
+      {label}
+    </button>
   )
 }
 

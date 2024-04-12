@@ -4,7 +4,6 @@ export async function POST(request: Request) {
   const body = await request.json()
 
   body.marketOrder = true
-
   try {
     const res = await postOrder(body)
     return new Response(JSON.stringify(res), {

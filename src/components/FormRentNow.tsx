@@ -19,7 +19,7 @@ import Button from './Button'
 export type OrderNowProps = Pick<
   OrderType,
   'address' | 'storeId' | 'references' | 'phone' | 'scheduledAt' | 'fullName'
-> & { categoryId: string; priceSelected: string }
+> & { categoryId: string; priceSelected: string; userId: string }
 
 export default function FormRentNow({
   item,
@@ -43,13 +43,19 @@ export default function FormRentNow({
     phone: user?.phone || '',
     priceSelected: '',
     scheduledAt: new Date(),
-    fullName: user?.fullName || user?.name || ''
+    fullName: user?.fullName || user?.name || '',
+    userId: user?.id || ''
   }
 
   const onSubmit = async (values: OrderNowProps) => {
     const priceSelected = prices.find((p) => p.id === values.priceSelected)
 
-    const newOrder: Partial<OrderType> & { categoryId: string } = {
+    const newOrder: Partial<OrderType> & {
+      categoryId: string
+      userId: string
+    } = {
+      userId: user?.id || '',
+      marketOrder: true,
       fullName: values.fullName,
       storeId: values.storeId,
       address: values.address,
@@ -90,7 +96,6 @@ export default function FormRentNow({
   const marketForm = item?.marketForm
 
   const disabledUserField = !!user
-
   return (
     <div>
       <Formik
@@ -107,7 +112,6 @@ export default function FormRentNow({
           // return errors
         }}
         onSubmit={async (values: OrderNowProps, { setSubmitting }) => {
-          console.log({ values })
           return await onSubmit(values)
         }}
       >
@@ -119,7 +123,7 @@ export default function FormRentNow({
 
           /* and other goodies */
         }) => (
-          <form onSubmit={handleSubmit} className="grid gap-2 mb-16 w-full">
+          <form className="grid gap-2 mb-16 w-full">
             {marketForm?.price && (
               <ItemPrices
                 itemId={item?.id || ''}
@@ -159,7 +163,7 @@ export default function FormRentNow({
                 helperText="Calle, Numero y entre calles"
               />
             )}
-            {marketForm?.references && (
+            {!!marketForm?.references && (
               <FormikInputText
                 name="references"
                 label="References"
@@ -193,20 +197,46 @@ export default function FormRentNow({
                   <p>Nombre: {values.fullName}</p>
                   <p>Teléfono: {values.phone}</p>
                   <p>Dirección: {values.address}</p>
-                  <p>Referencias: {values.references}</p>
+                  {/* <p>Referencias: {values.references}</p> */}
+                  {orderCreated && (
+                    <>
+                      <p className="text-center ">
+                        Orden creada con el folio:{' '}
+                      </p>
+                      <p className="text-center font-bold text-xl">
+                        {orderCreated.folio}
+                      </p>
+                      <div className="flex w-full justify-center mt-4">
+                        <Button
+                          label={`Cancelar orden`}
+                          onClick={() => {
+                            console.log('handleCancelOrder')
+                          }}
+                          variant="outline"
+                          color="error"
+                        />
+                      </div>
+                    </>
+                  )}
 
                   <p>{values.priceSelected}</p>
-                  <div className="flex w-full justify-center mt-4">
-                    <Button
-                      type="submit"
-                      label="Confirmar renta"
-                      disabled={
-                        !isValidPhoneNumber(values?.phone || '') ||
-                        !values.fullName
-                      }
-                      variant="solid"
-                    />
-                  </div>
+                  {!orderCreated && (
+                    <div className="flex w-full justify-center mt-4">
+                      <Button
+                        // type="submit"
+                        label={`
+                    Confirmar renta
+                    `}
+                        onClick={() => handleSubmit()}
+                        disabled={
+                          !isValidPhoneNumber(values?.phone || '') ||
+                          !values.fullName ||
+                          isSubmitting
+                        }
+                        variant="solid"
+                      />
+                    </div>
+                  )}
                 </div>
               )}
             </Modal>
