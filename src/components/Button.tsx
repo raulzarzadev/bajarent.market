@@ -85,6 +85,8 @@ const Button = ({
     disabled:bg-gray-500
     disabled:cursor-not-allowed
     disabled:opacity-50
+    active:bg-blue-400
+    transition-colors
     ${props.className}
     uppercase
     `}
@@ -109,6 +111,9 @@ const Button = ({
         disabled:bg-gray-500
         disabled:cursor-not-allowed
         disabled:opacity-50
+        active:bg-blue-400
+        transition-colors
+
         ${props.className}
         uppercase
         `}

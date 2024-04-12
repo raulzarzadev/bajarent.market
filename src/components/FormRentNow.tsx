@@ -107,6 +107,7 @@ export default function FormRentNow({
           // return errors
         }}
         onSubmit={async (values: OrderNowProps, { setSubmitting }) => {
+          console.log({ values })
           return await onSubmit(values)
         }}
       >
@@ -195,14 +196,17 @@ export default function FormRentNow({
                   <p>Referencias: {values.references}</p>
 
                   <p>{values.priceSelected}</p>
-                  <Button
-                    label="Confirmar renta"
-                    disabled={
-                      !isValidPhoneNumber(values?.phone || '') ||
-                      !values.fullName
-                    }
-                    variant="solid"
-                  />
+                  <div className="flex w-full justify-center mt-4">
+                    <Button
+                      type="submit"
+                      label="Confirmar renta"
+                      disabled={
+                        !isValidPhoneNumber(values?.phone || '') ||
+                        !values.fullName
+                      }
+                      variant="solid"
+                    />
+                  </div>
                 </div>
               )}
             </Modal>
