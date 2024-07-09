@@ -5,9 +5,10 @@ import { ServiceShops } from '@/firebase/ServiceShops'
 import { ServiceStores } from '@/firebase/ServiceStores'
 import OrderType from '@/types/OrderType'
 import { PriceType } from '@/types/PriceType'
-export const getShop = async (shop: string) => {
+
+export const getShop = async (shopId: string) => {
   try {
-    const item = await ServiceShops.getShopVisible(shop)
+    const item = await ServiceShops.getShopVisible(shopId)
     return item
   } catch (error) {
     console.error({ error })

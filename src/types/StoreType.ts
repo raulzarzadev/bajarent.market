@@ -3,6 +3,7 @@ export type BaseStoreType = {
   name: string
   description?: string
   currentFolio: number
+  openApi?: boolean
 }
 
 type StoreType = BaseType & BaseStoreType

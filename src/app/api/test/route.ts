@@ -8,7 +8,6 @@ export async function GET(request: Request) {
       headers: { 'content-type': 'application/json' }
     })
   } catch (error) {
-    console.error(error)
     return new Response(JSON.stringify({ error }), {
       headers: { 'content-type': 'application/json' },
       status: 500
