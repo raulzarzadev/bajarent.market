@@ -64,7 +64,7 @@ export default function FormRentNow({
       scheduledAt: values.scheduledAt || new Date(),
       categoryId: item?.id,
       status: order_status.PENDING,
-      type: order_type.DELIVERY_RENT,
+      type: order_type.RENT,
       item: {
         categoryName: item?.name,
         priceQty: 1,

@@ -102,7 +102,6 @@ export enum order_status {
   CANCELLED = 'CANCELLED',
   REPORTED = 'REPORTED',
   PICKUP = 'PICKUP',
-  // ? Should change order status to DELIVERED and add a extra prop called isExpired instead change the status
   EXPIRED = 'EXPIRED',
   RENEWED = 'RENEWED',
   REPAIRING = 'REPAIRING',
@@ -114,7 +113,13 @@ export enum order_type {
   RENT = 'RENT',
   SALE = 'SALE',
   REPAIR = 'REPAIR',
+  /**
+   * @deprecated use RENT instead
+   */
   STORE_RENT = 'STORE_RENT',
+  /**
+   * @deprecated use RENT instead
+   */
   DELIVERY_RENT = 'DELIVERY_RENT'
 }
 export type TypeOfOrderType = order_type
