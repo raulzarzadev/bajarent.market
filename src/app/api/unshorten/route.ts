@@ -1,7 +1,6 @@
-import { NextRequest, NextResponse } from 'next/server'
-
-export async function GET(req: NextRequest) {
+export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
+
   const url = searchParams.get('url')
   if (!url) {
     return new Response(JSON.stringify({ error: 'Missing url' }), {
@@ -27,14 +26,11 @@ export async function GET(req: NextRequest) {
     }
 
     if (redirectCount === maxRedirects) {
-      return NextResponse.json({ error: 'Too many redirects' }, { status: 400 })
+      return Response.json({ error: 'Too many redirects' }, { status: 400 })
     }
 
-    return NextResponse.json({ finalUrl: currentUrl })
+    return Response.json({ finalUrl: currentUrl })
   } catch (error) {
-    return NextResponse.json(
-      { error: 'Error processing the URL' },
-      { status: 500 }
-    )
+    return Response.json({ error: 'Error processing the URL' }, { status: 500 })
   }
 }
