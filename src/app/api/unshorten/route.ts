@@ -16,7 +16,6 @@ export async function GET(req: NextRequest) {
     // Seguir redirecciones manualmente
     while (true) {
       response = await fetch(currentUrl, { method: 'HEAD' })
-
       if (response.redirected) {
         currentUrl = response.url
       } else {
