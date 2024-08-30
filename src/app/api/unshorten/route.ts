@@ -1,16 +1,14 @@
-import { NextResponse } from 'next/server'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest, NextResponse } from 'next/server'
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
-  const url = req?.query?.url as string
-  console.log(req)
+export async function GET(req: NextRequest) {
+  const { searchParams } = new URL(req.url)
+  const url = searchParams.get('url')
   if (!url) {
     return new Response(JSON.stringify({ error: 'Missing url' }), {
       headers: { 'content-type': 'application/json' },
       status: 400
     })
   }
-
   try {
     let currentUrl = url
     let response
