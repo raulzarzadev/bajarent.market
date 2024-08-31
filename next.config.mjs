@@ -8,6 +8,13 @@ const nextConfig = {
         port: ''
       }
     ]
+  },
+  webpack: (config, { isServer }) => {
+    // Excluir `undici` del transpilado
+    config.externals = config.externals || []
+    config.externals.push('undici')
+
+    return config
   }
   // headers: () => [
   //   {
