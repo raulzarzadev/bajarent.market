@@ -26,15 +26,26 @@ export async function GET(req: Request) {
     }
 
     if (redirectCount === maxRedirects) {
-      return Response.json({ error: 'Too many redirects' }, { status: 400 })
+      return new Response(JSON.stringify({ error: 'Too many redirects' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' }
+      })
     }
 
-    return Response.json({
-      success: true,
-      unshortened_url: currentUrl, //* un_shorted_url
-      shortened_url: url
-    })
+    return new Response(
+      JSON.stringify({
+        success: true,
+        unshortened_url: currentUrl,
+        shortened_url: url
+      }),
+      {
+        headers: { 'Content-Type': 'application/json' }
+      }
+    )
   } catch (error) {
-    return Response.json({ error: 'Error processing the URL' }, { status: 500 })
+    return new Response(JSON.stringify({ error: 'Error processing the URL' }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' }
+    })
   }
 }
