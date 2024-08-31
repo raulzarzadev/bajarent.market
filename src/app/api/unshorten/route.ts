@@ -29,7 +29,11 @@ export async function GET(req: Request) {
       return Response.json({ error: 'Too many redirects' }, { status: 400 })
     }
 
-    return Response.json({ finalUrl: currentUrl })
+    return Response.json({
+      success: true,
+      unshortened_url: currentUrl, //* un_shorted_url
+      shortened_url: url
+    })
   } catch (error) {
     return Response.json({ error: 'Error processing the URL' }, { status: 500 })
   }
