@@ -72,7 +72,7 @@ export async function sendSignInPhone({
     // @ts-ignore
     const appVerifier = window.recaptchaVerifier
     // console.log({ appVerifier })
-    signInWithPhoneNumber(auth, phone, appVerifier)
+    return signInWithPhoneNumber(auth, phone, appVerifier)
       .then((confirmationResult) => {
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
@@ -96,6 +96,7 @@ export async function sendSignInPhone({
       })
   } else {
     console.log('recaptchaVerifier does not exist')
+    return
   }
 }
 

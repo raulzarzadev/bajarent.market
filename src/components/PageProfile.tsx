@@ -1,5 +1,6 @@
 'use client'
 import { useAuth } from '@/context/authContext'
+import PrivatePage from '@/hocs/PrivatePage'
 
 const PageProfile = () => {
   const { user } = useAuth()
@@ -12,4 +13,4 @@ const PageProfile = () => {
   )
 }
 
-export default PageProfile
+export default PrivatePage(PageProfile)

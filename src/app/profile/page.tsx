@@ -1,11 +1,7 @@
 import PageProfile from '@/components/PageProfile'
 
 const page = () => {
-  return (
-    <div>
-      <PageProfile />
-    </div>
-  )
+  return <PageProfile />
 }
 
 export default page

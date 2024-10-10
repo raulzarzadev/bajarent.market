@@ -1,7 +1,6 @@
 import { Formik } from 'formik'
 import Button from './Button'
 import FormikInputCode from './FormikInputCode'
-import { useEffect } from 'react'
 
 const FormCode = ({
   disabled,
@@ -10,7 +9,6 @@ const FormCode = ({
   disabled?: boolean
   onSubmit: ({ code }: { code: string | null }) => any
 }) => {
-  useEffect(() => {}, [])
   return (
     <div>
       <Formik
@@ -19,7 +17,7 @@ const FormCode = ({
           onSubmit(values)
         }}
       >
-        {({ handleSubmit }) => {
+        {({ handleSubmit, values }) => {
           return (
             <>
               <FormikInputCode name="code" />
@@ -32,7 +30,7 @@ const FormCode = ({
                   onClick={() => onSubmit({ code: null })}
                 />
                 <Button
-                  disabled={disabled}
+                  disabled={disabled || values?.code?.length !== 6}
                   type="submit"
                   label="Enviar"
                   onClick={() => handleSubmit()}

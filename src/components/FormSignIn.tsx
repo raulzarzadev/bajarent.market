@@ -12,13 +12,18 @@ import { useAuth } from '@/context/authContext'
 
 const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
   const [haveACode, setHaveACode] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const { user } = useAuth()
 
   useEffect(() => {
     // @ts-ignore
     window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
+      size: 'invisible',
       callback: (response: any) => {
         console.log({ response })
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        // console.log(response)
+        // onSignInSubmit()
       }
     })
   }, [])
@@ -34,11 +39,14 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
       {!haveACode && (
         <Formik
           initialValues={{ name: name, phone: phone }}
-          onSubmit={(values) => {
-            sendSignInPhone({ phone: values.phone })
+          onSubmit={async (values) => {
+            setIsLoading(true)
+            await sendSignInPhone({ phone: values.phone })
+
             setTimeout(() => {
+              setIsLoading(false)
               setHaveACode(true)
-            }, 1000)
+            }, 400)
           }}
         >
           {({ values, handleSubmit }) => {
@@ -49,7 +57,7 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
 
                 <div className="flex justify-end">
                   <Button
-                    disabled={!isValidPhoneNumber(values.phone)}
+                    disabled={!isValidPhoneNumber(values.phone) || isLoading}
                     type="submit"
                     label="Enviar"
                     className=""
@@ -62,18 +70,20 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
         </Formik>
       )}
 
+      <div id="sign-in-button" className=" h-20 mx-auto" />
       {haveACode && (
-        <FormCode
-          onSubmit={({ code }) => {
-            if (code) {
-              onSendCode({ code })
-            } else {
-              setHaveACode(false)
-            }
-          }}
-        />
+        <>
+          <FormCode
+            onSubmit={({ code }) => {
+              if (code) {
+                onSendCode({ code })
+              } else {
+                setHaveACode(false)
+              }
+            }}
+          />
+        </>
       )}
-      <div id="sign-in-button" className=" h-20 " />
     </div>
   )
 }
