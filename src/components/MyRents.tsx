@@ -22,7 +22,7 @@ const MyRents = () => {
         <tbody>
           {userRents?.map((rent) => (
             <tr key={rent.id} className="text-center">
-              <td>{dateFormat(rent.createdAt, 'dd MMM yy')}</td>
+              <td>{dateFormat(rent.createdAt, 'dd MMM yy HH:mm')}</td>
               <td>{rent.status}</td>
               <td>{rent.item.categoryName}</td>
               <td>{rent.item.priceSelected?.title}</td>

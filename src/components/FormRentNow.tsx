@@ -16,6 +16,7 @@ import { useAuth } from '@/context/authContext'
 import Button from './Button'
 import FormikCheckbox from './FormikCheckbox'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -34,7 +35,7 @@ export default function FormRentNow({
   const router = useRouter()
   const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
 
-  const { user } = useAuth()
+  const { user, fetchOrders } = useAuth()
   if (user === undefined) return <div>Espere un momento</div>
 
   const initialValues: OrderNowProps & { isInLaPaz?: boolean } = {
@@ -88,8 +89,9 @@ export default function FormRentNow({
         .then((data) => {
           const order = data?.orderCreated
           setOrderCreated(order as OrderType)
+          // router.push(`/my-rents/${data?.orderCreated?.id}`)
         })
-      router.push(`/orders/${orderCreated?.id}`)
+      fetchOrders()
       return
     } catch (error) {
       console.error(error)
@@ -233,21 +235,36 @@ export default function FormRentNow({
                   {/* <p>Referencias: {values.references}</p> */}
                   {orderCreated && (
                     <>
-                      <p className="text-center ">
-                        Orden creada con el folio:{' '}
+                      <p className="text-center mt-4">
+                        Su orden a sido creada con éxito
                       </p>
+                      <p className="font-normal text-xs text-center mt-2">
+                        Orden numero:{' '}
+                      </p>{' '}
                       <p className="text-center font-bold text-xl">
                         {orderCreated?.folio}
                       </p>
-                      <p className="text-xs text-center">{orderCreated?.id}</p>
-                      <div className="flex w-full justify-center mt-4">
+                      <p className="text-[8px] text-center italic ">
+                        {orderCreated?.id}
+                      </p>
+                      <div className="flex w-full justify-around mt-4">
                         <Button
                           label={`Cancelar orden`}
                           onClick={() => {
                             console.log('handleCancelOrder')
                           }}
-                          variant="outline"
+                          variant="ghost"
                           color="error"
+                        />
+                        <Button
+                          linkComponent={Link}
+                          href={`/my-rents/${orderCreated.id}`}
+                          label={`Ver detalles`}
+                          onClick={() => {
+                            console.log('handleCancelOrder')
+                          }}
+                          variant="outline"
+                          color="primary"
                         />
                       </div>
                     </>

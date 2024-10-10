@@ -15,9 +15,11 @@ import {
 const authContext = createContext<{
   user?: UserType | null
   userRents: OrderType[] | null
+  fetchOrders: () => void
 }>({
   user: undefined,
-  userRents: null
+  userRents: null,
+  fetchOrders: () => {}
 })
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -30,13 +32,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [])
 
   useEffect(() => {
-    if (!!user) {
-      ServiceOrders.getByUser(user.id).then(setUserRents)
-    }
+    fetchOrders()
   }, [user])
 
+  const fetchOrders = async () => {
+    if (user) {
+      ServiceOrders.getByUser(user.id).then(setUserRents)
+    } else {
+      console.log('no user')
+    }
+  }
+
   return (
-    <authContext.Provider value={{ user, userRents }}>
+    <authContext.Provider value={{ user, userRents, fetchOrders }}>
       {children}
     </authContext.Provider>
   )

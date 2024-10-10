@@ -7,7 +7,7 @@ const OrderDetails = ({ order }: { order: Partial<OrderType> }) => {
   })
   return (
     <div>
-      <h1 className="h1">Orden</h1>
+      <h1 className="h1">Orden {order.folio}</h1>
       <p className="h1">{order?.status}</p>
       <p className="text-helper">id:{order?.id}</p>
       <p className="text-helper">Creado:{formatter.format(order.createdAt)}</p>
