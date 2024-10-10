@@ -1,7 +1,9 @@
 'use client'
 
 import { useAuth } from '@/context/authContext'
+import PrivatePage from '@/hocs/PrivatePage'
 import { dateFormat } from '@/libs/utils-date'
+import Link from 'next/link'
 
 const MyRents = () => {
   const { userRents } = useAuth()
@@ -25,6 +27,11 @@ const MyRents = () => {
               <td>{rent.item.categoryName}</td>
               <td>{rent.item.priceSelected?.title}</td>
               <td>{rent.item.priceSelected?.amount}</td>
+              <td>
+                <Link className="w-full" href={`my-rents/${rent?.id}`}>
+                  <p>Ver</p>
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
@@ -33,4 +40,4 @@ const MyRents = () => {
   )
 }
 
-export default MyRents
+export default PrivatePage(MyRents)

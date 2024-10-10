@@ -124,7 +124,7 @@ export default function Modal({
                     )}
 
                     <Button
-                      label="Cancelar"
+                      label="Cerrar"
                       onClick={() => setOpen(false)}
                       variant="outline"
                     />

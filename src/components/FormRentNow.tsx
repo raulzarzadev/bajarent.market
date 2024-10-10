@@ -13,8 +13,9 @@ import { useState } from 'react'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import FormSignIn from './FormSignIn'
 import { useAuth } from '@/context/authContext'
-import UserType from '@/types/UserType'
 import Button from './Button'
+import FormikCheckbox from './FormikCheckbox'
+import { useRouter } from 'next/navigation'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -30,12 +31,13 @@ export default function FormRentNow({
   shop: Shop
   prices?: PriceType[]
 }) {
+  const router = useRouter()
   const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
 
   const { user } = useAuth()
   if (user === undefined) return <div>Espere un momento</div>
 
-  const initialValues: OrderNowProps = {
+  const initialValues: OrderNowProps & { isInLaPaz?: boolean } = {
     storeId: shop?.id,
     categoryId: item?.id,
     address: '',
@@ -73,7 +75,7 @@ export default function FormRentNow({
       }
     }
     try {
-      return await fetch('/api/orders', {
+      const rented = await fetch('/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -87,6 +89,8 @@ export default function FormRentNow({
           const order = data?.orderCreated
           setOrderCreated(order as OrderType)
         })
+      router.push(`/orders/${orderCreated?.id}`)
+      return
     } catch (error) {
       console.error(error)
       return error
@@ -124,66 +128,87 @@ export default function FormRentNow({
           /* and other goodies */
         }) => (
           <form className="grid gap-2 mb-16 w-full">
-            {marketForm?.price && (
-              <ItemPrices
-                itemId={item?.id || ''}
-                prices={prices}
-                onPrice={(priceId) => {
-                  setValues({ ...values, priceSelected: priceId })
-                }}
-              />
+            <div className="flex flex-col justify-center items-center">
+              <h2 className="text-center my-2"> 1. Selecciona tu ciudad.</h2>
+              <p className="text-xs ">
+                * Actualmente solo contamos con servicio en las siguientes
+                ciudades
+              </p>
+              <div className="my-4">
+                <FormikCheckbox name="isInLaPaz" label="La Paz, BCS" />
+              </div>
+            </div>
+            {!!values?.isInLaPaz && (
+              <>
+                <h2 className="text-center my-2 ">2. Seleccióna un precio</h2>
+
+                <ItemPrices
+                  itemId={item?.id || ''}
+                  prices={prices}
+                  onPrice={(priceId) => {
+                    setValues({ ...values, priceSelected: priceId })
+                  }}
+                />
+              </>
             )}
-            {marketForm?.fullName && (
-              <FormikInputText
-                name="fullName"
-                label="Nombre"
-                helperText="*Ejemplo: Juan Perez"
-                disabled={disabledUserField}
-              />
-            )}
-            {marketForm?.phone && (
-              <FormikInputPhone
-                name="phone"
-                label="Teléfono"
-                helperText="*Numero de teléfono válido"
-                disabled={disabledUserField}
-              />
-            )}
-            {marketForm?.neighborhood && (
-              <FormikInputText
-                name="neighborhood"
-                label="Colonia "
-                helperText="Ejemplo: Centro, San Pedro, etc."
-              />
-            )}
-            {marketForm?.address && (
-              <FormikInputText
-                name="address"
-                label="Dirección"
-                helperText="Calle, Numero y entre calles"
-              />
-            )}
-            {!!marketForm?.references && (
-              <FormikInputText
-                name="references"
-                label="References"
-                helperText="Ejemplo: Hay un camión de carga enfrente"
-              />
-            )}
-            {marketForm?.scheduledAt && (
-              <FormikInputText
-                type="datetime-local"
-                name="scheduleAt"
-                label="Fecha "
-                helperText="Puede cambiar sin previo aviso."
-              />
-            )}
-            {marketForm?.location && (
-              <FormikInputText
-                name="location"
-                label="Ubicación"
-                helperText="Puedes pegar la ubicación de google maps"
-              />
+
+            {!!values.priceSelected && values.isInLaPaz && (
+              <>
+                <h2 className="text-center my-2"> 3. Agrega tus datos</h2>
+
+                {marketForm?.fullName && (
+                  <FormikInputText
+                    name="fullName"
+                    label="Nombre"
+                    helperText="*Ejemplo: Juan Perez"
+                    disabled={disabledUserField}
+                  />
+                )}
+                {marketForm?.phone && (
+                  <FormikInputPhone
+                    name="phone"
+                    label="Teléfono"
+                    helperText="*Numero de teléfono válido"
+                    disabled={disabledUserField}
+                  />
+                )}
+                {marketForm?.neighborhood && (
+                  <FormikInputText
+                    name="neighborhood"
+                    label="Colonia "
+                    helperText="Ejemplo: Centro, San Pedro, etc."
+                  />
+                )}
+                {marketForm?.address && (
+                  <FormikInputText
+                    name="address"
+                    label="Dirección"
+                    helperText="Calle, Numero y entre calles"
+                  />
+                )}
+                {!!marketForm?.references && (
+                  <FormikInputText
+                    name="references"
+                    label="References"
+                    helperText="Ejemplo: Hay un camión de carga enfrente"
+                  />
+                )}
+                {marketForm?.scheduledAt && (
+                  <FormikInputText
+                    type="datetime-local"
+                    name="scheduleAt"
+                    label="Fecha "
+                    helperText="Puede cambiar sin previo aviso."
+                  />
+                )}
+                {marketForm?.location && (
+                  <FormikInputText
+                    name="location"
+                    label="Ubicación"
+                    helperText="Puedes pegar la ubicación de google maps"
+                  />
+                )}
+              </>
             )}
 
             {/* {marketForm?.imageId && <FormikInputFile name="imageID" />} */}
@@ -204,6 +229,7 @@ export default function FormRentNow({
                   <p>Nombre: {values.fullName}</p>
                   <p>Teléfono: {values.phone}</p>
                   <p>Dirección: {values.address}</p>
+
                   {/* <p>Referencias: {values.references}</p> */}
                   {orderCreated && (
                     <>
@@ -211,8 +237,9 @@ export default function FormRentNow({
                         Orden creada con el folio:{' '}
                       </p>
                       <p className="text-center font-bold text-xl">
-                        {orderCreated.folio}
+                        {orderCreated?.folio}
                       </p>
+                      <p className="text-xs text-center">{orderCreated?.id}</p>
                       <div className="flex w-full justify-center mt-4">
                         <Button
                           label={`Cancelar orden`}
@@ -226,7 +253,7 @@ export default function FormRentNow({
                     </>
                   )}
 
-                  <p>{values.priceSelected}</p>
+                  {/* <p>{values.priceSelected}</p> */}
                   {!orderCreated && (
                     <div className="flex w-full justify-center mt-4">
                       <Button

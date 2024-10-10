@@ -85,6 +85,6 @@ export const postOrder = async (order: OrderType) => {
   }
 }
 
-export const getOrder = async ({ orderId }: { orderId?: string }) => {
+export const getOrder = async ({ orderId }: { orderId?: string | null }) => {
   if (orderId) return await ServiceOrders.get(orderId)
 }

@@ -32,7 +32,6 @@ const ItemPrices = ({
 
   return (
     <>
-      <h2 className="text-center my-2">Seleccióna un precio</h2>
       <div className="flex justify-center w-full my-4 flex-wrap gap-2 ">
         {prices.map((price) => (
           <button
