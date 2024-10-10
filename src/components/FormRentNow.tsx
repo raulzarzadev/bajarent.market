@@ -178,6 +178,13 @@ export default function FormRentNow({
                 helperText="Puede cambiar sin previo aviso."
               />
             )}
+            {marketForm?.location && (
+              <FormikInputText
+                name="location"
+                label="Ubicación"
+                helperText="Puedes pegar la ubicación de google maps"
+              />
+            )}
 
             {/* {marketForm?.imageId && <FormikInputFile name="imageID" />} */}
 

@@ -20,6 +20,7 @@ export type CategoryBase = {
     references?: boolean
     imageId?: boolean
     scheduledAt?: boolean
+    location?: string
   }
 }
 

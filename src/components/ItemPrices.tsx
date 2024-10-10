@@ -31,30 +31,33 @@ const ItemPrices = ({
   }
 
   return (
-    <div className="flex justify-center w-full my-4 flex-wrap gap-2 ">
-      {prices.map((price) => (
-        <button
-          key={price.id}
-          onClick={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-            if (onPrice) {
-              handleSelectPrice(price.id)
-            }
-          }}
-          className="w-[120px] h-20"
-        >
-          <div
-            className={`primary card capitalize border-2 h-full flex flex-col justify-between ${
-              selected === price.id ? 'border-gray-700 ' : 'border-transparent'
-            }`}
+    <>
+      <h2 className="text-center my-2">Seleccióna un precio</h2>
+      <div className="flex justify-center w-full my-4 flex-wrap gap-2 ">
+        {prices.map((price) => (
+          <button
+            key={price.id}
+            onClick={(e) => {
+              e.preventDefault()
+              e.stopPropagation()
+              if (onPrice) {
+                handleSelectPrice(price.id)
+              }
+            }}
+            className="w-[120px] h-20"
           >
-            <h2 className=" ">{price.title}</h2>
-            <p className="h3">{formatter.format(price.amount)}</p>
-          </div>
-        </button>
-      ))}
-    </div>
+            <div
+              className={` card capitalize border-2 border-gray-400 border-opacity-50 h-full flex flex-col justify-between ${
+                selected === price.id ? 'primary' : 'border-transparent'
+              }`}
+            >
+              <h2 className=" ">{price.title}</h2>
+              <p className="h3">{formatter.format(price.amount)}</p>
+            </div>
+          </button>
+        ))}
+      </div>
+    </>
   )
 }
 export default ItemPrices
