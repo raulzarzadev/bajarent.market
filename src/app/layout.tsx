@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
 import { AuthProvider } from '@/context/authContext'
+import { Analytics } from '@vercel/analytics/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={'inter.className'}>
+        <Analytics />
         <AuthProvider>
           <nav className="sticky top-0 z-10 bg-white">
             <Navbar />
