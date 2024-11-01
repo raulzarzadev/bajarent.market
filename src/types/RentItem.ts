@@ -21,6 +21,9 @@ export type CategoryBase = {
     imageId?: boolean
     scheduledAt?: boolean
     location?: string
+    chooseBrand?: boolean
+    failDescription?: boolean
+    // availableBrands?: Record<string, { value: string }>
   }
 }
 

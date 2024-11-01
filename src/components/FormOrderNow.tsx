@@ -15,15 +15,16 @@ import FormSignIn from './FormSignIn'
 import { useAuth } from '@/context/authContext'
 import Button from './Button'
 import FormikCheckbox from './FormikCheckbox'
-import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import FormikInputSelect from './FormikInputSelect'
+import FormikInputTextarea from './FormikInputTextarea'
 
 export type OrderNowProps = Pick<
   OrderType,
   'address' | 'storeId' | 'references' | 'phone' | 'scheduledAt' | 'fullName'
 > & { categoryId: string; priceSelected: string; userId: string }
 
-export default function FormRentNow({
+export default function FormOrderNow({
   item,
   shop,
   prices = []
@@ -32,7 +33,8 @@ export default function FormRentNow({
   shop: Shop
   prices?: PriceType[]
 }) {
-  const router = useRouter()
+  console.log({ item })
+
   const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
 
   const { user, fetchOrders } = useAuth()
@@ -67,7 +69,7 @@ export default function FormRentNow({
       scheduledAt: values.scheduledAt || new Date(),
       categoryId: item?.id,
       status: order_status.PENDING,
-      type: order_type.RENT,
+      type: item.type || order_type.RENT,
       item: {
         categoryName: item?.name,
         priceQty: 1,
@@ -210,6 +212,25 @@ export default function FormRentNow({
                     helperText="Puedes pegar la ubicación de google maps"
                   />
                 )}
+
+                {!!marketForm?.chooseBrand && (
+                  <FormikInputSelect
+                    name="brand"
+                    options={
+                      Object.values(item?.availableBrands || {})?.map((b) => ({
+                        label: b?.value,
+                        value: b?.value
+                      })) || []
+                    }
+                    label="Seleccionar una marca"
+                  />
+                )}
+                {!!marketForm?.failDescription && (
+                  <FormikInputTextarea
+                    name="failDescription"
+                    label="Describe la falla"
+                  />
+                )}
               </>
             )}
 
@@ -217,10 +238,12 @@ export default function FormRentNow({
 
             <Modal
               title="Confirmar orden"
-              openLabel="Rentar"
-              confirmLabel="Rentar"
+              openLabel="Ordenar"
+              confirmLabel="Confirmar orden"
               openDisabled={
-                !isValidPhoneNumber(values?.phone || '') || !values.fullName
+                !isValidPhoneNumber(values?.phone || '') ||
+                !values.fullName ||
+                !values.priceSelected
               }
             >
               {!user && (
@@ -276,7 +299,7 @@ export default function FormRentNow({
                       <Button
                         // type="submit"
                         label={`
-                    Confirmar renta
+                    Confirmar orden
                     `}
                         onClick={() => handleSubmit()}
                         disabled={
@@ -303,7 +326,6 @@ export default function FormRentNow({
                 </p>
               )}
             </div>
-            {/* <Button type="submit" label="Rentar" disabled={isSubmitting} /> */}
           </form>
         )}
       </Formik>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import ItemPrices from './ItemPrices'
 import { CategoryBase, RentItem } from '@/types/RentItem'
 import Avatar from './Avatar'
+import { TypeOfOrderType } from '@/types/OrderType'
 
 export type Item = {
   id: string
@@ -17,6 +18,8 @@ export type Item = {
   shopVisible?: boolean
   shopImg?: string
   marketForm?: CategoryBase['marketForm']
+  type?: TypeOfOrderType
+  availableBrands?: Record<string, { value: string }>
 }
 export default function ItemLabel({
   item,

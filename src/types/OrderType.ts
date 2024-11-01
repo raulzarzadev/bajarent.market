@@ -122,8 +122,10 @@ export enum order_type {
    */
   DELIVERY_RENT = 'DELIVERY_RENT'
 }
+export type OrderTypes = keyof typeof order_type
 export type TypeOfOrderType = order_type
 export type OrderStatus = order_status
+export type OrderStatuses = keyof typeof order_status
 
 type OrderType = OrderBase & BaseType
 

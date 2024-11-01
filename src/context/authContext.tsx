@@ -1,5 +1,5 @@
 'use client'
-import { OrderNowProps } from '@/components/FormRentNow'
+
 import { ServiceOrders } from '@/firebase/ServiceOrders'
 import { authStateChanged } from '@/firebase/auth'
 import OrderType from '@/types/OrderType'
