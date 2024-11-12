@@ -21,7 +21,14 @@ import FormikInputTextarea from './FormikInputTextarea'
 
 export type OrderNowProps = Pick<
   OrderType,
-  'address' | 'storeId' | 'references' | 'phone' | 'scheduledAt' | 'fullName'
+  | 'address'
+  | 'storeId'
+  | 'references'
+  | 'phone'
+  | 'scheduledAt'
+  | 'fullName'
+  | 'neighborhood'
+  | 'location'
 > & { categoryId: string; priceSelected: string; userId: string }
 
 export default function FormOrderNow({
@@ -61,19 +68,21 @@ export default function FormOrderNow({
     } = {
       userId: user?.id || '',
       marketOrder: true,
-      fullName: values.fullName,
-      storeId: values.storeId,
-      address: values.address,
-      references: values.references,
-      phone: values.phone,
-      scheduledAt: values.scheduledAt || new Date(),
+      fullName: values?.fullName,
+      storeId: values?.storeId,
+      address: values?.address,
+      neighborhood: values?.neighborhood,
+      references: values?.references,
+      phone: values?.phone,
+      scheduledAt: values?.scheduledAt || new Date(),
       categoryId: item?.id,
       status: order_status.PENDING,
       type: item.type || order_type.RENT,
+      location: values?.location,
       item: {
         categoryName: item?.name,
         priceQty: 1,
-        priceSelectedId: values.priceSelected,
+        priceSelectedId: values?.priceSelected,
         priceSelected: priceSelected
       }
     }
