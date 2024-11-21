@@ -24,7 +24,7 @@ const sendMessage = async ({
     },
     number: number
   }
-  fetch(endpoint, {
+  return fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
