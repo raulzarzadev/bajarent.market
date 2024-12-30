@@ -5,6 +5,7 @@ import { ServiceShops } from '@/firebase/ServiceShops'
 import { ServiceStores } from '@/firebase/ServiceStores'
 import OrderType from '@/types/OrderType'
 import { PriceType } from '@/types/PriceType'
+import { increment } from 'firebase/firestore'
 
 export const getShop = async (shopId: string) => {
   try {
@@ -66,23 +67,39 @@ export const getItemPrices = async (itemId: string): Promise<PriceType[]> => {
 }
 
 export const postOrder = async (order: OrderType) => {
+  if (!order.storeId) console.error('No storeId provided')
   try {
-    if (!order.storeId) console.error('No storeId provided')
-    const store = await ServiceStores.get(order?.storeId)
-    const currentFolio = store?.currentFolio || 0
-    const nextFolio = currentFolio + 1
-    order.folio = nextFolio
-    order.marketOrder = true
-    const orderCreated = await ServiceOrders.create(order)
-    const storeUpdated = await ServiceStores.update(store.id, {
-      currentFolio: nextFolio
+    // FIRST update store
+    await ServiceStores.update(order.storeId, {
+      // @ts-ignore
+      currentFolio: increment(1)
     })
-    order.id = orderCreated.res.id
-
-    return { orderCreated: order, storeUpdated }
+    // SECOND create order
+    const currentFolio = (await ServiceStores.get(order.storeId)).currentFolio
+    order.folio = currentFolio as unknown as number
+    const orderId = await ServiceOrders.create(order).then((res) => res.res.id)
+    return orderId || null
   } catch (error) {
-    console.error(error)
+    console.log({ error })
+    throw new Error('Error creating order')
   }
+  // try {
+  //   if (!order.storeId) console.error('No storeId provided')
+  //   const store = await ServiceStores.get(order?.storeId)
+  //   const currentFolio = store?.currentFolio || 0
+  //   const nextFolio = currentFolio + 1
+  //   order.folio = nextFolio
+  //   order.marketOrder = true
+  //   const orderCreated = await ServiceOrders.create(order)
+  //   const storeUpdated = await ServiceStores.update(store.id, {
+  //     currentFolio: nextFolio
+  //   })
+  //   order.id = orderCreated.res.id
+
+  //   return { orderCreated: order, storeUpdated }
+  // } catch (error) {
+  //   console.error(error)
+  // }
 }
 
 export const getOrder = async ({ orderId }: { orderId?: string | null }) => {
