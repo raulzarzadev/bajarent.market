@@ -307,9 +307,7 @@ export default function FormOrderNow({
                     <div className="flex w-full justify-center mt-4">
                       <Button
                         // type="submit"
-                        label={`
-                    Confirmar orden
-                    `}
+                        label={`Confirmar orden`}
                         onClick={() => handleSubmit()}
                         disabled={
                           !isValidPhoneNumber(values?.phone || '') ||

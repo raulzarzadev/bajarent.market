@@ -78,7 +78,11 @@ export const postOrder = async (order: OrderType) => {
     const currentFolio = (await ServiceStores.get(order.storeId)).currentFolio
     order.folio = currentFolio as unknown as number
     const orderId = await ServiceOrders.create(order).then((res) => res.res.id)
-    return orderId || null
+
+    // return created order
+    order.id = orderId
+
+    return { orderCreated: order }
   } catch (error) {
     console.log({ error })
     throw new Error('Error creating order')
