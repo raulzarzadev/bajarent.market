@@ -11,7 +11,7 @@ const sendMessage = async ({
   botId: string
   apiKey: string
 }) => {
-  const endpoint = `https://www.builderbot.cloud/api/v2/${botId}/messages`
+  const endpoint = `https://app.builderbot.cloud/api/v2/${botId}/messages`
   if (!phone) return console.log('Phone number is required')
   if (!botId) return console.log('Bot Id is required')
   if (!apiKey) return console.log('Api Key is required')
@@ -22,7 +22,8 @@ const sendMessage = async ({
     messages: {
       content: message
     },
-    number: number
+    number: number,
+    checkIfExists: true
   }
   return fetch(endpoint, {
     method: 'POST',
@@ -32,8 +33,15 @@ const sendMessage = async ({
     },
     body: JSON.stringify(data)
   })
-    .then((response) => console.log(response))
-    .catch((error) => console.error(error))
+    .then((res) => res.json())
+    .then((res) => {
+      console.log(res)
+      return res
+    })
+    .catch((error) => {
+      console.error(error)
+      return error
+    })
 }
 
 export default sendMessage
