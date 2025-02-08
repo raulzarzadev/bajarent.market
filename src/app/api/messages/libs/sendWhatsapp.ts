@@ -12,10 +12,24 @@ const sendMessage = async ({
   apiKey: string
 }) => {
   const endpoint = `https://app.builderbot.cloud/api/v2/${botId}/messages`
-  if (!phone) return console.log('Phone number is required')
-  if (!botId) return console.log('Bot Id is required')
-  if (!apiKey) return console.log('Api Key is required')
-  if (phone.length < 10) return console.log('Length phone number is invalid')
+  if (!phone) {
+    return {
+      error: 'Phone is required'
+    }
+  }
+  if (!botId)
+    return {
+      error: 'Bot Id is required'
+    }
+  if (!apiKey)
+    return {
+      error: 'Api Key is required'
+    }
+  if (phone.length < 10) {
+    return {
+      error: 'Phone is invalid'
+    }
+  }
   const number = formatMxWhatsappPhone(phone)
 
   const data = {
