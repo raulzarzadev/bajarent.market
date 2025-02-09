@@ -84,7 +84,7 @@ export default function FormOrderNow({
     isInLaPaz: customer?.address?.city === 'La Paz'
   }
 
-  const onSubmit = async (values: OrderNowProps) => {
+  const onSubmit = async (values: OrderNowProps & { isInLaPaz?: boolean }) => {
     const priceSelected = prices.find((p) => p.id === values.priceSelected)
     //* if customer don't exist create it
     let shopCustomer = customer
