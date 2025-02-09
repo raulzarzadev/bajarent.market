@@ -29,6 +29,7 @@ type OrderBase = {
   betweenStreets?: string
   neighborhood?: string
   location?: string
+  customerId?: string
   /**
    * @deprecated use references instead
    */

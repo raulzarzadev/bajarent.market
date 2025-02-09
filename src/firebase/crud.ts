@@ -4,7 +4,6 @@ import {
   getDownloadURL,
   deleteObject
 } from 'firebase/storage'
-import { getAuth } from 'firebase/auth'
 import { v4 as uidGenerator } from 'uuid'
 
 import {
@@ -25,6 +24,8 @@ import {
   where,
   writeBatch
 } from 'firebase/firestore'
+import { getAuth } from 'firebase/auth'
+import { app } from './main'
 
 export class FirebaseCRUD {
   dateType: 'date' | 'number' | 'timestamp'
@@ -38,6 +39,7 @@ export class FirebaseCRUD {
   collectionName: string
   db: any
   storage: any
+
   constructor(collectionName = '', firebaseDB: any, firebaseStorage: any) {
     this.collectionName = collectionName
     this.db = firebaseDB
@@ -94,9 +96,6 @@ export class FirebaseCRUD {
         })
       }
     )
-    /*   uploadBytes(storageRef(storagePath), file).then((snapshot) => {
-        console.log('Uploaded a blob or file!');
-      } */
   }
 
   /**
@@ -149,30 +148,18 @@ export class FirebaseCRUD {
    */
 
   createItemMetadata() {
-    const currentUser = getAuth().currentUser
+    const currentUserUID = getAuth(app).currentUser?.uid
     return {
-      createdBy: currentUser?.uid || 'no-user',
+      createdBy: currentUserUID || '',
       createdAt: new Date()
     }
-    // return {
-    //   created: {
-    //     at: new Date(),
-    //     by: currentUser?.uid,
-    //     byEmail: currentUser?.email
-    //   },
-    //   updated: {
-    //     at: new Date(),
-    //     by: currentUser?.uid,
-    //     byEmail: currentUser?.email
-    //   }
-    // }
   }
 
   updateItemMetadata() {
-    const currentUser = getAuth().currentUser
+    const currentUserUID = getAuth(app).currentUser?.uid
     return {
       updatedAt: new Date(),
-      updatedBy: currentUser?.uid || ''
+      updatedBy: currentUserUID || ''
     }
   }
 
@@ -344,8 +331,8 @@ export class FirebaseCRUD {
   }
 
   async listenUserItems(filters: QueryConstraint[] = [], cb: CallableFunction) {
-    const userId = getAuth().currentUser?.uid
-    this.listenItems([where('userId', '==', userId), ...filters], cb)
+    const currentUserUID = getAuth(app).currentUser?.uid
+    this.listenItems([where('userId', '==', currentUserUID), ...filters], cb)
   }
 
   // -------------------------------------------------------------> Helpers

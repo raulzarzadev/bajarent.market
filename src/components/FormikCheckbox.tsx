@@ -13,6 +13,7 @@ const FormikCheckbox = ({
     <div>
       <InputCheckbox
         label={label}
+        checked={field.value}
         {...field}
         {...props}
         helperText={helperText}

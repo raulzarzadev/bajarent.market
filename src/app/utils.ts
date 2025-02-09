@@ -87,23 +87,6 @@ export const postOrder = async (order: OrderType) => {
     console.log({ error })
     throw new Error('Error creating order')
   }
-  // try {
-  //   if (!order.storeId) console.error('No storeId provided')
-  //   const store = await ServiceStores.get(order?.storeId)
-  //   const currentFolio = store?.currentFolio || 0
-  //   const nextFolio = currentFolio + 1
-  //   order.folio = nextFolio
-  //   order.marketOrder = true
-  //   const orderCreated = await ServiceOrders.create(order)
-  //   const storeUpdated = await ServiceStores.update(store.id, {
-  //     currentFolio: nextFolio
-  //   })
-  //   order.id = orderCreated.res.id
-
-  //   return { orderCreated: order, storeUpdated }
-  // } catch (error) {
-  //   console.error(error)
-  // }
 }
 
 export const getOrder = async ({ orderId }: { orderId?: string | null }) => {

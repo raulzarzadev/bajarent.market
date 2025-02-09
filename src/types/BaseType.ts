@@ -1,8 +1,8 @@
 type BaseType = {
-  createdAt: Date
-  createdBy: string
-  updatedAt: Date
-  updatedBy: string
+  createdAt?: Date
+  createdBy?: string
+  updatedAt?: Date
+  updatedBy?: string
   id: string
 }
 

@@ -17,7 +17,13 @@ auth.languageCode = 'es'
 export const storage = getStorage(app)
 
 // CREATE A MAIN INSTANCE FOR USERS
-export const usersCRUD = new FirebaseCRUD('users', db, storage)
+export const usersCRUD = new FirebaseCRUD(
+  'users',
+  db,
+  storage,
+  auth.currentUser
+)
+console.log({ auth })
 
 export const passwordReset = async (email: string) => {
   return await sendPasswordResetEmail(auth, email)

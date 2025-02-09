@@ -9,7 +9,7 @@ import { PriceType } from '@/types/PriceType'
 import OrderType, { order_status, order_type } from '@/types/OrderType'
 import FormikInputPhone from './FormikInputPhone'
 import Modal from './Modal'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import FormSignIn from './FormSignIn'
 import { useAuth } from '@/context/authContext'
@@ -18,6 +18,10 @@ import FormikCheckbox from './FormikCheckbox'
 import Link from 'next/link'
 import FormikInputSelect from './FormikInputSelect'
 import FormikInputTextarea from './FormikInputTextarea'
+import { ServiceCustomers } from '@/firebase/ServiceCustomers'
+import { createUUID } from '@/libs/uid'
+import { CustomerType } from '@/app/api/custmers/types'
+import { where } from 'firebase/firestore'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -29,6 +33,7 @@ export type OrderNowProps = Pick<
   | 'fullName'
   | 'neighborhood'
   | 'location'
+  | 'customerId'
 > & { categoryId: string; priceSelected: string; userId: string }
 
 export default function FormOrderNow({
@@ -40,33 +45,97 @@ export default function FormOrderNow({
   shop: Shop
   prices?: PriceType[]
 }) {
-  console.log({ item })
-
   const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
+  const [customer, setCustomer] = useState<Partial<CustomerType>>()
 
   const { user, fetchOrders } = useAuth()
+
+  useEffect(() => {
+    if (user?.id && shop?.id) {
+      ServiceCustomers.findOne([
+        where('userId', '==', user?.id),
+        where('storeId', '==', shop?.id)
+      ])
+        .then((res) => {
+          console.log('customer', res)
+          setCustomer(res)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    }
+  }, [shop?.id, user?.id])
+
   if (user === undefined) return <div>Espere un momento</div>
+  if (customer === undefined) return <div>Espere un momento</div>
 
   const initialValues: OrderNowProps & { isInLaPaz?: boolean } = {
     storeId: shop?.id,
     categoryId: item?.id,
-    address: '',
-    references: '',
+    address: customer?.address?.street || '',
+    references: customer?.address?.references || '',
+    neighborhood: customer?.address?.neighborhood || '',
     phone: user?.phone || '',
     priceSelected: '',
     scheduledAt: new Date(),
-    fullName: user?.fullName || user?.name || '',
-    userId: user?.id || ''
+    fullName: customer?.name || user?.fullName || user?.name || '',
+    userId: user?.id || '',
+    customerId: customer?.id,
+    isInLaPaz: customer?.address?.city === 'La Paz'
   }
 
   const onSubmit = async (values: OrderNowProps) => {
     const priceSelected = prices.find((p) => p.id === values.priceSelected)
+    //* if customer don't exist create it
+    let shopCustomer = customer
+    const formattingCustomer: Partial<CustomerType> = {
+      storeId: shop.id,
+      name: values?.fullName,
+      userId: values?.userId,
 
+      address: {
+        city: values?.isInLaPaz ? 'La Paz' : '',
+        street: values?.address || '',
+        neighborhood: values?.neighborhood || '',
+        references: values?.references || '',
+        locationURL: values?.location || ''
+      },
+      contacts: {
+        default: {
+          value: values.phone,
+          type: 'phone',
+          label: 'Default',
+          id: 'default'
+        }
+      }
+    }
+    if (shopCustomer?.id) {
+      await ServiceCustomers.update(shopCustomer?.id, formattingCustomer)
+        .then((res) => console.log('actualizado', { res }))
+        .catch((error) => console.error({ error }))
+    }
+    if (!shopCustomer) {
+      const createdCustomer = await ServiceCustomers.create(formattingCustomer)
+        .then(({ res }) => {
+          console.log('creado')
+          return { id: res.id, ...formattingCustomer }
+        })
+        .catch((error) => {
+          console.error(error)
+          return null
+        })
+
+      if (createdCustomer) {
+        // set customer
+        shopCustomer = createdCustomer
+      }
+    }
     const newOrder: Partial<OrderType> & {
       categoryId: string
       userId: string
     } = {
       userId: user?.id || '',
+      customerId: shopCustomer?.id || '',
       marketOrder: true,
       fullName: values?.fullName,
       storeId: values?.storeId,
@@ -115,6 +184,7 @@ export default function FormOrderNow({
   const disabledUserField = !!user
   return (
     <div>
+      {customer ? customer.id : ''}
       <Formik
         initialValues={initialValues}
         validate={(values) => {
