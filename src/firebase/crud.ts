@@ -21,11 +21,8 @@ import {
   setDoc,
   Timestamp,
   updateDoc,
-  where,
   writeBatch
 } from 'firebase/firestore'
-import { getAuth } from 'firebase/auth'
-import { app } from './main'
 
 export class FirebaseCRUD {
   dateType: 'date' | 'number' | 'timestamp'
@@ -148,18 +145,16 @@ export class FirebaseCRUD {
    */
 
   createItemMetadata() {
-    const currentUserUID = getAuth(app).currentUser?.uid
     return {
-      createdBy: currentUserUID || '',
+      createdBy: '',
       createdAt: new Date()
     }
   }
 
   updateItemMetadata() {
-    const currentUserUID = getAuth(app).currentUser?.uid
     return {
       updatedAt: new Date(),
-      updatedBy: currentUserUID || ''
+      updatedBy: ''
     }
   }
 
@@ -331,8 +326,7 @@ export class FirebaseCRUD {
   }
 
   async listenUserItems(filters: QueryConstraint[] = [], cb: CallableFunction) {
-    const currentUserUID = getAuth(app).currentUser?.uid
-    this.listenItems([where('userId', '==', currentUserUID), ...filters], cb)
+    this.listenItems([...filters], cb)
   }
 
   // -------------------------------------------------------------> Helpers
@@ -386,12 +380,6 @@ export class FirebaseCRUD {
           filter,
           collectionName
         })
-      // if (typeof filter._a === 'function') {
-      //   return console.error('invalid data', {
-      //     segment: filter.fa.segments[0],
-      //     collectionName
-      //   })
-      // }
     })
 
     return filters
