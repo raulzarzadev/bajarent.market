@@ -39,7 +39,7 @@ const sendMessage = async ({
     number: number,
     checkIfExists: true
   }
-  return fetch(endpoint, {
+  return await fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

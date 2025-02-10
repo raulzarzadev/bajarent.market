@@ -19,9 +19,12 @@ import Link from 'next/link'
 import FormikInputSelect from './FormikInputSelect'
 import FormikInputTextarea from './FormikInputTextarea'
 import { ServiceCustomers } from '@/firebase/ServiceCustomers'
-import { createUUID } from '@/libs/uid'
 import { CustomerType } from '@/app/api/custmers/types'
 import { where } from 'firebase/firestore'
+import {
+  getFavoriteCustomerPhone,
+  writeMessage
+} from '@/features/Customers/lib'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -57,7 +60,6 @@ export default function FormOrderNow({
         where('storeId', '==', shop?.id)
       ])
         .then((res) => {
-          console.log('customer', res)
           setCustomer(res)
         })
         .catch((error) => {
@@ -111,13 +113,13 @@ export default function FormOrderNow({
     }
     if (shopCustomer?.id) {
       await ServiceCustomers.update(shopCustomer?.id, formattingCustomer)
-        .then((res) => console.log('actualizado', { res }))
+        .then((res) => res)
         .catch((error) => console.error({ error }))
     }
     if (!shopCustomer) {
       const createdCustomer = await ServiceCustomers.create(formattingCustomer)
         .then(({ res }) => {
-          console.log('creado')
+          //console.log('creado')
           return { id: res.id, ...formattingCustomer }
         })
         .catch((error) => {
@@ -156,7 +158,7 @@ export default function FormOrderNow({
       }
     }
     try {
-      const rented = await fetch('/api/orders', {
+      const created = await fetch('/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -166,11 +168,46 @@ export default function FormOrderNow({
         .then((res) => {
           return res.json()
         })
-        .then((data) => {
+        .then(async (data) => {
           const order = data?.orderCreated
-          setOrderCreated(order as OrderType)
-          // router.push(`/my-rents/${data?.orderCreated?.id}`)
+          return order
         })
+      setOrderCreated(created)
+
+      // just send whatsapp if the option is enabled in the chatbot store optios
+      if (shouldSentWhatsapp) {
+        const res = await fetch('/api/messages', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            phone: getFavoriteCustomerPhone(shopCustomer?.contacts || {}) || '',
+            message: writeMessage('newWebOrder', {
+              customerName: shopCustomer?.name || '',
+              orderFolio: created?.folio,
+              orderType: created?.type,
+              shopName: shop?.name
+            }),
+            apiKey: shop?.chatbot?.apiKey || '',
+            botId: shop?.chatbot?.id || ''
+          })
+        })
+          .then((res) => {
+            return res.json()
+          })
+          .then((data) => {
+            return data
+          })
+          .catch((error) => {
+            console.error(error)
+            return error
+          })
+        if (res.waited) {
+          console.log('sent message')
+        }
+      }
+
       fetchOrders()
       return
     } catch (error) {
@@ -178,7 +215,7 @@ export default function FormOrderNow({
       return error
     }
   }
-
+  const shouldSentWhatsapp = shop.chatbot?.config?.sendNewWebOrder
   const marketForm = item?.marketForm
 
   const disabledUserField = !!user
@@ -353,8 +390,10 @@ export default function FormOrderNow({
                         <Button
                           label={`Cancelar orden`}
                           onClick={() => {
-                            console.log('handleCancelOrder')
+                            //TODO: cancel order
+                            //console.log('handleCancelOrder')
                           }}
+                          disabled={true}
                           variant="ghost"
                           color="error"
                         />
@@ -362,14 +401,16 @@ export default function FormOrderNow({
                           linkComponent={Link}
                           href={`/my-rents/${orderCreated.id}`}
                           label={`Ver detalles`}
-                          onClick={() => {
-                            console.log('handleCancelOrder')
-                          }}
                           variant="outline"
                           color="primary"
                         />
                       </div>
                     </>
+                  )}
+                  {shouldSentWhatsapp && (
+                    <div>
+                      <p>Te enviaremos un whatsapp para confirmar tu orden </p>
+                    </div>
                   )}
 
                   {/* <p>{values.priceSelected}</p> */}

@@ -83,10 +83,10 @@ const Button = ({
     py-2
     px-4
     rounded
-    disabled:bg-gray-500
     disabled:cursor-not-allowed
-    disabled:opacity-50
-    active:bg-blue-400
+    disabled:opacity-30
+    
+   
     transition-colors
     ${props.className}
     uppercase
@@ -108,10 +108,9 @@ const Button = ({
         py-2
         px-4
         rounded
-        disabled:bg-gray-500
         disabled:cursor-not-allowed
-        disabled:opacity-50
-        active:bg-blue-400
+        disabled:opacity-30
+      
         transition-colors
 
         ${props.className}

@@ -1,10 +1,56 @@
+import formatMxWhatsappPhone from './libs/formatMxWhatsappPhone'
 import sendMessage from './libs/sendWhatsapp'
 
 export async function POST(request: Request) {
-  const { botId, message, phone, apiKey } = await request.json()
-
   try {
-    const res = await sendMessage({ apiKey, botId, message, phone })
+    // Validar que el cuerpo de la solicitud no esté vacío
+    if (!request.body) {
+      return Response.json(
+        { error: 'El cuerpo de la solicitud está vacío' },
+        { status: 400 }
+      )
+    }
+    const { botId, message, phone, apiKey } = await request.json()
+
+    if (!botId || !message || !phone || !apiKey) {
+      return Response.json(
+        { error: 'Faltan campos requeridos (botId, message, phone, apiKey)' },
+        { status: 400 }
+      )
+    }
+    const endpoint = `https://app.builderbot.cloud/api/v2/${botId}/messages`
+    const number = formatMxWhatsappPhone(phone)
+
+    const data = {
+      messages: {
+        content: message
+      },
+      number,
+      checkIfExists: true
+    }
+
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-builderbot': apiKey
+      },
+      body: JSON.stringify(data)
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res)
+        return res
+      })
+      .catch((error) => {
+        console.error(error)
+        return error
+      })
+
+    if (!res) {
+      throw new Error('No se recibió respuesta del servicio de mensajes')
+    }
+
     return new Response(JSON.stringify(res), {
       headers: { 'content-type': 'application/json' },
       status: 200
