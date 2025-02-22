@@ -39,7 +39,7 @@ export async function POST(request: Request) {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res)
+        //console.log(res)
         return res
       })
       .catch((error) => {

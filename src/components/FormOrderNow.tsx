@@ -49,7 +49,7 @@ export default function FormOrderNow({
   prices?: PriceType[]
 }) {
   const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
-  const [customer, setCustomer] = useState<Partial<CustomerType>>()
+  const [customer, setCustomer] = useState<Partial<CustomerType> | null>()
 
   const { user, fetchOrders } = useAuth()
 
@@ -65,11 +65,13 @@ export default function FormOrderNow({
         .catch((error) => {
           console.error(error)
         })
+    } else {
+      setCustomer(null)
     }
   }, [shop?.id, user?.id])
 
-  if (user === undefined) return <div>Espere un momento</div>
-  if (customer === undefined) return <div>Espere un momento</div>
+  if (user === undefined && customer === undefined)
+    return <div>Espere un momento</div>
 
   const initialValues: OrderNowProps & { isInLaPaz?: boolean } = {
     storeId: shop?.id,
@@ -218,7 +220,7 @@ export default function FormOrderNow({
   const shouldSentWhatsapp = shop.chatbot?.config?.sendNewWebOrder
   const marketForm = item?.marketForm
 
-  const disabledUserField = !!user
+  const disabledUserField = false
   return (
     <div>
       {customer ? customer.id : ''}
