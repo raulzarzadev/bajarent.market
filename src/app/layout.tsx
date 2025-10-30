@@ -10,7 +10,8 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'bajarent',
   description:
-    'Renta lo que sea. Renta de herramientas y equipo en línea. Lavadoras, Bicicletas, Herramientas, Motos, Autos, y más.'
+    'Renta lo que sea. Renta de herramientas y equipo en línea. Lavadoras, Bicicletas, Herramientas, Motos, Autos, y más.',
+  icons: [{ rel: 'icon', url: '/favicon.ico' }]
 }
 
 export default function RootLayout({
@@ -23,10 +24,8 @@ export default function RootLayout({
       <body className={'inter.className'}>
         <Analytics />
         <AuthProvider>
-          <nav className="sticky top-0 z-10 bg-white">
-            <Navbar />
-          </nav>
-          <main className=" max-w-[480px] mx-auto">{children}</main>
+          <Navbar />
+          <main className="container mx-auto">{children}</main>
         </AuthProvider>
       </body>
     </html>

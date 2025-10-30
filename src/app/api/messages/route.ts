@@ -10,7 +10,7 @@ export async function POST(request: Request) {
         { status: 400 }
       )
     }
-    const { botId, message, phone, apiKey } = await request.json()
+    const { botId, message, phone, apiKey, mediaUrl } = await request.json()
 
     if (!botId || !message || !phone || !apiKey) {
       return Response.json(
@@ -23,7 +23,8 @@ export async function POST(request: Request) {
 
     const data = {
       messages: {
-        content: message
+        content: message,
+        mediaUrl
       },
       number,
       checkIfExists: true

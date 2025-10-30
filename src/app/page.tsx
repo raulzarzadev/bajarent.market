@@ -31,12 +31,7 @@ export default async function Home() {
     })
     .filter((item: Item) => item?.shopVisible)
   return (
-    <main className="flex min-h-screen flex-col  justify-start">
-      <div className="flex justify-center">
-        <p className="mr-2">Tiendas: {shops?.length || 0}</p>
-        <p className="">Articulos: {items?.length || 0}</p>
-      </div>
-      {/* <Hero item={formatItems[0]} /> */}
+    <main className="flex min-h-screen sm: flex-col  justify-start">
       <ItemsList items={formatItems} />
     </main>
   )
