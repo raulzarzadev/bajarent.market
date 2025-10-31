@@ -30,8 +30,16 @@ const InputCheckbox = ({
       <label htmlFor={id} className="ml-2 text-gray-700">
         {label}
       </label>
-      {helperText && !errorText && <label className={'text-helper'}>{helperText}</label>}
-      {errorText && <label className={'text-helper text-error'}>{errorText}</label>}
+      {helperText && !errorText && (
+        <label htmlFor={id} className={'text-helper'}>
+          {helperText}
+        </label>
+      )}
+      {errorText && (
+        <label htmlFor={id} className={'text-helper text-error'}>
+          {errorText}
+        </label>
+      )}
     </div>
   )
 }

@@ -1,12 +1,8 @@
 import type { NextApiRequest } from 'next'
 import { ServiceShops } from '@/firebase/ServiceShops'
 
-export async function GET(request: NextApiRequest, { params }: { params: { id: string } }) {
+export async function GET(_: NextApiRequest, { params }: { params: { id: string } }) {
   const shopId = params.id
-  // const shopId = params.id as string
-  const body = {
-    message: `Hello from shop details route! ${shopId} `,
-  }
 
   try {
     const shop = await ServiceShops.getOpenApiShop({ shopId })

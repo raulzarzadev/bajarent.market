@@ -72,17 +72,15 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
 
       <div id="sign-in-button" className=" h-20 mx-auto" />
       {haveACode && (
-        <>
-          <FormCode
-            onSubmit={({ code }) => {
-              if (code) {
-                onSendCode({ code })
-              } else {
-                setHaveACode(false)
-              }
-            }}
-          />
-        </>
+        <FormCode
+          onSubmit={({ code }) => {
+            if (code) {
+              onSendCode({ code })
+            } else {
+              setHaveACode(false)
+            }
+          }}
+        />
       )}
     </div>
   )

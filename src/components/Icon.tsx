@@ -1,4 +1,3 @@
-import React from 'react'
 import { BsWhatsapp } from 'react-icons/bs'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
 import { FaRegWindowRestore } from 'react-icons/fa6'

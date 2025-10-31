@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { TypeOfOrderType } from '@/types/OrderType'
 import type { PriceType } from '@/types/PriceType'
-import { type CategoryBase, RentItem } from '@/types/RentItem'
+import type { CategoryBase } from '@/types/RentItem'
 import Avatar from './Avatar'
 import ItemPrices from './ItemPrices'
 

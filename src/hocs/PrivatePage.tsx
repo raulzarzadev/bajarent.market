@@ -1,6 +1,6 @@
 'use client'
 import { useRouter } from 'next/navigation'
-import React, { type ComponentType, useEffect } from 'react'
+import { type ComponentType, useEffect } from 'react'
 import { useAuth } from '@/context/authContext'
 
 const PrivatePage = <P extends object>(WrappedComponent: ComponentType<P>) => {

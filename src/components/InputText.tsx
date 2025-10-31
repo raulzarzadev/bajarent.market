@@ -1,4 +1,3 @@
-import { useField } from 'formik'
 export type InputTextProps = {
   label?: string
   name: string
@@ -11,8 +10,8 @@ const InputText = ({ label, helperText, errorText, ...props }: InputTextProps) =
       <label className="grid">
         {label}
         <input className="input " {...props} />
-        {helperText && !errorText && <label className={'text-helper'}>{helperText}</label>}
-        {errorText && <label className={'text-helper text-error'}>{errorText}</label>}
+        {helperText && !errorText && <span className={'text-helper'}>{helperText}</span>}
+        {errorText && <span className={'text-helper text-error'}>{errorText}</span>}
       </label>
     </div>
   )

@@ -21,7 +21,7 @@ const InputPhone = ({
     setValue(value)
   }
   return (
-    <label>
+    <div>
       <PhoneInput
         defaultCountry="MX"
         placeholder={label}
@@ -31,7 +31,7 @@ const InputPhone = ({
         className="input"
       />
       {helperText && <div className="text-helper">{helperText}</div>}
-    </label>
+    </div>
   )
 }
 

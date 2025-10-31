@@ -192,11 +192,11 @@ export class FirebaseCRUD {
   async getItem(itemId: string) {
     const ref = doc(this.db, this.collectionName, itemId)
     // const docSnap = await getDoc(ref)
-    let docSnap
+    let docSnap: any
     try {
       docSnap = await getDocFromCache(ref)
       console.log('doc from cache')
-    } catch (error) {
+    } catch (_error) {
       console.log('doc from server')
       docSnap = await getDocFromServer(ref)
     }
@@ -352,7 +352,7 @@ export class FirebaseCRUD {
     filters.forEach((filter) => {
       //* Looks like firebase define a function unsolved if the value of
       if (!(filter instanceof QueryConstraint))
-        return console.error('invalid filter', {
+        console.error('invalid filter', {
           filter,
           collectionName,
         })

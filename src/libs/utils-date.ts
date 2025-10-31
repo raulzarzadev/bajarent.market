@@ -1,12 +1,4 @@
-import {
-  endOfWeek,
-  type FormatDistanceToken,
-  format as fnsFormat,
-  formatDistanceToNowStrict,
-  isWithinInterval,
-  startOfWeek,
-  subWeeks,
-} from 'date-fns'
+import { type FormatDistanceToken, format as fnsFormat, formatDistanceToNowStrict } from 'date-fns'
 import { es } from 'date-fns/locale'
 import { Timestamp } from 'firebase/firestore'
 
@@ -81,7 +73,7 @@ export const inputDateFormat = (date: Date | Timestamp | string | number = new D
 export const asDate = (date?: Timestamp | Date | number | string | object | null): Date | null => {
   if (!date) return null
   if (date instanceof Date) {
-    if (!isNaN(date.getTime())) return date
+    if (!Number.isNaN(date.getTime())) return date
     console.error('not a valid date', { date })
     return null
   }

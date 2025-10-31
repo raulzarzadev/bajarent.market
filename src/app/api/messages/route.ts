@@ -1,5 +1,4 @@
 import formatMxWhatsappPhone from './libs/formatMxWhatsappPhone'
-import sendMessage from './libs/sendWhatsapp'
 
 export async function POST(request: Request) {
   try {
