@@ -11,7 +11,6 @@ export default async function ShopItem({
   params: { shop: string; itemId: string }
 }) {
   const { shop: shopName, itemId } = await Promise.resolve(params)
-  //const { item, shop, prices } = await getShopItem(params.shop, params.itemId)
   const [error, result] = await catchError(getShopItem(shopName, itemId))
   if (error || !result) {
     console.log({ itemId, shopName, error })
