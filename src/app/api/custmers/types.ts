@@ -1,4 +1,4 @@
-import BaseType from '@/types/BaseType'
+import type BaseType from '@/types/BaseType'
 
 export type CustomerBase = {
   name: string
@@ -29,10 +29,7 @@ export type CustomerAddress = {
   coords?: `${number},${number}`
 }
 
-export type CustomerImages = Record<
-  ImageDescriptionType['id'],
-  Partial<ImageDescriptionType>
->
+export type CustomerImages = Record<ImageDescriptionType['id'], Partial<ImageDescriptionType>>
 
 export type ImageDescriptionType = {
   description: string

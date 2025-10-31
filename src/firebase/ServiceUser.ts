@@ -1,4 +1,4 @@
-import StoreType from '../types/StoreType'
+import type StoreType from '../types/StoreType'
 import { FirebaseGenericService } from './service'
 
 // ? FIXME: StoreType?? this should be UserType

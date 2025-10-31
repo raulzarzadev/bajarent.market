@@ -1,16 +1,23 @@
-import ShopInfo from '@/components/ShopInfo'
-import ItemCard from '@/components/ItemCard'
 import { getShopItem } from '@/app/utils'
 import FormOrderNow from '@/components/FormOrderNow'
+import ItemCard from '@/components/ItemCard'
 import ItemStatus from '@/components/ItemStatus'
+import ShopInfo from '@/components/ShopInfo'
+import catchError from '@/libs/catchError'
 
 export default async function ShopItem({
   params
 }: {
   params: { shop: string; itemId: string }
 }) {
-  const { item, shop, prices } = await getShopItem(params.shop, params.itemId)
-
+  const { shop: shopName, itemId } = await Promise.resolve(params)
+  //const { item, shop, prices } = await getShopItem(params.shop, params.itemId)
+  const [error, result] = await catchError(getShopItem(shopName, itemId))
+  if (error || !result) {
+    console.log({ itemId, shopName, error })
+    return <div>Error loading item: {error?.message}</div>
+  }
+  const { item, shop, prices } = result
   return (
     <div className="p-2">
       <ShopInfo shop={shop} />

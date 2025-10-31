@@ -4,7 +4,7 @@ const Avatar = ({
   src,
   label,
   size = 'md',
-  className
+  className,
 }: {
   src?: string
   label?: string
@@ -14,10 +14,10 @@ const Avatar = ({
   const sizes = {
     sm: 32,
     md: 48,
-    lg: 96
+    lg: 96,
   }
   return (
-    <div className={`${className} flex-grow-0 flex-shrink-0`}>
+    <div className={`${className} grow-0 shrink-0`}>
       {src ? (
         <Image
           src={src || '/avatar.png'}
@@ -30,7 +30,7 @@ const Avatar = ({
         <div
           style={{
             widows: sizes[size],
-            height: sizes[size]
+            height: sizes[size],
           }}
           className="bg-gray-300 rounded-full flex justify-center items-center font-bold text-lg uppercase shadow-md shadow-slate-600 aspect-square"
         >

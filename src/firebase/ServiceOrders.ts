@@ -1,6 +1,7 @@
 import { where } from 'firebase/firestore'
+import type OrderType from '@/types/OrderType'
 import { FirebaseGenericService } from './service'
-import OrderType from '@/types/OrderType'
+
 class ServiceOrdersClass extends FirebaseGenericService<OrderType> {
   constructor() {
     super('orders')

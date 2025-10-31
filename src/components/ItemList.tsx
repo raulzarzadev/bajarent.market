@@ -1,5 +1,5 @@
 import ProductCard from './ItemCard'
-import { Item } from './ItemLabel'
+import type { Item } from './ItemLabel'
 
 export default function ItemsList({ items = [] }: { items: Item[] }) {
   return (

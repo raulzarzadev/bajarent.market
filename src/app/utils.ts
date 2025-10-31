@@ -1,11 +1,11 @@
+import { increment } from 'firebase/firestore'
 import { ServiceCategories } from '@/firebase/ServiceCategories'
 import { ServiceOrders } from '@/firebase/ServiceOrders'
 import { ServicePrices } from '@/firebase/ServicePrices'
 import { ServiceShops } from '@/firebase/ServiceShops'
 import { ServiceStores } from '@/firebase/ServiceStores'
-import OrderType from '@/types/OrderType'
-import { PriceType } from '@/types/PriceType'
-import { increment } from 'firebase/firestore'
+import type OrderType from '@/types/OrderType'
+import type { PriceType } from '@/types/PriceType'
 
 export const getShop = async (shopId: string) => {
   try {
@@ -43,7 +43,7 @@ export const getShopItems = async (id: string) => {
     shopId: shop.id,
     shopName: shop.name,
     shopImg: shop?.img,
-    shopLink: shop?.link
+    shopLink: shop?.link,
   }))
 }
 
@@ -57,7 +57,7 @@ export const getShopItem = async (shopId: string, itemId: string) => {
     shopId: shop?.id,
     shopName: shop?.name,
     shopImg: shop?.img,
-    shopLink: shop?.link
+    shopLink: shop?.link,
   }
   return { item: itemData, shop, prices }
 }
@@ -71,8 +71,8 @@ export const postOrder = async (order: OrderType) => {
   try {
     // FIRST update store
     await ServiceStores.update(order.storeId, {
-      // @ts-ignore
-      currentFolio: increment(1)
+      // @ts-expect-error
+      currentFolio: increment(1),
     })
     // SECOND create order
     const currentFolio = (await ServiceStores.get(order.storeId)).currentFolio

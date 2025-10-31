@@ -1,4 +1,4 @@
-import { CustomerType } from '@/app/api/custmers/types'
+import type { CustomerType } from '@/app/api/custmers/types'
 import { FirebaseGenericService } from './service'
 
 class ServiceCustomersClass extends FirebaseGenericService<CustomerType> {

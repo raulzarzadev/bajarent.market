@@ -5,7 +5,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPhoneNumber,
-  signOut
+  signOut,
 } from 'firebase/auth'
 
 import { getStorage } from 'firebase/storage'
@@ -23,21 +23,12 @@ export const passwordReset = async (email: string) => {
   return await sendPasswordResetEmail(auth, email)
 }
 
-export const confirmThePasswordReset = async (
-  oobCode: string,
-  newPassword: string
-) => {
+export const confirmThePasswordReset = async (oobCode: string, newPassword: string) => {
   if (!oobCode && !newPassword) return
   return await confirmPasswordReset(auth, oobCode, newPassword)
 }
 
-export async function signInWithPassword({
-  email,
-  password
-}: {
-  email: string
-  password: string
-}) {
+export async function signInWithPassword({ email, password }: { email: string; password: string }) {
   return signInWithEmailAndPassword(auth, email, password)
 }
 
@@ -50,23 +41,23 @@ export async function getCurrentUser() {
 }
 
 export async function sendSignInPhone({
-  phone
+  phone,
 }: //appVerifier
 {
   phone: string
   //appVerifier: any
 }) {
-  // @ts-ignore
+  // @ts-expect-error
   if (window?.recaptchaVerifier) {
     console.log('recaptchaVerifier exists')
-    // @ts-ignore
+    // @ts-expect-error
     const appVerifier = window.recaptchaVerifier
     // console.log({ appVerifier })
     return signInWithPhoneNumber(auth, phone, appVerifier)
       .then((confirmationResult) => {
         // SMS sent. Prompt user to type the code from the message, then sign the
         // user in with confirmationResult.confirm(code).
-        // @ts-ignore
+        // @ts-expect-error
         window.confirmationResult = confirmationResult
         // setMsmSent(true)
         console.log({ confirmationResult })
@@ -91,16 +82,16 @@ export async function sendSignInPhone({
 }
 
 export const onSendCode = ({
-  code
+  code,
 }: // confirmationResult
 {
   code: string
   //confirmationResult: any
 }) => {
-  // @ts-ignore
+  // @ts-expect-error
   if (window?.confirmationResult) {
     console.log('window.confirmationResult exists')
-    // @ts-ignore
+    // @ts-expect-error
     window.confirmationResult
       .confirm(code)
       .then((result: any) => {
@@ -136,7 +127,7 @@ export async function authStateChanged(cb: CallableFunction) {
         // rol: 'CLIENT',
         image: user.photoURL || '',
         phone: user.phoneNumber || '',
-        canCreateStore: true
+        canCreateStore: true,
       }
       await usersCRUD.setItem(user.uid, newUser)
       const userCreated = await usersCRUD.getItem(user.uid)

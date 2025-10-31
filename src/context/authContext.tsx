@@ -1,16 +1,10 @@
 'use client'
 
-import { ServiceOrders } from '@/firebase/ServiceOrders'
+import { createContext, type ReactNode, useContext, useEffect, useState } from 'react'
 import { authStateChanged } from '@/firebase/auth'
-import OrderType from '@/types/OrderType'
-import UserType from '@/types/UserType'
-import {
-  ReactNode,
-  createContext,
-  useContext,
-  useEffect,
-  useState
-} from 'react'
+import { ServiceOrders } from '@/firebase/ServiceOrders'
+import type OrderType from '@/types/OrderType'
+import type UserType from '@/types/UserType'
 
 const authContext = createContext<{
   user?: UserType | null
@@ -19,7 +13,7 @@ const authContext = createContext<{
 }>({
   user: undefined,
   userRents: null,
-  fetchOrders: () => {}
+  fetchOrders: () => {},
 })
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -44,9 +38,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }
 
   return (
-    <authContext.Provider value={{ user, userRents, fetchOrders }}>
-      {children}
-    </authContext.Provider>
+    <authContext.Provider value={{ user, userRents, fetchOrders }}>{children}</authContext.Provider>
   )
 }
 

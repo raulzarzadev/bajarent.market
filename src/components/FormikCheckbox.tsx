@@ -1,12 +1,7 @@
 import { useField } from 'formik'
-import InputCheckbox, { InputCheckboxProps } from './InputCheckbox'
+import InputCheckbox, { type InputCheckboxProps } from './InputCheckbox'
 
-const FormikCheckbox = ({
-  label,
-  helperText,
-  name,
-  ...props
-}: InputCheckboxProps) => {
+const FormikCheckbox = ({ label, helperText, name, ...props }: InputCheckboxProps) => {
   const [field, meta, helpers] = useField({ ...props, name })
 
   return (

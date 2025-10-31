@@ -3,10 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "biome lint .",
+    "lint:fix": "biome lint --write .",
+    "format": "biome format .",
+    "format:fix": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write .",
     "types": "tsc --noEmit",
     "build:no-cache": "rm -rf .next && next build"
   },
@@ -17,23 +22,22 @@
     "date-fns": "^3.6.0",
     "firebase": "^10.9.0",
     "formik": "^2.4.5",
-    "next": "^14.2.15",
-    "react": "^18",
-    "react-dom": "^18",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "react-icons": "^5.0.1",
     "react-otp-input": "^3.1.1",
     "react-phone-number-input": "^3.3.9",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.2",
+    "@tailwindcss/postcss": "latest",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.4",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0",
+    "postcss": "^8.5.6",
+    "tailwindcss": "latest",
     "typescript": "^5"
   }
 }

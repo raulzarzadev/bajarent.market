@@ -1,10 +1,10 @@
 import dictionary from '@/libs/dictionary'
-import OrderType from '@/types/OrderType'
+import type OrderType from '@/types/OrderType'
 
 const OrderDetails = ({ order }: { order: Partial<OrderType> }) => {
   const formatter = new Intl.DateTimeFormat('es-ES', {
     dateStyle: 'short',
-    timeStyle: 'short'
+    timeStyle: 'short',
   })
   return (
     <div>
@@ -12,9 +12,7 @@ const OrderDetails = ({ order }: { order: Partial<OrderType> }) => {
       <p className="h1">{dictionary(order?.status)}</p>
       <p className="text-helper">id:{order?.id}</p>
       <p className="text-helper">Creado:{formatter.format(order.createdAt)}</p>
-      <p className="text-helper">
-        Ultima actualización:{formatter.format(order.updatedAt)}
-      </p>
+      <p className="text-helper">Ultima actualización:{formatter.format(order.updatedAt)}</p>
       <p>Nombre:{order?.fullName}</p>
       <p>Teléfono:{order?.phone}</p>
       <p>Dirección:{order?.address}</p>
@@ -28,8 +26,7 @@ const OrderDetails = ({ order }: { order: Partial<OrderType> }) => {
           <div className=" ">
             <p className="font-bold">{order.item?.priceSelected?.title}</p>
             <p className="text-2xl font-bold">
-              $
-              {parseFloat(String(order.item?.priceSelected?.amount)).toFixed(2)}
+              ${parseFloat(String(order.item?.priceSelected?.amount)).toFixed(2)}
             </p>
           </div>
         )}

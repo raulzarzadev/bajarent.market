@@ -1,21 +1,16 @@
 'use client'
-import React, { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import Icon, { IconName } from './Icon'
+import type React from 'react'
+import { Fragment, useRef, useState } from 'react'
 import Button from './Button'
-//import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
+import type { IconName } from './Icon'
 
 export default function Modal({
   openLabel = 'Abrir modal',
   confirmLabel = 'Confirmar',
   title = 'Título',
   openDisabled = false,
-  content,
   text,
-  openIcon,
-  openColor,
-  confirmIcon,
-  confirmColor,
   handleConfirm,
   children
 }: {
@@ -81,7 +76,7 @@ export default function Modal({
                     <div className="sm:flex sm:items-start">
                       {/* 
                       // Icon on left side of the title
-                      <div className="mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                      <div className="mx-auto flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
                         <Icon name="close" /> 
                       </div> */}
                       <div className="mt-3 text-center sm:ml-4 sm:mt-0 sm:text-left">
@@ -106,7 +101,7 @@ export default function Modal({
                     {handleConfirm && (
                       <button
                         type="button"
-                        className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
+                        className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 sm:ml-3 sm:w-auto"
                         onClick={async (e) => {
                           e.preventDefault()
                           e.stopPropagation()
@@ -126,7 +121,7 @@ export default function Modal({
                     <Button
                       label="Cerrar"
                       onClick={() => setOpen(false)}
-                      variant="outline"
+                      variant="outline-solid"
                     />
                   </div>
                 </Dialog.Panel>

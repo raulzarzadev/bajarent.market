@@ -5,12 +5,12 @@ export async function GET(req: Request) {
   if (!url) {
     return new Response(JSON.stringify({ error: 'Missing url' }), {
       headers: { 'content-type': 'application/json' },
-      status: 400
+      status: 400,
     })
   }
   try {
     let currentUrl = url
-    let response
+    let response: any
     const maxRedirects = 10 // Limitar el número de redirecciones para evitar bucles infinitos
     let redirectCount = 0
 
@@ -28,7 +28,7 @@ export async function GET(req: Request) {
     if (redirectCount === maxRedirects) {
       return new Response(JSON.stringify({ error: 'Too many redirects' }), {
         status: 400,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
       })
     }
 
@@ -36,16 +36,16 @@ export async function GET(req: Request) {
       JSON.stringify({
         success: true,
         unshortened_url: currentUrl,
-        shortened_url: url
+        shortened_url: url,
       }),
       {
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
       }
     )
   } catch (error) {
     return new Response(JSON.stringify({ error: 'Error processing the URL' }), {
       status: 500,
-      headers: { 'Content-Type': 'application/json' }
+      headers: { 'Content-Type': 'application/json' },
     })
   }
 }

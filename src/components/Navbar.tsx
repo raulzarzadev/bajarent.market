@@ -1,7 +1,6 @@
-import { useAuth } from '@/context/authContext'
+import Image from 'next/image'
 import Link from 'next/link'
 import MenuProfile from './MenuProfile'
-import Image from 'next/image'
 
 export default function Navbar() {
   return (
@@ -19,9 +18,9 @@ export default function Navbar() {
         ></input> */}
       </div>
       <div className="flex items-center space-x-4">
-        <Link href="https://admin.bajarent.app" className="font-bold">
+        {/* <Link href="https://admin.bajarent.app" className="font-bold">
           admin
-        </Link>
+        </Link> */}
         <MenuProfile />
       </div>
     </nav>

@@ -1,9 +1,7 @@
-import { CustomerType } from '@/app/api/custmers/types'
-import dictionary, { DictionaryWords } from '@/libs/dictionary'
+import type { CustomerType } from '@/app/api/custmers/types'
+import dictionary, { type DictionaryWords } from '@/libs/dictionary'
 
-export const getFavoriteCustomerPhone = (
-  customerContacts: CustomerType['contacts']
-) => {
+export const getFavoriteCustomerPhone = (customerContacts: CustomerType['contacts']) => {
   const phones = Object.values(customerContacts || {})
     .filter((a) => a.type === 'phone')
     .sort((a, b) => {
@@ -22,7 +20,7 @@ export const writeMessage = (
     customerName,
     orderFolio,
     orderType,
-    shopName
+    shopName,
   }: {
     customerName: string
     orderFolio: string
@@ -38,7 +36,7 @@ export const writeMessage = (
   \nTipo: ${dictionary(orderType)}
   \nPronto un asesor se pondrá en contacto para confirmar la fecha de entrega.*
   \n${shopName} agradece su preferencia 🙏🏼
-  `
+  `,
   }
 
   return messages[type]

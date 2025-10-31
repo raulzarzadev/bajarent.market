@@ -4,7 +4,7 @@ import FormikInputCode from './FormikInputCode'
 
 const FormCode = ({
   disabled,
-  onSubmit
+  onSubmit,
 }: {
   disabled?: boolean
   onSubmit: ({ code }: { code: string | null }) => any

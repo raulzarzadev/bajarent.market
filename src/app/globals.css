@@ -1,6 +1,31 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(
+    from 180deg at 50% 50%,
+    var(--tw-gradient-stops)
+  );
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
 /* 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -32,25 +57,28 @@ body {
   }
 } */
 
-@layer components {
-  .h1 {
-    @apply text-center text-2xl font-bold my-2;
-  }
-  .h2 {
-    @apply text-center text-xl font-bold my-1;
-  }
-  .h3 {
-    @apply text-center text-lg font-bold;
-  }
-  .text-helper {
-    @apply text-xs opacity-70;
-  }
-  .card {
-    @apply shadow-md rounded-lg p-2;
-  }
-  .input {
-    @apply border border-gray-500 border-opacity-50 rounded-md p-1;
-  }
+@utility h1 {
+  @apply text-center text-2xl font-bold my-2;
+}
+
+@utility h2 {
+  @apply text-center text-xl font-bold my-1;
+}
+
+@utility h3 {
+  @apply text-center text-lg font-bold;
+}
+
+@utility text-helper {
+  @apply text-xs opacity-70;
+}
+
+@utility card {
+  @apply shadow-md rounded-lg p-2;
+}
+
+@utility input {
+  @apply border border-gray-500/50 rounded-md p-1;
 }
 
 @layer theme {

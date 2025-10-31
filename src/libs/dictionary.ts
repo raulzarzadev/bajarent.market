@@ -1,4 +1,4 @@
-import { OrderStatuses, OrderTypes } from '@/types/OrderType'
+import type { OrderStatuses, OrderTypes } from '@/types/OrderType'
 
 export type DictionaryWords = OrderTypes | OrderStatuses
 export default function dictionary(word?: DictionaryWords): string {
@@ -22,5 +22,5 @@ const words: Record<DictionaryWords, string> = {
   RENEWED: 'Renovado',
   REPAIRING: 'En reparación',
   REPAIRED: 'Reparado',
-  REPAIR_DELIVERED: 'Reparación entregada'
+  REPAIR_DELIVERED: 'Reparación entregada',
 }

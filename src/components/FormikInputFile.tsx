@@ -1,13 +1,13 @@
 import { useField } from 'formik'
-import InputFile from './InputFile'
 import { usersCRUD } from '@/firebase/auth'
+import InputFile from './InputFile'
 export type InputTextProps = {
   label?: string
   name: string
   helperText?: string
 } & React.InputHTMLAttributes<HTMLInputElement>
 const FormikInputFile = ({ label, helperText, ...props }: InputTextProps) => {
-  const [field, meta, helpers] = useField(props)
+  const [field] = useField(props)
 
   return (
     <InputFile

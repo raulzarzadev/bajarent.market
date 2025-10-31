@@ -22,7 +22,7 @@ export default function InputCode({
         justifyContent: 'space-around',
         width: '100%',
         maxWidth: '300px',
-        margin: '16px auto'
+        margin: '16px auto',
       }}
       inputStyle={{
         width: '40px',
@@ -31,7 +31,7 @@ export default function InputCode({
         margin: '0 5px',
         borderRadius: '5px',
         border: '1px solid #ccc',
-        textAlign: 'center'
+        textAlign: 'center',
       }}
       {...props}
     />

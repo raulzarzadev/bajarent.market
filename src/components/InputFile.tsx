@@ -1,10 +1,9 @@
 const InputFile = ({
   label = 'Subir archivo',
   ...props
-}: React.DetailedHTMLProps<
-  React.InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
-> & { label?: string }) => {
+}: React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement> & {
+  label?: string
+}) => {
   return (
     <div>
       <label>

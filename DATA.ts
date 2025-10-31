@@ -1,5 +1,5 @@
-import { Shop } from '@/app/[shop]/page'
-import { Item } from '@/components/ItemLabel'
+import type { Shop } from '@/app/[shop]/page'
+import type { Item } from '@/components/ItemLabel'
 
 export const items: Item[] = [
   // {

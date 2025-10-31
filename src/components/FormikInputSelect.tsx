@@ -13,7 +13,7 @@ const FormikInputSelect = ({
   options,
   ...props
 }: FormikInputSelectProps) => {
-  const [field, meta] = useField(props)
+  const [field] = useField(props)
   return (
     <div>
       <label className="grid">
@@ -25,12 +25,8 @@ const FormikInputSelect = ({
             </option>
           ))}
         </select>
-        {helperText && !errorText && (
-          <label className={'text-helper'}>{helperText}</label>
-        )}
-        {errorText && (
-          <label className={'text-helper text-error'}>{errorText}</label>
-        )}
+        {helperText && !errorText && <span className={'text-helper'}>{helperText}</span>}
+        {errorText && <span className={'text-helper text-error'}>{errorText}</span>}
       </label>
     </div>
   )

@@ -1,4 +1,4 @@
-import React from 'react'
+import type React from 'react'
 
 export type InputCheckboxProps = {
   id?: string
@@ -16,7 +16,7 @@ const InputCheckbox = ({
   checked,
   onChange,
   helperText,
-  errorText
+  errorText,
 }: InputCheckboxProps) => {
   return (
     <div className="flex items-center">
@@ -30,12 +30,8 @@ const InputCheckbox = ({
       <label htmlFor={id} className="ml-2 text-gray-700">
         {label}
       </label>
-      {helperText && !errorText && (
-        <label className={'text-helper'}>{helperText}</label>
-      )}
-      {errorText && (
-        <label className={'text-helper text-error'}>{errorText}</label>
-      )}
+      {helperText && !errorText && <label className={'text-helper'}>{helperText}</label>}
+      {errorText && <label className={'text-helper text-error'}>{errorText}</label>}
     </div>
   )
 }

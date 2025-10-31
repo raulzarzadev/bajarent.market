@@ -1,9 +1,10 @@
-import { Shop } from '@/app/[shop]/page'
-import ItemsList from './ItemList'
 import Image from 'next/image'
+import type { Shop } from '@/app/[shop]/page'
 import { getShopItems } from '@/app/utils'
+import ItemsList from './ItemList'
+import ErrorBoundary from './ErrorBoundry'
 
-export default async function ShopHome({ shop }: { shop: Partial<Shop> }) {
+async function ShopHome({ shop }: { shop: Partial<Shop> }) {
   const { name, description, img, id } = shop
   const data = await getShopItems((id as string) || '')
   return (
@@ -26,5 +27,13 @@ export default async function ShopHome({ shop }: { shop: Partial<Shop> }) {
 
       <ItemsList items={data} />
     </div>
+  )
+}
+
+export default function ShopHomeWrapper({ shop }: { shop: Partial<Shop> }) {
+  return (
+    <ErrorBoundary>
+      <ShopHome shop={shop} />
+    </ErrorBoundary>
   )
 }

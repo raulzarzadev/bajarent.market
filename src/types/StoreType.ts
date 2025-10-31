@@ -1,4 +1,4 @@
-import BaseType from './BaseType'
+import type BaseType from './BaseType'
 export type BaseStoreType = {
   name: string
   description?: string

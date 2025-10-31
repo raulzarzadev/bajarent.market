@@ -1,6 +1,6 @@
 export type ButtonBaseProps = {
   label: string
-  variant?: 'outline' | 'solid' | 'ghost'
+  variant?: 'outline-solid' | 'solid' | 'ghost'
   color?: 'primary' | 'secondary' | 'error'
   linkComponent?: React.ElementType
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
@@ -47,7 +47,7 @@ const Button = ({
     hover:bg-blue-500
     hover:text-white
     border-none
-  `
+  `,
   }
 
   const colors = {
@@ -70,7 +70,7 @@ const Button = ({
     border-red-500
     text-red-500
     
-  `
+  `,
   }
   if (LinkComponent) {
     return (

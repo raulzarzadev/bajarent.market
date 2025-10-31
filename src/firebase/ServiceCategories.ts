@@ -1,6 +1,7 @@
 import { where } from 'firebase/firestore'
+import type { CategoryType } from '../types/RentItem'
 import { FirebaseGenericService } from './service'
-import { CategoryType } from '../types/RentItem'
+
 class ServiceCategoriesClass extends FirebaseGenericService<CategoryType> {
   constructor() {
     super('categories')
@@ -15,10 +16,7 @@ class ServiceCategoriesClass extends FirebaseGenericService<CategoryType> {
   }
 
   async getByShop(shopId: string) {
-    return this.getItems([
-      where('storeId', '==', shopId),
-      where('marketVisible', '==', true)
-    ])
+    return this.getItems([where('storeId', '==', shopId), where('marketVisible', '==', true)])
   }
 }
 

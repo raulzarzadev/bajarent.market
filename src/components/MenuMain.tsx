@@ -1,7 +1,7 @@
 import { Menu, Transition } from '@headlessui/react'
-import { Fragment } from 'react'
-import Icon, { IconName } from './Icon'
 import Link from 'next/link'
+import { Fragment } from 'react'
+import Icon, { type IconName } from './Icon'
 
 export default function MenuMain({
   label,
@@ -24,7 +24,7 @@ export default function MenuMain({
 }) {
   return (
     <div className=" ">
-      <Menu as="div" className="relative inline-block text-left">
+      <Menu as="div" className="relative inline-block text-left z-50">
         <div>
           <Menu.Button>{children}</Menu.Button>
         </div>
@@ -37,16 +37,17 @@ export default function MenuMain({
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none">
+          <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-hidden z-50">
             <div className="px-1 py-1 ">
               {options?.map(
                 (option) =>
                   option?.visible && (
                     <Menu.Item key={option.label}>
                       {({ active }) => (
-                        <>
-                          {option.onClick && (
+                        <div>
+                          {!!option.onClick && (
                             <button
+                              type="button"
                               onClick={option.onClick}
                               className={`${
                                 active
@@ -79,7 +80,7 @@ export default function MenuMain({
                               <span className="ml-4">{option.label}</span>
                             </Link>
                           )}
-                        </>
+                        </div>
                       )}
                     </Menu.Item>
                   )

@@ -1,9 +1,9 @@
-import { PriceType } from '@/types/PriceType'
 import Link from 'next/link'
-import ItemPrices from './ItemPrices'
-import { CategoryBase, RentItem } from '@/types/RentItem'
+import type { TypeOfOrderType } from '@/types/OrderType'
+import type { PriceType } from '@/types/PriceType'
+import { type CategoryBase, RentItem } from '@/types/RentItem'
 import Avatar from './Avatar'
-import { TypeOfOrderType } from '@/types/OrderType'
+import ItemPrices from './ItemPrices'
 
 export type Item = {
   id: string
@@ -25,7 +25,7 @@ export default function ItemLabel({
   item,
   showDescription,
   showPrices,
-  prices
+  prices,
 }: {
   item: Item
   showDescription?: boolean
@@ -56,9 +56,7 @@ export default function ItemLabel({
           )}
           {item?.shortInfo && <p className="text-pretty">{item?.shortInfo}</p>}
         </div>
-        {showDescription && item?.description && (
-          <p className="text-pretty">{item?.description}</p>
-        )}
+        {showDescription && item?.description && <p className="text-pretty">{item?.description}</p>}
         {showPrices && <ItemPrices itemId={item.id} prices={prices || []} />}
       </div>
     </div>

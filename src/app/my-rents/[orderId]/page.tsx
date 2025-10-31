@@ -1,9 +1,9 @@
 'use client'
-import OrderDetails from '@/components/OrderDetails'
-import { useAuth } from '@/context/authContext'
-import OrderType from '@/types/OrderType'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import OrderDetails from '@/components/OrderDetails'
+import { useAuth } from '@/context/authContext'
+import type OrderType from '@/types/OrderType'
 
 const Orders = ({ params }: { params: { orderId: string } }) => {
   const { userRents, user } = useAuth()

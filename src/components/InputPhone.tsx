@@ -1,14 +1,14 @@
 'use client'
 import 'react-phone-number-input/style.css'
-import PhoneInput from 'react-phone-number-input'
+import type { E164Number } from 'libphonenumber-js'
 import { useState } from 'react'
-import { E164Number } from 'libphonenumber-js'
+import PhoneInput from 'react-phone-number-input'
 
 const InputPhone = ({
   value,
   setValue,
   label = 'Phone number',
-  helperText
+  helperText,
 }: {
   value: E164Number | undefined
   setValue: (value: E164Number | undefined) => void

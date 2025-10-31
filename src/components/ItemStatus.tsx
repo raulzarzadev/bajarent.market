@@ -1,8 +1,8 @@
 'use client'
 
-import { useAuth } from '@/context/authContext'
-import ItemType from '@/types/ItemType'
 import Link from 'next/link'
+import { useAuth } from '@/context/authContext'
+import type ItemType from '@/types/ItemType'
 
 const ItemStatus = ({ item }: { item: ItemType }) => {
   const { userRents } = useAuth()

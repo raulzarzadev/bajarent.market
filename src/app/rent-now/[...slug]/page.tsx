@@ -1,11 +1,7 @@
-import ShopInfo from '@/components/ShopInfo'
 import { getShopItem } from '@/app/utils'
+import ShopInfo from '@/components/ShopInfo'
 
-export default async function RentNowShop({
-  params: { slug }
-}: {
-  params: { slug: string[] }
-}) {
+export default async function RentNowShop({ params: { slug } }: { params: { slug: string[] } }) {
   const shopLink = slug[0] || ''
   const itemId = slug[1]
   const { shop } = await getShopItem(shopLink, itemId)

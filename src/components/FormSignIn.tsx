@@ -1,14 +1,14 @@
 'use client'
-import { Formik } from 'formik'
-import FormikInputPhone from './FormikInputPhone'
-import FormikInputText from './FormikInputText'
-import Button from './Button'
-import { auth, onSendCode, sendSignInPhone } from '@/firebase/auth'
-import { useEffect, useState } from 'react'
-import FormCode from './FormCode'
 import { RecaptchaVerifier } from 'firebase/auth'
+import { Formik } from 'formik'
+import { useEffect, useState } from 'react'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { useAuth } from '@/context/authContext'
+import { auth, onSendCode, sendSignInPhone } from '@/firebase/auth'
+import Button from './Button'
+import FormCode from './FormCode'
+import FormikInputPhone from './FormikInputPhone'
+import FormikInputText from './FormikInputText'
 
 const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
   const [haveACode, setHaveACode] = useState(false)
@@ -16,7 +16,7 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
   const { user } = useAuth()
 
   useEffect(() => {
-    // @ts-ignore
+    // @ts-expect-error
     window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
       size: 'invisible',
       callback: (response: any) => {
@@ -24,7 +24,7 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
         // reCAPTCHA solved, allow signInWithPhoneNumber.
         // console.log(response)
         // onSignInSubmit()
-      }
+      },
     })
   }, [])
 

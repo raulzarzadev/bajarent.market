@@ -1,7 +1,7 @@
-import { QueryConstraint, where } from 'firebase/firestore'
+import { type QueryConstraint, where } from 'firebase/firestore'
+import { storage } from './auth'
 import { FirebaseCRUD } from './crud'
 import { db } from './main'
-import { storage } from './auth'
 
 type CreateItem<T> = Partial<T>
 

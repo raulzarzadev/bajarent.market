@@ -1,40 +1,34 @@
-import { IoMdCalendar, IoMdSwap, IoMdAdd } from 'react-icons/io'
-
 import React from 'react'
+import { BsWhatsapp } from 'react-icons/bs'
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
+import { FaRegWindowRestore } from 'react-icons/fa6'
+import { GrFormSubtract } from 'react-icons/gr'
+import { HiDotsVertical } from 'react-icons/hi'
+import { IoMdAdd, IoMdCalendar, IoMdSwap } from 'react-icons/io'
+import { IoPersonAddOutline, IoPersonOutline, IoPersonSharp } from 'react-icons/io5'
+import { LiaBroomSolid } from 'react-icons/lia'
+import { LuComponent } from 'react-icons/lu'
 import {
-  MdEdit,
-  MdClose,
   MdAttachMoney,
-  MdSave,
-  MdLocationPin,
-  MdOutlineStorefront,
-  MdListAlt,
-  MdFilterList,
-  MdDeleteOutline,
-  MdOutlineSearch,
-  MdLocationOff,
-  MdOutlineDone,
   MdChevronLeft,
   MdChevronRight,
+  MdClose,
+  MdDeleteOutline,
+  MdDownload,
+  MdEdit,
+  MdFilterList,
+  MdListAlt,
+  MdLocationOff,
+  MdLocationPin,
+  MdOutlineDone,
+  MdOutlineSearch,
+  MdOutlineStorefront,
+  MdSave,
   MdSettings,
-  MdDownload
 } from 'react-icons/md'
-
-import {
-  IoPersonOutline,
-  IoPersonSharp,
-  IoPersonAddOutline
-} from 'react-icons/io5'
-import { LuComponent } from 'react-icons/lu'
 import { PiUserList } from 'react-icons/pi'
-import { FaRegWindowRestore } from 'react-icons/fa6'
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
-import { LiaBroomSolid } from 'react-icons/lia'
 import { TbMapSearch } from 'react-icons/tb'
-import { HiDotsVertical } from 'react-icons/hi'
-import { GrFormSubtract } from 'react-icons/gr'
 import { TiPhone } from 'react-icons/ti'
-import { BsWhatsapp } from 'react-icons/bs'
 
 // https://react-icons.github.io/react-icons/
 const icons = {
@@ -101,19 +95,11 @@ const icons = {
   rowLeft: MdChevronLeft,
   rowRight: MdChevronRight,
   settings: MdSettings,
-  download: MdDownload
+  download: MdDownload,
 } as const
 
 export type IconName = keyof typeof icons
-const Icon = ({
-  icon,
-  size = 30,
-  ...props
-}: {
-  icon: IconName
-  color?: string
-  size?: number
-}) => {
+const Icon = ({ icon, size = 30, ...props }: { icon: IconName; color?: string; size?: number }) => {
   const Component = icons[icon]
   if (!Component) return <>Icon</>
   return <Component size={size} {...props} />
