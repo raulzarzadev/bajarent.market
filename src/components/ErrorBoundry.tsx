@@ -1,3 +1,4 @@
+'use client'
 import { Component, type ErrorInfo, type ReactNode } from 'react'
 
 interface Props {
@@ -37,7 +38,7 @@ class ErrorBoundary extends Component<Props, State> {
       stack: error.stack,
       componentStack: errorInfo.componentStack,
       timestamp: new Date().toISOString(),
-      componentName: this.props.componentName
+      componentName: this.props.componentName,
     }
 
     console.log('Sending error report:', errorReport)
@@ -59,9 +60,8 @@ class ErrorBoundary extends Component<Props, State> {
           <h2>¡Algo salió mal!</h2>
           <p>
             Ha ocurrido un error inesperado
-            {this.props.componentName &&
-              ` en el componente: ${this.props.componentName}`}
-            . El equipo técnico ha sido notificado.
+            {this.props.componentName && ` en el componente: ${this.props.componentName}`}. El
+            equipo técnico ha sido notificado.
           </p>
           <div>
             <button type="button" onClick={this.goBack}>

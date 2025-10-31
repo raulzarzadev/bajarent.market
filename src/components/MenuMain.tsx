@@ -4,10 +4,7 @@ import { Fragment } from 'react'
 import Icon, { type IconName } from './Icon'
 
 export default function MenuMain({
-  label,
   options = [],
-  icon,
-  image,
   children
 }: {
   icon: IconName

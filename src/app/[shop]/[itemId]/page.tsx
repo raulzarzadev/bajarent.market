@@ -5,11 +5,7 @@ import ItemStatus from '@/components/ItemStatus'
 import ShopInfo from '@/components/ShopInfo'
 import catchError from '@/libs/catchError'
 
-export default async function ShopItem({
-  params
-}: {
-  params: { shop: string; itemId: string }
-}) {
+export default async function ShopItem({ params }: { params: { shop: string; itemId: string } }) {
   const { shop: shopName, itemId } = await Promise.resolve(params)
   const [error, result] = await catchError(getShopItem(shopName, itemId))
   if (error || !result) {

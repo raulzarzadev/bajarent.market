@@ -12,7 +12,7 @@ export default function Modal({
   openDisabled = false,
   text,
   handleConfirm,
-  children
+  children,
 }: {
   title: string
   openLabel?: string
@@ -42,12 +42,7 @@ export default function Modal({
         {openLabel}
       </button>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog
-          as="div"
-          className="relative z-10"
-          initialFocus={cancelButtonRef}
-          onClose={setOpen}
-        >
+        <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={setOpen}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -93,9 +88,7 @@ export default function Modal({
                         )}
                       </div>
                     </div>
-                    <div className='bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4"'>
-                      {children}
-                    </div>
+                    <div className='bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4"'>{children}</div>
                   </div>
                   <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                     {handleConfirm && (
@@ -118,11 +111,7 @@ export default function Modal({
                       </button>
                     )}
 
-                    <Button
-                      label="Cerrar"
-                      onClick={() => setOpen(false)}
-                      variant="outline-solid"
-                    />
+                    <Button label="Cerrar" onClick={() => setOpen(false)} variant="outline-solid" />
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
