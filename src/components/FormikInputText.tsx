@@ -6,7 +6,7 @@ export type InputTextProps = {
   helperText?: string
 } & React.InputHTMLAttributes<HTMLInputElement>
 const FormikInputText = ({ label, helperText, ...props }: InputTextProps) => {
-  const [field, meta, helpers] = useField(props)
+  const [field, meta] = useField(props)
   return (
     <div>
       <InputText

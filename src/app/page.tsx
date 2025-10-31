@@ -1,4 +1,3 @@
-import Hero from '@/components/Hero'
 import type { Item } from '@/components/ItemLabel'
 import ItemsList from '@/components/ItemList'
 import type { Shop } from './[shop]/page'
@@ -15,7 +14,9 @@ export default async function Home() {
 
   const formatItems: Item[] = items
     .map((item: Item) => {
-      const shop: Shop = shops?.find((shop: { id: any }) => shop.id === item.storeId)
+      const shop: Shop = shops?.find(
+        (shop: { id: any }) => shop.id === item.storeId
+      )
       return {
         id: item?.id,
         name: item?.name,
@@ -24,7 +25,7 @@ export default async function Home() {
         shop,
         shopLink: `${shop?.link}`,
         img: item.img,
-        shopImg: shop?.img,
+        shopImg: shop?.img
       }
     })
     .filter((item: Item) => item?.shopVisible)

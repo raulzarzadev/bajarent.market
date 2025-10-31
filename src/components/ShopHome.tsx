@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import type { Shop } from '@/app/[shop]/page'
 import { getShopItems } from '@/app/utils'
-import ItemsList from './ItemList'
 import ErrorBoundary from './ErrorBoundry'
+import ItemsList from './ItemList'
 
 async function ShopHome({ shop }: { shop: Partial<Shop> }) {
   const { name, description, img, id } = shop
