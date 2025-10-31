@@ -1,16 +1,16 @@
 export async function GET() {
   const body = {
-    message: 'Hello from test route!'
+    message: 'Hello from test route!',
   }
 
   try {
     return new Response(JSON.stringify({ body }), {
-      headers: { 'content-type': 'application/json' }
+      headers: { 'content-type': 'application/json' },
     })
   } catch (error) {
     return new Response(JSON.stringify({ error }), {
       headers: { 'content-type': 'application/json' },
-      status: 500
+      status: 500,
     })
   }
 }

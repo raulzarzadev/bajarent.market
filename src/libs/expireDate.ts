@@ -18,7 +18,7 @@ export function priceTimeInSeconds(time: TimePriceType): number {
     day: 86400,
     week: 604800,
     month: 2628000,
-    year: 31536000
+    year: 31536000,
   } as const
   type UnitsType = keyof typeof unitsInSeconds
   return timeNumber * unitsInSeconds[timeUnit as UnitsType]
@@ -27,7 +27,7 @@ export function priceTimeInSeconds(time: TimePriceType): number {
 export function expireDate({
   startedAt,
   price,
-  priceQty
+  priceQty,
 }: {
   startedAt: Date | Timestamp
   price?: Partial<PriceType>

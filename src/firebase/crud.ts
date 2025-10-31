@@ -13,19 +13,15 @@ import {
   setDoc,
   Timestamp,
   updateDoc,
-  writeBatch
+  writeBatch,
 } from 'firebase/firestore'
-import {
-  deleteObject,
-  getDownloadURL,
-  ref,
-  uploadBytesResumable
-} from 'firebase/storage'
+import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import { v4 as uidGenerator } from 'uuid'
 
 export class FirebaseCRUD {
   dateType: 'date' | 'number' | 'timestamp'
-  static uploadFile() { //setURL: ((url: string) => void) | undefined //files: FileList | null,
+  static uploadFile() {
+    //setURL: ((url: string) => void) | undefined //files: FileList | null,
     throw new Error('Method not implemented.')
   }
 
@@ -100,11 +96,7 @@ export class FirebaseCRUD {
     const desertRef = ref(this.storage, url)
     try {
       return await deleteObject(desertRef).then((res) => {
-        return this.formatResponse(
-          true,
-          `${this.collectionName}_IMAGE_DELETED`,
-          res
-        )
+        return this.formatResponse(true, `${this.collectionName}_IMAGE_DELETED`, res)
       })
     } catch (error) {
       console.log({ error })
@@ -118,10 +110,7 @@ export class FirebaseCRUD {
       const data = json
 
       const promises = data.map(async (document) => {
-        const docRef = await addDoc(
-          collection(this.db, this.collectionName),
-          document
-        )
+        const docRef = await addDoc(collection(this.db, this.collectionName), document)
         return batch.set(docRef, { id: docRef.id, ...document })
       })
       await Promise.all(promises)
@@ -143,40 +132,39 @@ export class FirebaseCRUD {
   createItemMetadata() {
     return {
       createdBy: '',
-      createdAt: new Date()
+      createdAt: new Date(),
     }
   }
 
   updateItemMetadata() {
     return {
       updatedAt: new Date(),
-      updatedBy: ''
+      updatedBy: '',
     }
   }
 
   async createItem(item: object) {
     const newItem = {
       ...item,
-      ...this.createItemMetadata()
+      ...this.createItemMetadata(),
     }
 
-    return await addDoc(collection(this.db, this.collectionName), newItem).then(
-      (res) =>
-        this.formatResponse(true, `${this.collectionName}_CREATED`, {
-          id: res.id
-        })
+    return await addDoc(collection(this.db, this.collectionName), newItem).then((res) =>
+      this.formatResponse(true, `${this.collectionName}_CREATED`, {
+        id: res.id,
+      })
     )
   }
 
   async updateItem(itemId: string, item: object) {
     const newItem = {
       ...item,
-      ...this.updateItemMetadata()
+      ...this.updateItemMetadata(),
     }
     return await updateDoc(doc(this.db, this.collectionName, itemId), newItem)
       .then(() =>
         this.formatResponse(true, `${this.collectionName}_UPDATED`, {
-          id: itemId
+          id: itemId,
         })
       )
       .catch((err) => console.error(err))
@@ -186,13 +174,13 @@ export class FirebaseCRUD {
     const item = {
       id: itemId,
       ...this.createItemMetadata(),
-      ...newItem
+      ...newItem,
     }
 
     return await setDoc(doc(this.db, this.collectionName, itemId), item)
       .then(() =>
         this.formatResponse(true, `${this.collectionName}_CREATED`, {
-          item
+          item,
         })
       )
       .catch((err) => console.error(err))
@@ -245,9 +233,7 @@ export class FirebaseCRUD {
 
   async deleteItem(itemId: string) {
     return await deleteDoc(doc(this.db, this.collectionName, itemId))
-      .then((res) =>
-        this.formatResponse(true, `${this.collectionName}_DELETED`, res)
-      )
+      .then((res) => this.formatResponse(true, `${this.collectionName}_DELETED`, res))
       .catch((err) => console.error(err))
   }
 
@@ -268,9 +254,7 @@ export class FirebaseCRUD {
     querySnapshot.forEach((doc) => {
       res.push(
         deleteDoc(doc.ref)
-          .then((res) =>
-            this.formatResponse(true, `${this.collectionName}_DELETED`, res)
-          )
+          .then((res) => this.formatResponse(true, `${this.collectionName}_DELETED`, res))
           .catch((err) => console.error(err))
       )
     })
@@ -353,17 +337,14 @@ export class FirebaseCRUD {
     }
   }
 
-  validateFilters(
-    filters: QueryConstraint[],
-    collectionName: string
-  ): QueryConstraint[] | null {
+  validateFilters(filters: QueryConstraint[], collectionName: string): QueryConstraint[] | null {
     if (!filters) {
       console.error('Should have filters implanted')
       return null
     }
     if (!Array.isArray(filters)) {
       console.error('filter is not an array', {
-        collectionName
+        collectionName,
       })
       return null
     }
@@ -374,7 +355,7 @@ export class FirebaseCRUD {
       if (!(filter instanceof QueryConstraint))
         console.error('invalid filter', {
           filter,
-          collectionName
+          collectionName,
         })
     })
 
@@ -386,9 +367,7 @@ export class FirebaseCRUD {
   normalizeItem = (doc: any) => {
     const id = doc.id
     if (!doc?.exists()) {
-      console.error(
-        `document ${id} in collection:${this.collectionName} not found`
-      )
+      console.error(`document ${id} in collection:${this.collectionName} not found`)
       return null
     } // The document  not exist
     const data = doc.data()
@@ -413,9 +392,7 @@ export class FirebaseCRUD {
     if (res) {
       return { ...res, id }
     } else {
-      console.log(
-        `error formatting document ${id} in collection:${this.collectionName} not found`
-      )
+      console.log(`error formatting document ${id} in collection:${this.collectionName} not found`)
       return null
     }
   }
