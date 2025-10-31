@@ -1,7 +1,6 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 import { useAuth } from '@/context/authContext'
 import PrivatePage from '@/hocs/PrivatePage'
 import dictionary from '@/libs/dictionary'
@@ -11,7 +10,6 @@ import SpanPrice from './SpanPrice'
 const MyRents = () => {
   const { userRents } = useAuth()
   const router = useRouter()
-  const [chosenRow, setChosenRow] = useState(null)
   return (
     <div>
       <table className="w-full">

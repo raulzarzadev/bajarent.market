@@ -2,7 +2,7 @@ import React, { createContext, type ReactNode } from 'react'
 
 // Define the initial state of your store
 const initialState = {
-  shops: [],
+  shops: []
   // Add your initial state properties here
 }
 
@@ -10,11 +10,11 @@ const initialState = {
 const StoreContext = createContext(initialState)
 
 export const ShopsProvider = ({ children }: { children: ReactNode }) => {
-  const [shops, setShops] = React.useState([])
+  const [shops] = React.useState([])
   return (
     <StoreContext.Provider
       value={{
-        shops,
+        shops
         // Add your state properties here
       }}
     >

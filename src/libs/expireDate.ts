@@ -9,7 +9,7 @@ import asDate from './utils-date'
  */
 export function priceTimeInSeconds(time: TimePriceType): number {
   const timeArray = time.split(' ')
-  const timeNumber = parseInt(timeArray[0])
+  const timeNumber = parseInt(timeArray[0], 10)
   const timeUnit = timeArray[1]
   const unitsInSeconds = {
     second: 1,
@@ -18,7 +18,7 @@ export function priceTimeInSeconds(time: TimePriceType): number {
     day: 86400,
     week: 604800,
     month: 2628000,
-    year: 31536000,
+    year: 31536000
   } as const
   type UnitsType = keyof typeof unitsInSeconds
   return timeNumber * unitsInSeconds[timeUnit as UnitsType]
@@ -27,7 +27,7 @@ export function priceTimeInSeconds(time: TimePriceType): number {
 export function expireDate({
   startedAt,
   price,
-  priceQty,
+  priceQty
 }: {
   startedAt: Date | Timestamp
   price?: Partial<PriceType>
@@ -38,7 +38,7 @@ export function expireDate({
   const startedAtDate = asDate(startedAt)
   if (!startedAtDate) return null
   const [qty, unit] = price?.time?.split(' ') || ['', '']
-  const QTY = parseInt(qty) * (priceQty || 1)
+  const QTY = parseInt(qty, 10) * (priceQty || 1)
   if (unit === 'year') {
     const expireDate = addMonths(startedAtDate, QTY * 12)
     return expireDate

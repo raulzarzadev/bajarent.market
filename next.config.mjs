@@ -5,11 +5,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'firebasestorage.googleapis.com',
-        port: '',
-      },
-    ],
+        port: ''
+      }
+    ]
   },
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     // Excluir `undici` del transpilado
     config.externals = config.externals || []
     config.externals.push('undici')
@@ -26,17 +26,17 @@ const nextConfig = {
           { key: 'Access-Control-Allow-Origin', value: '*' },
           {
             key: 'Access-Control-Allow-Methods',
-            value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+            value: 'GET,OPTIONS,PATCH,DELETE,POST,PUT'
           },
           {
             key: 'Access-Control-Allow-Headers',
             value:
-              'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
-          },
-        ],
-      },
+              'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+          }
+        ]
+      }
     ]
-  },
+  }
   // headers: () => [
   //   {
   //     source: '/',
