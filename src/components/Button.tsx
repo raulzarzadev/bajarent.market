@@ -25,7 +25,7 @@ const Button = ({
   ...props
 }: ButtonProps) => {
   const variants = {
-    outline: `
+    'outline-solid': `
     border
     border-blue-500
     text-blue-500
@@ -47,7 +47,7 @@ const Button = ({
     hover:bg-blue-500
     hover:text-white
     border-none
-  `,
+  `
   }
 
   const colors = {
@@ -70,7 +70,7 @@ const Button = ({
     border-red-500
     text-red-500
     
-  `,
+  `
   }
   if (LinkComponent) {
     return (

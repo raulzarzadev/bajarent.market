@@ -4,7 +4,7 @@ import FormikInputCode from './FormikInputCode'
 
 const FormCode = ({
   disabled,
-  onSubmit,
+  onSubmit
 }: {
   disabled?: boolean
   onSubmit: ({ code }: { code: string | null }) => any
@@ -26,7 +26,7 @@ const FormCode = ({
                 <Button
                   type="submit"
                   label="Enviar de nuevo"
-                  variant="outline"
+                  variant="outline-solid"
                   onClick={() => onSubmit({ code: null })}
                 />
                 <Button
