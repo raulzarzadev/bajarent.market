@@ -24,7 +24,7 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
         // reCAPTCHA solved, allow signInWithPhoneNumber.
         // console.log(response)
         // onSignInSubmit()
-      },
+      }
     })
   }, [])
 

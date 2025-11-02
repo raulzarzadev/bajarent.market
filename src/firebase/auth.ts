@@ -5,12 +5,13 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPhoneNumber,
-  signOut,
+  signOut
 } from 'firebase/auth'
 
 import { getStorage } from 'firebase/storage'
 import { FirebaseCRUD } from './crud'
 import { app, db } from './main'
+import catchError from '@/libs/catchError'
 
 export const auth = getAuth(app)
 auth.languageCode = 'es'
@@ -23,12 +24,21 @@ export const passwordReset = async (email: string) => {
   return await sendPasswordResetEmail(auth, email)
 }
 
-export const confirmThePasswordReset = async (oobCode: string, newPassword: string) => {
+export const confirmThePasswordReset = async (
+  oobCode: string,
+  newPassword: string
+) => {
   if (!oobCode && !newPassword) return
   return await confirmPasswordReset(auth, oobCode, newPassword)
 }
 
-export async function signInWithPassword({ email, password }: { email: string; password: string }) {
+export async function signInWithPassword({
+  email,
+  password
+}: {
+  email: string
+  password: string
+}) {
   return signInWithEmailAndPassword(auth, email, password)
 }
 
@@ -41,7 +51,7 @@ export async function getCurrentUser() {
 }
 
 export async function sendSignInPhone({
-  phone,
+  phone
 }: //appVerifier
 {
   phone: string
@@ -53,28 +63,41 @@ export async function sendSignInPhone({
     // @ts-expect-error
     const appVerifier = window.recaptchaVerifier
     // console.log({ appVerifier })
-    return signInWithPhoneNumber(auth, phone, appVerifier)
-      .then((confirmationResult) => {
-        // SMS sent. Prompt user to type the code from the message, then sign the
-        // user in with confirmationResult.confirm(code).
-        // @ts-expect-error
-        window.confirmationResult = confirmationResult
-        // setMsmSent(true)
-        console.log({ confirmationResult })
+    const [error, data] = await catchError(
+      signInWithPhoneNumber(auth, phone, appVerifier)
+    )
+    if (error) {
+      console.error({ error })
+      return Promise.reject(error)
+    }
+    // SMS sent. Prompt user to type the code from the message, then sign the
+    // user in with confirmationResult.confirm(code).
+    // @ts-expect-error
+    window.confirmationResult = data
+    console.log({ confirmationResult: data })
+    return Promise.resolve(data)
+    // return signInWithPhoneNumber(auth, phone, appVerifier)
+    //   .then((confirmationResult) => {
+    //     // SMS sent. Prompt user to type the code from the message, then sign the
+    //     // user in with confirmationResult.confirm(code).
+    //     // @ts-expect-error
+    //     window.confirmationResult = confirmationResult
+    //     // setMsmSent(true)
+    //     console.log({ confirmationResult })
 
-        // * ... redirect to ConfirmCode
-      })
-      .catch((error) => {
-        console.error({ error })
-        // Error; SMS not sent
-        // ...
-        // setError(
-        //   `¡Ups! Algo no salio bien. Codigo:  ${fbErrorToCode(error).code}`
-        // )
-      })
-      .finally(() => {
-        // setSending(false)
-      })
+    //     // * ... redirect to ConfirmCode
+    //   })
+    //   .catch((error) => {
+    //     console.error({ error })
+    //     // Error; SMS not sent
+    //     // ...
+    //     // setError(
+    //     //   `¡Ups! Algo no salio bien. Codigo:  ${fbErrorToCode(error).code}`
+    //     // )
+    //   })
+    //   .finally(() => {
+    //     // setSending(false)
+    //   })
   } else {
     console.log('recaptchaVerifier does not exist')
     return
@@ -82,7 +105,7 @@ export async function sendSignInPhone({
 }
 
 export const onSendCode = ({
-  code,
+  code
 }: // confirmationResult
 {
   code: string
@@ -127,7 +150,7 @@ export async function authStateChanged(cb: CallableFunction) {
         // rol: 'CLIENT',
         image: user.photoURL || '',
         phone: user.phoneNumber || '',
-        canCreateStore: true,
+        canCreateStore: true
       }
       await usersCRUD.setItem(user.uid, newUser)
       const userCreated = await usersCRUD.getItem(user.uid)
