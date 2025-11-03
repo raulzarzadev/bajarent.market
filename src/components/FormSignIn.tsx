@@ -10,6 +10,8 @@ import FormCode from './FormCode'
 import FormikInputPhone from './FormikInputPhone'
 import FormikInputText from './FormikInputText'
 import Icon from './Icon'
+import catchError from '@/libs/catchError'
+import { ServiceUsers } from '@/firebase/ServiceUser'
 
 type UserFlow = 'phone-check' | 'new-user' | 'code-verification'
 
@@ -54,29 +56,12 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
 
   // Función para verificar si un usuario existe
   const checkUserExists = async (phone: string): Promise<boolean> => {
-    try {
-      // En una implementación real, esto debería ser:
-      // 1. Una llamada a Firebase Functions
-      // 2. Una consulta a tu backend
-      // 3. O usar Firebase Admin SDK del lado del servidor
-
-      console.log(`Verificando si existe usuario con número: ${phone}`)
-
-      // Simulamos una verificación: números que terminan en 0,1,2,3,4 "existen"
-      // En producción, reemplaza esto con tu lógica real
-      const lastDigit = phone.slice(-1)
-      const exists = ['0', '1', '2', '3', '4'].includes(lastDigit)
-
-      console.log(`Usuario ${exists ? 'existe' : 'no existe'}`)
-
-      // Simulamos un pequeño delay para que parezca una consulta real
-      await new Promise((resolve) => setTimeout(resolve, 500))
-
-      return exists
-    } catch (error) {
+    const [error, data] = await catchError(ServiceUsers.userExists({ phone }))
+    if (error) {
       console.error('Error checking user existence:', error)
       return false
     }
+    return data ? true : false
   }
 
   // Función para manejar la verificación inicial del teléfono
@@ -249,17 +234,17 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
       {currentFlow === 'new-user' && (
         <div>
           <div className="text-center mb-6">
-            <Icon
+            {/* <Icon
               icon="profileAdd"
               size={48}
               className="text-blue-500 mx-auto mb-4"
-            />
-            <h3 className="text-lg font-medium text-gray-900 mb-2">
+            /> */}
+            {/* <h3 className="text-lg font-medium text-gray-900 mb-2">
               ¡Bienvenido!
-            </h3>
-            <p className="text-gray-600 text-sm">
+            </h3> */}
+            {/* <p className="text-gray-600 text-sm">
               Es tu primera vez. Necesitamos algunos datos para crear tu cuenta.
-            </p>
+            </p> */}
           </div>
 
           <Formik
@@ -315,7 +300,8 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
                   <Button
                     type="button"
                     label="Usar otro número"
-                    variant="outline-solid"
+                    variant="ghost"
+                    disabled={isLoading}
                     onClick={() => {
                       setCurrentFlow('phone-check')
                       setError(null)
