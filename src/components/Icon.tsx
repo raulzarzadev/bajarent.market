@@ -4,26 +4,33 @@ import { FaRegWindowRestore } from 'react-icons/fa6'
 import { GrFormSubtract } from 'react-icons/gr'
 import { HiDotsVertical } from 'react-icons/hi'
 import { IoMdAdd, IoMdCalendar, IoMdSwap } from 'react-icons/io'
-import { IoPersonAddOutline, IoPersonOutline, IoPersonSharp } from 'react-icons/io5'
+import {
+  IoPersonAddOutline,
+  IoPersonOutline,
+  IoPersonSharp
+} from 'react-icons/io5'
 import { LiaBroomSolid } from 'react-icons/lia'
 import { LuComponent } from 'react-icons/lu'
 import {
   MdAttachMoney,
+  MdCheckCircle,
   MdChevronLeft,
   MdChevronRight,
   MdClose,
   MdDeleteOutline,
   MdDownload,
   MdEdit,
+  MdError,
   MdFilterList,
   MdListAlt,
   MdLocationOff,
   MdLocationPin,
+  MdMessage,
   MdOutlineDone,
   MdOutlineSearch,
   MdOutlineStorefront,
   MdSave,
-  MdSettings,
+  MdSettings
 } from 'react-icons/md'
 import { PiUserList } from 'react-icons/pi'
 import { TbMapSearch } from 'react-icons/tb'
@@ -61,6 +68,9 @@ const icons = {
   phone: TiPhone,
   whatsapp: BsWhatsapp,
   done: MdOutlineDone,
+  error: MdError,
+  checkCircle: MdCheckCircle,
+  message: MdMessage,
   // print: PrintIcon,
   // medicalInfo: MedicalInformationIcon,
   // restore: RestoreIcon,
@@ -94,13 +104,23 @@ const icons = {
   rowLeft: MdChevronLeft,
   rowRight: MdChevronRight,
   settings: MdSettings,
-  download: MdDownload,
+  download: MdDownload
 } as const
 
 export type IconName = keyof typeof icons
-const Icon = ({ icon, size = 30, ...props }: { icon: IconName; color?: string; size?: number }) => {
+const Icon = ({
+  icon,
+  size = 30,
+  className,
+  ...props
+}: {
+  icon: IconName
+  color?: string
+  size?: number
+  className?: string
+}) => {
   const Component = icons[icon]
   if (!Component) return <>Icon</>
-  return <Component size={size} {...props} />
+  return <Component size={size} className={className} {...props} />
 }
 export default Icon

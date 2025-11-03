@@ -7,14 +7,14 @@ const FormCode = ({
   onSubmit
 }: {
   disabled?: boolean
-  onSubmit: ({ code }: { code: string | null }) => any
+  onSubmit: (code: string | null) => any
 }) => {
   return (
     <div>
       <Formik
         initialValues={{ code: '' }}
         onSubmit={(values) => {
-          onSubmit(values)
+          onSubmit(values.code)
         }}
       >
         {({ handleSubmit, values }) => {
@@ -27,7 +27,7 @@ const FormCode = ({
                   type="submit"
                   label="Enviar de nuevo"
                   variant="outline-solid"
-                  onClick={() => onSubmit({ code: null })}
+                  onClick={() => onSubmit(null)}
                 />
                 <Button
                   disabled={disabled || values?.code?.length !== 6}

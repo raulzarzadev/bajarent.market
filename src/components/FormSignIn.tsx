@@ -9,23 +9,41 @@ import Button from './Button'
 import FormCode from './FormCode'
 import FormikInputPhone from './FormikInputPhone'
 import FormikInputText from './FormikInputText'
+import Icon from './Icon'
+
+type UserFlow = 'phone-check' | 'new-user' | 'code-verification'
 
 const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
-  const [haveACode, setHaveACode] = useState(false)
+  const [currentFlow, setCurrentFlow] = useState<UserFlow>('phone-check')
+  const [userPhone, setUserPhone] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const [success, setSuccess] = useState<string | null>(null)
   const { user } = useAuth()
 
   useEffect(() => {
-    // @ts-expect-error
-    window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
-      size: 'invisible',
-      callback: (response: any) => {
-        console.log({ response })
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        // console.log(response)
-        // onSignInSubmit()
+    try {
+      // @ts-expect-error
+      if (!window.recaptchaVerifier) {
+        // @ts-expect-error
+        window.recaptchaVerifier = new RecaptchaVerifier(
+          auth,
+          'sign-in-button',
+          {
+            size: 'invisible',
+            callback: (response: any) => {
+              console.log('reCAPTCHA solved:', response)
+            },
+            'expired-callback': () => {
+              setError('reCAPTCHA expiró. Por favor, inténtalo de nuevo.')
+            }
+          }
+        )
       }
-    })
+    } catch (error) {
+      console.error('Error initializing reCAPTCHA:', error)
+      setError('Error al inicializar el sistema de verificación.')
+    }
   }, [])
 
   useEffect(() => {
@@ -34,54 +52,318 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
     }
   }, [user])
 
+  // Función para verificar si un usuario existe
+  const checkUserExists = async (phone: string): Promise<boolean> => {
+    try {
+      // En una implementación real, esto debería ser:
+      // 1. Una llamada a Firebase Functions
+      // 2. Una consulta a tu backend
+      // 3. O usar Firebase Admin SDK del lado del servidor
+
+      console.log(`Verificando si existe usuario con número: ${phone}`)
+
+      // Simulamos una verificación: números que terminan en 0,1,2,3,4 "existen"
+      // En producción, reemplaza esto con tu lógica real
+      const lastDigit = phone.slice(-1)
+      const exists = ['0', '1', '2', '3', '4'].includes(lastDigit)
+
+      console.log(`Usuario ${exists ? 'existe' : 'no existe'}`)
+
+      // Simulamos un pequeño delay para que parezca una consulta real
+      await new Promise((resolve) => setTimeout(resolve, 500))
+
+      return exists
+    } catch (error) {
+      console.error('Error checking user existence:', error)
+      return false
+    }
+  }
+
+  // Función para manejar la verificación inicial del teléfono
+  const handlePhoneCheck = async (values: { phone: string }) => {
+    setUserPhone(values.phone)
+    setError(null)
+    setIsLoading(true)
+
+    try {
+      // Primero verificamos si el usuario existe
+      const userExists = await checkUserExists(values.phone)
+
+      if (userExists) {
+        // Usuario existe: enviar código directamente
+        await sendSignInPhone({ phone: values.phone })
+        setCurrentFlow('code-verification')
+        setSuccess(`Código enviado a ${values.phone}`)
+      } else {
+        // Usuario no existe: mostrar formulario de registro
+        setCurrentFlow('new-user')
+        setSuccess(
+          `Número nuevo: ${values.phone}. Completa tus datos para crear la cuenta.`
+        )
+      }
+
+      setIsLoading(false)
+    } catch (err: any) {
+      setIsLoading(false)
+      console.error('Error in phone check:', err)
+
+      // Manejo de errores de Firebase
+      switch (err.code) {
+        case 'auth/too-many-requests':
+          setError(
+            'Demasiados intentos. Espera un momento antes de volver a intentar.'
+          )
+          break
+        case 'auth/invalid-app-credential':
+          setError('Error de configuración. Por favor, contacta soporte.')
+          break
+        case 'auth/invalid-phone-number':
+          setError('Número de teléfono inválido. Verifica el formato.')
+          break
+        default:
+          setError('Error al verificar el número. Inténtalo de nuevo.')
+      }
+      setCurrentFlow('phone-check')
+    }
+  }
+
+  const handlePhoneSubmit = async (values: { name: string; phone: string }) => {
+    setIsLoading(true)
+    setError(null)
+    setSuccess(null)
+
+    try {
+      await sendSignInPhone({ phone: values.phone })
+      setSuccess(`Código enviado a ${values.phone}`)
+
+      setTimeout(() => {
+        setIsLoading(false)
+        setCurrentFlow('code-verification')
+      }, 1000)
+    } catch (err: any) {
+      setIsLoading(false)
+      console.error('Error sending SMS:', err)
+
+      // Manejo de errores específicos de Firebase
+      switch (err.code) {
+        case 'auth/invalid-phone-number':
+          setError('Número de teléfono inválido. Verifica el formato.')
+          break
+        case 'auth/too-many-requests':
+          setError(
+            'Demasiados intentos. Espera un momento antes de volver a intentar.'
+          )
+          break
+        case 'auth/invalid-app-credential':
+          setError('Error de configuración. Por favor, contacta soporte.')
+          break
+        default:
+          setError('Error al enviar el código. Inténtalo de nuevo.')
+      }
+    }
+  }
+
+  const handleCodeSubmit = (code: string | null) => {
+    setError(null)
+    setSuccess(null)
+
+    if (code === null) {
+      // Reenviar código
+      setCurrentFlow('phone-check')
+      setError('')
+      return
+    }
+
+    if (code) {
+      try {
+        onSendCode({ code })
+      } catch (err: any) {
+        console.error('Error verifying code:', err)
+        setError('Código incorrecto. Verifica e inténtalo de nuevo.')
+      }
+    } else {
+      setCurrentFlow('phone-check')
+      setError(null)
+      setSuccess(null)
+    }
+  }
+
   return (
-    <div>
-      {!haveACode && (
-        <Formik
-          initialValues={{ name: name, phone: phone }}
-          onSubmit={async (values) => {
-            setIsLoading(true)
-            await sendSignInPhone({ phone: values.phone })
+    <div className="space-y-6">
+      {/* Mensajes de estado */}
+      {error && (
+        <div className="bg-red-50 border border-red-200 rounded-lg p-4 flex items-center space-x-3">
+          <Icon icon="error" size={20} className="text-red-500 flex-shrink-0" />
+          <p className="text-red-700 text-sm">{error}</p>
+        </div>
+      )}
 
-            setTimeout(() => {
-              setIsLoading(false)
-              setHaveACode(true)
-            }, 400)
-          }}
-        >
-          {({ values, handleSubmit }) => {
-            return (
-              <div className="grid gap-2">
-                <FormikInputText name="name" label="Name" />
-                <FormikInputPhone name="phone" label="Phone" />
+      {success && (
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-3">
+          <Icon
+            icon="checkCircle"
+            size={20}
+            className="text-green-500 flex-shrink-0"
+          />
+          <p className="text-green-700 text-sm">{success}</p>
+        </div>
+      )}
 
-                <div className="flex justify-end">
+      {/* Paso 1: Verificar número de teléfono */}
+      {currentFlow === 'phone-check' && (
+        <div>
+          <Formik initialValues={{ phone: phone }} onSubmit={handlePhoneCheck}>
+            {({ values, handleSubmit }) => (
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <div className="text-center mb-6">
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">
+                      ¿Ya tienes cuenta?
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Ingresa tu número para verificar si ya estás registrado
+                    </p>
+                  </div>
+
+                  <FormikInputPhone
+                    name="phone"
+                    label="Número de teléfono"
+                    placeholder="+52 xxx xxx xxxx"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  label={isLoading ? 'Verificando...' : 'Verificar número'}
+                  variant="solid"
+                  disabled={!isValidPhoneNumber(values.phone) || isLoading}
+                  onClick={() => handleSubmit()}
+                />
+              </div>
+            )}
+          </Formik>
+        </div>
+      )}
+
+      {/* Paso 2: Usuario nuevo - Pedir nombre y apellido para registro */}
+      {currentFlow === 'new-user' && (
+        <div>
+          <div className="text-center mb-6">
+            <Icon
+              icon="profileAdd"
+              size={48}
+              className="text-blue-500 mx-auto mb-4"
+            />
+            <h3 className="text-lg font-medium text-gray-900 mb-2">
+              ¡Bienvenido!
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Es tu primera vez. Necesitamos algunos datos para crear tu cuenta.
+            </p>
+          </div>
+
+          <Formik
+            initialValues={{ firstName: '', lastName: '', phone: userPhone }}
+            onSubmit={(values) => {
+              // Combinamos nombre y apellido para mantener compatibilidad
+              const fullName =
+                `${values.firstName.trim()} ${values.lastName.trim()}`.trim()
+              handlePhoneSubmit({ name: fullName, phone: values.phone })
+            }}
+          >
+            {({ values, handleSubmit }) => (
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <FormikInputText
+                    name="firstName"
+                    label="Nombre"
+                    placeholder="Tu nombre"
+                  />
+
+                  <FormikInputText
+                    name="lastName"
+                    label="Apellido"
+                    placeholder="Tu apellido"
+                  />
+
+                  <FormikInputPhone
+                    name="phone"
+                    label="Número de teléfono"
+                    placeholder="+52 xxx xxx xxxx"
+                    disabled
+                  />
+                </div>
+
+                <div className="space-y-3">
                   <Button
-                    disabled={!isValidPhoneNumber(values.phone) || isLoading}
                     type="submit"
-                    label="Enviar"
-                    className=""
+                    label={
+                      isLoading
+                        ? 'Creando cuenta...'
+                        : 'Crear cuenta y enviar código'
+                    }
+                    variant="solid"
+                    disabled={
+                      !values.firstName.trim() ||
+                      !values.lastName.trim() ||
+                      !isValidPhoneNumber(values.phone) ||
+                      isLoading
+                    }
                     onClick={() => handleSubmit()}
+                  />
+
+                  <Button
+                    type="button"
+                    label="Usar otro número"
+                    variant="outline-solid"
+                    onClick={() => {
+                      setCurrentFlow('phone-check')
+                      setError(null)
+                      setSuccess(null)
+                    }}
                   />
                 </div>
               </div>
-            )
-          }}
-        </Formik>
+            )}
+          </Formik>
+        </div>
       )}
 
-      <div id="sign-in-button" className=" h-20 mx-auto" />
-      {haveACode && (
-        <FormCode
-          onSubmit={({ code }) => {
-            if (code) {
-              onSendCode({ code })
-            } else {
-              setHaveACode(false)
-            }
-          }}
-        />
+      {/* Paso 3: Verificación de código */}
+      {currentFlow === 'code-verification' && (
+        <div>
+          <div className="text-center mb-6">
+            <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <Icon icon="message" size={32} className="text-blue-600" />
+            </div>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              Verifica tu número
+            </h3>
+            <p className="text-sm text-gray-600">
+              Ingresa el código de 6 dígitos que enviamos por SMS
+            </p>
+          </div>
+
+          <FormCode onSubmit={handleCodeSubmit} />
+
+          <div className="text-center mt-6">
+            <button
+              type="button"
+              onClick={() => {
+                setCurrentFlow('phone-check')
+                setError(null)
+                setSuccess(null)
+              }}
+              className="text-blue-600 hover:text-blue-800 text-sm font-medium transition-colors"
+            >
+              ← Cambiar número de teléfono
+            </button>
+          </div>
+        </div>
       )}
+
+      {/* reCAPTCHA container - oculto */}
+      <div id="sign-in-button" className="hidden" />
     </div>
   )
 }
