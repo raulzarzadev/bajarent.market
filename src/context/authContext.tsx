@@ -1,7 +1,13 @@
 'use client'
 
-import { createContext, type ReactNode, useContext, useEffect, useState } from 'react'
-import { authStateChanged } from '@/firebase/auth'
+import {
+  createContext,
+  type ReactNode,
+  useContext,
+  useEffect,
+  useState
+} from 'react'
+import { authStateChanged, usersCRUD } from '@/firebase/auth'
 import { ServiceOrders } from '@/firebase/ServiceOrders'
 import type OrderType from '@/types/OrderType'
 import type UserType from '@/types/UserType'
@@ -10,10 +16,12 @@ const authContext = createContext<{
   user?: UserType | null
   userRents: OrderType[] | null
   fetchOrders: () => void
+  refreshUser: () => Promise<void>
 }>({
   user: undefined,
   userRents: null,
   fetchOrders: () => {},
+  refreshUser: async () => {}
 })
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -37,8 +45,19 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }
 
+  const refreshUser = async () => {
+    if (user?.id) {
+      const updatedUser = await usersCRUD.getItem(user.id)
+      if (updatedUser) {
+        setUser(updatedUser)
+      }
+    }
+  }
+
   return (
-    <authContext.Provider value={{ user, userRents, fetchOrders }}>{children}</authContext.Provider>
+    <authContext.Provider value={{ user, userRents, fetchOrders, refreshUser }}>
+      {children}
+    </authContext.Provider>
   )
 }
 

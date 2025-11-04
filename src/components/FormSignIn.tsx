@@ -142,7 +142,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
     setSuccess(null)
 
     try {
-      localStorage.setItem('tempUserData', values.name)
+      localStorage.setItem('tempUserName', values.name)
       await sendSignInPhone({ phone: values.phone })
 
       setSuccess(`Código enviado a ${values.phone}`)

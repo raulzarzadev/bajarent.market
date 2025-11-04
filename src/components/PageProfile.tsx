@@ -12,7 +12,7 @@ import { Formik } from 'formik'
 import { usersCRUD } from '@/firebase/auth'
 
 const PageProfile = () => {
-  const { user } = useAuth()
+  const { user, refreshUser } = useAuth()
   const [isEditing, setIsEditing] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -21,14 +21,14 @@ const PageProfile = () => {
   const [tempUserData, setTempUserData] = useState<any>(null)
 
   useEffect(() => {
-    const tempDataString = localStorage.getItem('tempUserData')
+    const tempDataString = localStorage.getItem('tempUserName')
     if (tempDataString && user) {
       try {
         setTempUserData({ name: tempDataString })
         setShowUpdateModal(true)
       } catch (error) {
         console.error('Error parsing tempUserData:', error)
-        localStorage.removeItem('tempUserData')
+        localStorage.removeItem('tempUserName')
       }
     }
   }, [user])
@@ -56,9 +56,12 @@ const PageProfile = () => {
         updatedAt: new Date().toISOString()
       })
 
+      // Refrescar los datos del usuario en el contexto
+      await refreshUser()
+
       setSuccess('Perfil actualizado correctamente')
       setShowUpdateModal(false)
-      localStorage.removeItem('tempUserData')
+      localStorage.removeItem('tempUserName')
 
       setTimeout(() => setSuccess(null), 3000)
     } catch (error) {
@@ -71,7 +74,7 @@ const PageProfile = () => {
 
   const handleCloseModal = () => {
     setShowUpdateModal(false)
-    localStorage.removeItem('tempUserData')
+    localStorage.removeItem('tempUserName')
   }
 
   const handleUpdateProfile = async (values: any) => {
@@ -88,6 +91,9 @@ const PageProfile = () => {
         phone: values.phone,
         updatedAt: new Date().toISOString()
       })
+
+      // Refrescar los datos del usuario en el contexto
+      await refreshUser()
 
       setSuccess('Perfil actualizado correctamente')
       setIsEditing(false)
