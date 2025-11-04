@@ -142,7 +142,18 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
     setSuccess(null)
 
     try {
-      localStorage.setItem('tempUserName', values.name)
+      // Dividir el nombre en firstName y lastName
+      const nameParts = values.name.trim().split(' ')
+      const firstName = nameParts[0] || ''
+      const lastName = nameParts.slice(1).join(' ') || ''
+
+      const tempUserData = {
+        firstName,
+        lastName,
+        phone: values.phone
+      }
+
+      localStorage.setItem('tempUserData', JSON.stringify(tempUserData))
       await sendSignInPhone({ phone: values.phone })
 
       setSuccess(`Código enviado a ${values.phone}`)

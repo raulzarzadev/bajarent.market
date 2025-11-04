@@ -22,10 +22,15 @@ export const getUserPublicData = onCall(async (request) => {
     }
 
     const userData = querySnapshot.docs[0].data()
+    const firstName = userData.firstName || ''
+    const lastName = userData.lastName || ''
+    const fullName = `${firstName} ${lastName}`.trim() || 'Usuario'
 
     // Solo retornar datos públicos/seguros
     return {
-      name: userData.name || 'Usuario',
+      name: fullName,
+      firstName,
+      lastName,
       phone: cleanedPhone,
       userId: querySnapshot.docs[0].id
       // Agregar otros campos públicos que necesites

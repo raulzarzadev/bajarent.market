@@ -21,14 +21,15 @@ const PageProfile = () => {
   const [tempUserData, setTempUserData] = useState<any>(null)
 
   useEffect(() => {
-    const tempDataString = localStorage.getItem('tempUserName')
+    const tempDataString = localStorage.getItem('tempUserData')
     if (tempDataString && user) {
       try {
-        setTempUserData({ name: tempDataString })
+        const tempData = JSON.parse(tempDataString)
+        setTempUserData(tempData)
         setShowUpdateModal(true)
       } catch (error) {
         console.error('Error parsing tempUserData:', error)
-        localStorage.removeItem('tempUserName')
+        localStorage.removeItem('tempUserData')
       }
     }
   }, [user])
@@ -50,7 +51,8 @@ const PageProfile = () => {
 
     try {
       await usersCRUD.updateItem(user.id, {
-        name: values.name,
+        firstName: values.firstName,
+        lastName: values.lastName,
         email: values.email,
         phone: values.phone,
         updatedAt: new Date().toISOString()
@@ -61,7 +63,7 @@ const PageProfile = () => {
 
       setSuccess('Perfil actualizado correctamente')
       setShowUpdateModal(false)
-      localStorage.removeItem('tempUserName')
+      localStorage.removeItem('tempUserData')
 
       setTimeout(() => setSuccess(null), 3000)
     } catch (error) {
@@ -74,7 +76,7 @@ const PageProfile = () => {
 
   const handleCloseModal = () => {
     setShowUpdateModal(false)
-    localStorage.removeItem('tempUserName')
+    localStorage.removeItem('tempUserData')
   }
 
   const handleUpdateProfile = async (values: any) => {
@@ -86,7 +88,8 @@ const PageProfile = () => {
 
     try {
       await usersCRUD.updateItem(user.id, {
-        name: values.name,
+        firstName: values.firstName,
+        lastName: values.lastName,
         email: values.email,
         phone: values.phone,
         updatedAt: new Date().toISOString()
@@ -117,6 +120,13 @@ const PageProfile = () => {
       .slice(0, 2)
   }
 
+  const getFullName = (user: any) => {
+    if (!user) return 'Usuario'
+    const firstName = user.firstName || ''
+    const lastName = user.lastName || ''
+    return `${firstName} ${lastName}`.trim() || 'Sin nombre'
+  }
+
   if (!user) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -143,12 +153,12 @@ const PageProfile = () => {
                   {user.image ? (
                     <img
                       src={user.image}
-                      alt={user.name}
+                      alt={getFullName(user)}
                       className="w-full h-full rounded-full object-cover"
                     />
                   ) : (
                     <div className="w-full h-full rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-semibold">
-                      {getInitials(user.name || 'Usuario')}
+                      {getInitials(getFullName(user))}
                     </div>
                   )}
                 </div>
@@ -156,7 +166,7 @@ const PageProfile = () => {
                 {/* Name & Status */}
                 <div className="mt-4">
                   <h1 className="text-2xl font-bold text-gray-900">
-                    {user.name || 'Sin nombre'}
+                    {getFullName(user)}
                   </h1>
                   <div className="flex items-center space-x-2 mt-1">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
@@ -199,7 +209,8 @@ const PageProfile = () => {
             {isEditing ? (
               <Formik
                 initialValues={{
-                  name: user.name || '',
+                  firstName: user.firstName || '',
+                  lastName: user.lastName || '',
                   email: user.email || '',
                   phone: user.phone || ''
                 }}
@@ -209,9 +220,14 @@ const PageProfile = () => {
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <FormikInputText
-                        name="name"
-                        label="Nombre completo"
-                        placeholder="Tu nombre completo"
+                        name="firstName"
+                        label="Nombre"
+                        placeholder="Tu nombre"
+                      />
+                      <FormikInputText
+                        name="lastName"
+                        label="Apellidos"
+                        placeholder="Tus apellidos"
                       />
                       <FormikInputText
                         name="email"
@@ -357,7 +373,8 @@ const PageProfile = () => {
             onClose={handleCloseModal}
             onSave={handleUpdateFromModal}
             initialValues={{
-              name: tempUserData.name || user?.name || '',
+              firstName: tempUserData.firstName || user?.firstName || '',
+              lastName: tempUserData.lastName || user?.lastName || '',
               email: tempUserData.email || user?.email || '',
               phone: tempUserData.phone || user?.phone || ''
             }}

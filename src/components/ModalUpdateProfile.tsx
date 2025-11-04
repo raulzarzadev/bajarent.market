@@ -12,7 +12,8 @@ interface ModalUpdateProfileProps {
   onClose: () => void
   onSave: (values: any) => Promise<void>
   initialValues: {
-    name: string
+    firstName: string
+    lastName: string
     email: string
     phone: string
   }
@@ -91,25 +92,29 @@ export default function ModalUpdateProfile({
                   >
                     {({ handleSubmit }) => (
                       <div className="space-y-4">
-                        <FormikInputText
-                          name="name"
-                          label="Nombre completo"
-                          placeholder="Tu nombre completo"
-                        />
-
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <FormikInputText
+                            name="firstName"
+                            label="Nombre"
+                            placeholder="Tu nombre"
+                          />
+                          <FormikInputText
+                            name="lastName"
+                            label="Apellidos"
+                            placeholder="Tus apellidos"
+                          />
+                        </div>
                         <FormikInputText
                           name="email"
                           label="Correo electrónico"
                           placeholder="tu@email.com"
                           type="email"
                         />
-
                         <FormikInputPhone
                           name="phone"
                           label="Número de teléfono"
                           placeholder="+52 xxx xxx xxxx"
-                        />
-
+                        />{' '}
                         <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6 rounded-lg mt-6">
                           <Button
                             type="submit"

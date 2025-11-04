@@ -143,8 +143,16 @@ export async function authStateChanged(cb: CallableFunction) {
     if (user?.uid) {
       const dbUser = await usersCRUD.getItem(user.uid)
       if (dbUser) return cb(dbUser)
+
+      // Dividir displayName en firstName y lastName
+      const displayName = user.displayName || ''
+      const nameParts = displayName.split(' ')
+      const firstName = nameParts[0] || ''
+      const lastName = nameParts.slice(1).join(' ') || ''
+
       const newUser = {
-        name: user.displayName || '',
+        firstName,
+        lastName,
         email: user.email || '',
         image: user.photoURL || '',
         phone: user.phoneNumber || '',

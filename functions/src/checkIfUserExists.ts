@@ -35,11 +35,16 @@ export const checkUserExists = onCall(async (request) => {
 
     // Usuario existe - retornar solo información pública
     const userData = querySnapshot.docs[0].data()
+    const firstName = userData.firstName || ''
+    const lastName = userData.lastName || ''
+    const fullName = `${firstName} ${lastName}`.trim() || 'Usuario'
 
     return {
       exists: true,
       phone: cleanedPhone,
-      name: userData.name || 'Usuario',
+      name: fullName,
+      firstName,
+      lastName,
       userId: querySnapshot.docs[0].id,
       message: 'Usuario encontrado'
     }
