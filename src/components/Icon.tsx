@@ -30,7 +30,8 @@ import {
   MdOutlineSearch,
   MdOutlineStorefront,
   MdSave,
-  MdSettings
+  MdSettings,
+  MdEmail
 } from 'react-icons/md'
 import { PiUserList } from 'react-icons/pi'
 import { TbMapSearch } from 'react-icons/tb'
@@ -94,7 +95,7 @@ const icons = {
   // settingsApplications: SettingsApplicationsIcon,
   // recordVoiceOver: RecordVoiceOverIcon,
   // phone: PhoneIcon,
-  // mail: EmailIcon,
+  mail: MdEmail,
   // whatsapp: WhatsAppIcon,
   // location: LocationOnIcon,
   // addComment: AddCommentIcon,

@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 import { useEffect, useState } from 'react'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { useAuth } from '@/context/authContext'
-import { createUser, onSendCode, sendSignInPhone } from '@/firebase/auth'
+import { onSendCode, sendSignInPhone } from '@/firebase/auth'
 import Button from './Button'
 import FormCode from './FormCode'
 import FormikInputPhone from './FormikInputPhone'
@@ -15,7 +15,7 @@ import { auth, functions } from '@/firebase/main'
 import catchError from '@/libs/catchError'
 type UserFlow = 'phone-check' | 'new-user' | 'code-verification'
 
-const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
+const FormSignIn = ({ phone }: { name: string; phone: string }) => {
   const [currentFlow, setCurrentFlow] = useState<UserFlow>('phone-check')
   const [userPhone, setUserPhone] = useState('')
   const [isLoading, setIsLoading] = useState(false)
@@ -142,9 +142,9 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
     setSuccess(null)
 
     try {
-      const res = await sendSignInPhone({ phone: values.phone })
+      localStorage.setItem('tempUserData', values.name)
+      await sendSignInPhone({ phone: values.phone })
 
-      console.log({ res })
       setSuccess(`Código enviado a ${values.phone}`)
 
       setTimeout(() => {
