@@ -4,15 +4,15 @@ import { Formik } from 'formik'
 import { useEffect, useState } from 'react'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { useAuth } from '@/context/authContext'
-import { auth, onSendCode, sendSignInPhone } from '@/firebase/auth'
+import { onSendCode, sendSignInPhone } from '@/firebase/auth'
 import Button from './Button'
 import FormCode from './FormCode'
 import FormikInputPhone from './FormikInputPhone'
 import FormikInputText from './FormikInputText'
 import Icon from './Icon'
+import { httpsCallable } from 'firebase/functions'
+import { auth, functions } from '@/firebase/main'
 import catchError from '@/libs/catchError'
-import { ServiceUsers } from '@/firebase/ServiceUser'
-
 type UserFlow = 'phone-check' | 'new-user' | 'code-verification'
 
 const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
@@ -55,13 +55,40 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
   }, [user])
 
   // Función para verificar si un usuario existe
-  const checkUserExists = async (phone: string): Promise<boolean> => {
-    const [error, data] = await catchError(ServiceUsers.userExists({ phone }))
+  const checkUserExists = async (
+    phone: string
+  ): Promise<{
+    exists: boolean
+    name?: string
+  }> => {
+    console.log('🔍 Verificando usuario...')
+    const checkUserExistsFunction = httpsCallable<
+      { phone: string },
+      { exists: boolean; name?: string; userId?: string; message: string }
+    >(functions, 'checkUserExists')
+
+    // Llamar a la función
+    const [error, result] = await catchError(checkUserExistsFunction({ phone }))
+
     if (error) {
-      console.error('Error checking user existence:', error)
-      return false
+      console.error('❌ Error en Cloud Function:', error)
+      return {
+        exists: false
+      }
     }
-    return data ? true : false
+    const data = result?.data
+    const userExists = data?.exists || false
+    const userName = data?.name
+    if (userExists) {
+      return {
+        exists: userExists,
+        name: userName
+      }
+    }
+
+    return {
+      exists: false
+    }
   }
 
   // Función para manejar la verificación inicial del teléfono
@@ -72,13 +99,20 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
 
     try {
       // Primero verificamos si el usuario existe
-      const userExists = await checkUserExists(values.phone)
+      const result = await checkUserExists(values.phone)
+      console.log({ result })
+      const { exists: userExists, name: userName } = result
 
       if (userExists) {
+        setSuccess(
+          `Este numero, ${values.phone} esta registrado a nombre de ${
+            userName || 'Sin nombre'
+          }`
+        )
+        setCurrentFlow('code-verification')
         // Usuario existe: enviar código directamente
         await sendSignInPhone({ phone: values.phone })
         setCurrentFlow('code-verification')
-        setSuccess(`Código enviado a ${values.phone}`)
       } else {
         // Usuario no existe: mostrar formulario de registro
         setCurrentFlow('new-user')
@@ -118,7 +152,7 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
     setSuccess(null)
 
     try {
-      await sendSignInPhone({ phone: values.phone })
+      await sendSignInPhone({ phone: values.phone, name: values.name })
       setSuccess(`Código enviado a ${values.phone}`)
 
       setTimeout(() => {
@@ -203,7 +237,7 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
                 <div className="space-y-4">
                   <div className="text-center mb-6">
                     <h3 className="text-lg font-medium text-gray-900 mb-2">
-                      ¿Ya tienes cuenta?
+                      Inicia sesión
                     </h3>
                     <p className="text-gray-600 text-sm">
                       Ingresa tu número para verificar si ya estás registrado
@@ -221,7 +255,9 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
                   type="submit"
                   label={isLoading ? 'Verificando...' : 'Verificar número'}
                   variant="solid"
-                  disabled={!isValidPhoneNumber(values.phone) || isLoading}
+                  disabled={
+                    !isValidPhoneNumber(values?.phone || '') || isLoading
+                  }
                   onClick={() => handleSubmit()}
                 />
               </div>

@@ -1,0 +1,587 @@
+[debug] [2025-11-04T20:41:59.509Z] ----------------------------------------------------------------------
+[debug] [2025-11-04T20:41:59.510Z] Command:       /Users/zarza/.nvm/versions/node/v22.18.0/bin/node /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/node_modules/.bin/firebase emulators:start --only functions,firestore,auth
+[debug] [2025-11-04T20:41:59.511Z] CLI Version:   14.23.0
+[debug] [2025-11-04T20:41:59.511Z] Platform:      darwin
+[debug] [2025-11-04T20:41:59.511Z] Node Version:  v22.18.0
+[debug] [2025-11-04T20:41:59.511Z] Time:          Tue Nov 04 2025 13:41:59 GMT-0700 (hora estándar del Pacífico de México)
+[debug] [2025-11-04T20:41:59.511Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-04T20:41:59.634Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-04T20:41:59.635Z] > authorizing via signed-in user (raulzarza.dev@gmail.com)
+[debug] [2025-11-04T20:41:59.728Z] java version "22.0.1" 2024-04-16
+
+[debug] [2025-11-04T20:41:59.728Z] Java(TM) SE Runtime Environment (build 22.0.1+8-16)
+Java HotSpot(TM) 64-Bit Server VM (build 22.0.1+8-16, mixed mode, sharing)
+
+[debug] [2025-11-04T20:41:59.731Z] Parsed Java major version: 22
+[info] i  emulators: Starting emulators: auth, functions, firestore {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore"}}
+[debug] [2025-11-04T20:42:00.233Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T20:42:00.233Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T20:42:00.233Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T20:42:00.234Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T20:42:00.234Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2025-11-04T20:42:00.237Z] Emulator locator file path: /var/folders/g1/71x7ytjx3c7dzmjrq419_d800000gn/T/hub-bajarent-app.json
+[debug] [2025-11-04T20:42:00.237Z] [hub] writing locator at /var/folders/g1/71x7ytjx3c7dzmjrq419_d800000gn/T/hub-bajarent-app.json
+[debug] [2025-11-04T20:42:00.485Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T20:42:00.485Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T20:42:00.485Z] [tasks] Cloud Tasks Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2025-11-04T20:42:00.485Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}],"tasks":[{"address":"127.0.0.1","family":"IPv4","port":9499}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: apphosting, database, hosting, pubsub, storage, dataconnect {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mapphosting, database, hosting, pubsub, storage, dataconnect\u001b[22m"}}
+[debug] [2025-11-04T20:42:00.494Z] defaultcredentials: writing to file /Users/zarza/.config/firebase/raulzarza_dev_gmail.com_application_default_credentials.json
+[debug] [2025-11-04T20:42:00.495Z] Setting GAC to /Users/zarza/.config/firebase/raulzarza_dev_gmail.com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/zarza/.config/firebase/raulzarza_dev_gmail.com_application_default_credentials.json"}}
+[debug] [2025-11-04T20:42:00.496Z] Checked if tokens are valid: true, expires at: 1762291951781
+[debug] [2025-11-04T20:42:00.496Z] Checked if tokens are valid: true, expires at: 1762291951781
+[debug] [2025-11-04T20:42:00.496Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/bajarent-app/adminSdkConfig [none]
+[debug] [2025-11-04T20:42:02.142Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/bajarent-app/adminSdkConfig 200
+[debug] [2025-11-04T20:42:02.142Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/bajarent-app/adminSdkConfig {"projectId":"bajarent-app","storageBucket":"bajarent-app.appspot.com","locationId":"us-central"}
+[debug] [2025-11-04T20:42:02.154Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2025-11-04T20:42:02.154Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2025-11-04T20:42:02.154Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/Users/zarza/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","bajarent-app","--rules","/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false,"shell":false,"port":8080} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/Users/zarza/.cache/firebase/emulators/cloud-firestore-emulator-v1.19.8.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"bajarent-app\",\"--rules\",\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false,\"shell\":false,\"port\":8080}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2025-11-04T20:42:02.946Z] Nov 04, 2025 1:42:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2025-11-04T20:42:02.963Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2025-11-04T20:42:02.964Z] 127.0.0.1:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+If you are running a Firestore in Datastore Mode project, run:
+
+   export DATASTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Note: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"127.0.0.1:8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nIf you are running a Firestore in Datastore Mode project, run:\n\n   export DATASTORE_EMULATOR_HOST=127.0.0.1:8080\n\nNote: Support for Datastore Mode is in preview. If you encounter any bugs please file at https://github.com/firebase/firebase-tools/issues.\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2025-11-04T20:42:06.115Z] Nov 04, 2025 1:42:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[info] i  functions: Watching "/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions\" for Cloud Functions..."}}
+[debug] [2025-11-04T20:42:06.122Z] Validating nodejs source
+[debug] [2025-11-04T20:42:07.131Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T20:42:07.132Z] Building nodejs source
+[debug] [2025-11-04T20:42:07.132Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T20:42:07.133Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T20:42:07.137Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8297
+
+[debug] [2025-11-04T20:42:07.480Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-11-04T20:42:09.524Z] Nov 04, 2025 1:42:09 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:09 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[info] ✔  functions[us-central1-checkUserExists]: http function initialized (http://127.0.0.1:5001/bajarent-app/us-central1/checkUserExists). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/bajarent-app/us-central1/checkUserExists)."}}
+[info] ✔  functions[us-central1-getUserPublicData]: http function initialized (http://127.0.0.1:5001/bajarent-app/us-central1/getUserPublicData). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://127.0.0.1:5001/bajarent-app/us-central1/getUserPublicData)."}}
+[debug] [2025-11-04T20:42:11.502Z] Could not find VSCode notification endpoint: FetchError: request to http://localhost:40001/vscode/notify failed, reason: . If you are not running the Firebase Data Connect VSCode extension, this is expected and not an issue.
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub host: 127.0.0.1 port: 4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2025-11-04T20:42:13.476Z] Nov 04, 2025 1:42:13 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:13 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-11-04T20:42:13.477Z] Nov 04, 2025 1:42:13 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:13 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-11-04T20:42:14.294Z] Nov 04, 2025 1:42:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:42:14.351Z] Nov 04, 2025 1:42:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:42:28.739Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:42:28.739Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:42:28.741Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:42:28.739Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:42:28.742Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:42:28.745Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:42:28.745Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:42:28.749Z] [worker-pool] addWorker(us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-checkUserExists)"}}
+[debug] [2025-11-04T20:42:28.750Z] [worker-pool] Adding worker with key us-central1-checkUserExists, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-checkUserExists, total=1"}}
+[debug] [2025-11-04T20:42:29.326Z] [runtime-status] [6991] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-11-04T20:42:29.326Z] [runtime-status] [6991] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T20:42:29.327Z] [runtime-status] [6991] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-11-04T20:42:29.327Z] [runtime-status] [6991] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T20:42:29.482Z] [runtime-status] [6991] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-11-04T20:42:29.483Z] [runtime-status] [6991] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2025-11-04T20:42:29.483Z] [runtime-status] [6991] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T20:42:29.485Z] [runtime-status] [6991] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-11-04T20:42:29.486Z] [runtime-status] [6991] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T20:42:29.486Z] [runtime-status] [6991] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2025-11-04T20:42:29.491Z] [runtime-status] [6991] Functions runtime initialized. {"cwd":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions","node_version":"22.18.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Functions runtime initialized. {\"cwd\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions\",\"node_version\":\"22.18.0\"}"}}
+[debug] [2025-11-04T20:42:29.491Z] [runtime-status] [6991] Listening to port: /var/folders/g1/71x7ytjx3c7dzmjrq419_d800000gn/T/fire_emu_f721a6f341e4c87e.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [6991] Listening to port: /var/folders/g1/71x7ytjx3c7dzmjrq419_d800000gn/T/fire_emu_f721a6f341e4c87e.sock"}}
+[debug] [2025-11-04T20:42:29.564Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:42:29.564Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:42:29.566Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[debug] [2025-11-04T20:42:29.568Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 2.393417ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 2.393417ms"}}
+[debug] [2025-11-04T20:42:29.569Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:42:29.569Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:42:29.569Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:42:29.569Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:42:29.569Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:42:29.569Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:42:29.569Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:42:29.569Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:42:29.569Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:42:29.570Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:42:29.570Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:42:29.570Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:42:29.570Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374020 {"user":"🔍 Buscando usuario con teléfono: +525543374020","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374020"}}
+[debug] [2025-11-04T20:42:29.798Z] Nov 04, 2025 1:42:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:42:29.883Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 312.697292ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 312.697292ms"}}
+[debug] [2025-11-04T20:42:29.883Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:42:29.883Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:42:29.883Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:42:29.883Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] i  To verify the phone number +525543374020, use the code 689130. {"metadata":{"emulator":{"name":"auth"},"message":"To verify the phone number +525543374020, use the code 689130."}}
+[debug] [2025-11-04T20:42:36.312Z] Nov 04, 2025 1:42:36 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:36 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-11-04T20:42:40.904Z] Nov 04, 2025 1:42:40 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:40 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-11-04T20:42:40.913Z] Nov 04, 2025 1:42:40 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:40 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-11-04T20:42:42.894Z] Nov 04, 2025 1:42:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:42:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:43:25.455Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:43:25.454Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:43:25.458Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:43:25.454Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:43:25.458Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:43:25.462Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:43:25.463Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:43:25.463Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:43:25.464Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[debug] [2025-11-04T20:43:25.477Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 13.825292ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 13.825292ms"}}
+[debug] [2025-11-04T20:43:25.478Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:43:25.478Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:43:25.478Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:43:25.478Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:43:25.479Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:43:25.479Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:43:25.479Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:43:25.479Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:43:25.479Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:43:25.480Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:43:25.480Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:43:25.480Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:43:25.480Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374016 {"user":"🔍 Buscando usuario con teléfono: +525543374016","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374016"}}
+[debug] [2025-11-04T20:43:25.523Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 43.170083ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 43.170083ms"}}
+[debug] [2025-11-04T20:43:25.524Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:43:25.524Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:43:25.524Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:43:25.524Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:44:30.926Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:44:30.926Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:44:30.927Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:44:30.926Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:44:30.927Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:44:30.932Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:44:30.932Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:44:30.932Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:44:30.933Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[debug] [2025-11-04T20:44:30.938Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 5.20025ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 5.20025ms"}}
+[debug] [2025-11-04T20:44:30.938Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:44:30.938Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:44:30.938Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:44:30.938Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:44:30.939Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:44:30.939Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:44:30.939Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:44:30.939Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:44:30.939Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:44:30.942Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:44:30.942Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:44:30.942Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:44:30.942Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374020 {"user":"🔍 Buscando usuario con teléfono: +525543374020","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374020"}}
+[debug] [2025-11-04T20:44:30.994Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 51.88075ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 51.88075ms"}}
+[debug] [2025-11-04T20:44:30.994Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:44:30.994Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:44:30.994Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:44:30.994Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] i  To verify the phone number +525543374020, use the code 868927. {"metadata":{"emulator":{"name":"auth"},"message":"To verify the phone number +525543374020, use the code 868927."}}
+[debug] [2025-11-04T20:45:00.790Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast [none]
+[debug] [2025-11-04T20:45:00.790Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast {"eventId":"185547d7-966f-4813-a396-b2453addda3a","eventType":"providers/firebase.auth/eventTypes/user.create","resource":{"name":"projects/bajarent-app","service":"firebaseauth.googleapis.com"},"params":{},"timestamp":"2025-11-04T20:45:00.786Z","data":{"uid":"A2QSuOM8aSoRRdbyL2IiKtpjfztJ","phoneNumber":"+525543374020","metadata":{"creationTime":"2025-11-04T20:45:00.780Z","lastSignInTime":"2025-11-04T20:45:00.780Z"},"customClaims":{},"providerData":[{"rawId":"+525543374020","providerId":"phone","phoneNumber":"+525543374020"}]}}
+[debug] [2025-11-04T20:45:00.806Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast 200
+[debug] [2025-11-04T20:45:00.806Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2025-11-04T20:45:00.844Z] Nov 04, 2025 1:45:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.111Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.128Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.132Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.157Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.165Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.231Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.247Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.277Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:01.334Z] Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:02.311Z] Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:02.328Z] Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:02.347Z] Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:02.362Z] Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:02.375Z] Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:11.438Z] Nov 04, 2025 1:45:11 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:11 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:45:11.449Z] Nov 04, 2025 1:45:11 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:11 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-11-04T20:45:14.031Z] Nov 04, 2025 1:45:14 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:14 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-11-04T20:45:14.042Z] Nov 04, 2025 1:45:14 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:45:14 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-11-04T20:45:21.937Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:45:21.937Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:45:21.937Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:45:21.937Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:45:21.937Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:45:21.941Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:45:21.941Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:45:21.941Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:45:21.942Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[debug] [2025-11-04T20:45:21.946Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 4.898292ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 4.898292ms"}}
+[debug] [2025-11-04T20:45:21.947Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:45:21.947Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:45:21.947Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:45:21.947Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:45:21.948Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:45:21.947Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:45:21.948Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:45:21.947Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:45:21.948Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:45:21.949Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:45:21.949Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:45:21.949Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:45:21.949Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374020 {"user":"🔍 Buscando usuario con teléfono: +525543374020","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374020"}}
+[debug] [2025-11-04T20:45:22.008Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 59.04175ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 59.04175ms"}}
+[debug] [2025-11-04T20:45:22.008Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:45:22.008Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:45:22.008Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:45:22.009Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:46:20.851Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:46:20.851Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:46:20.852Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:46:20.851Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:46:20.853Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:46:20.856Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:46:20.856Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:46:20.857Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:46:20.857Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[debug] [2025-11-04T20:46:20.863Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 5.883583ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 5.883583ms"}}
+[debug] [2025-11-04T20:46:20.864Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:46:20.864Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:46:20.864Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:46:20.864Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:46:20.864Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:46:20.864Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:46:20.865Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:46:20.864Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:46:20.865Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:46:20.867Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:46:20.867Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:46:20.867Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:46:20.867Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374020 {"user":"🔍 Buscando usuario con teléfono: +525543374020","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374020"}}
+[debug] [2025-11-04T20:46:20.906Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 39.08175ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 39.08175ms"}}
+[debug] [2025-11-04T20:46:20.908Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:46:20.909Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:46:20.909Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:46:20.909Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:52:50.905Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:52:50.903Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:52:50.906Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:52:50.903Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:52:50.906Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:52:50.923Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:52:50.923Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:52:50.923Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:52:50.924Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[debug] [2025-11-04T20:52:50.949Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 25.678541ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 25.678541ms"}}
+[debug] [2025-11-04T20:52:50.950Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:52:50.950Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:52:50.950Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:52:50.950Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:52:50.951Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:52:50.951Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:52:50.951Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:52:50.951Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:52:50.951Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:52:50.952Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:52:50.952Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:52:50.952Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:52:50.952Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374020 {"user":"🔍 Buscando usuario con teléfono: +525543374020","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374020"}}
+[debug] [2025-11-04T20:52:51.007Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 54.927083ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 54.927083ms"}}
+[debug] [2025-11-04T20:52:51.007Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:52:51.007Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:52:51.007Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:52:51.007Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] i  To verify the phone number +525543374020, use the code 238191. {"metadata":{"emulator":{"name":"auth"},"message":"To verify the phone number +525543374020, use the code 238191."}}
+[debug] [2025-11-04T20:53:05.828Z] Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:05.864Z] Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:05.874Z] Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:05.911Z] Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:05.935Z] Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:07.030Z] Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:07.065Z] Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:07.076Z] Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:07.087Z] Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:07.099Z] Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:13.432Z] Nov 04, 2025 1:53:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T20:53:13.436Z] Nov 04, 2025 1:53:13 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 1:53:13 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-11-04T20:53:22.292Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:53:22.292Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:53:22.292Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:53:22.292Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:53:22.292Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:53:22.295Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:53:22.296Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:53:22.296Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:53:22.296Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[debug] [2025-11-04T20:53:22.305Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 9.381666ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 9.381666ms"}}
+[debug] [2025-11-04T20:53:22.306Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:53:22.306Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:53:22.306Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:53:22.306Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:53:22.307Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:53:22.307Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:53:22.307Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T20:53:22.307Z"],"workRunningCount":1}
+[debug] [2025-11-04T20:53:22.307Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T20:53:22.308Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T20:53:22.308Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T20:53:22.308Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T20:53:22.308Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374021 {"user":"🔍 Buscando usuario con teléfono: +525543374021","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374021"}}
+[debug] [2025-11-04T20:53:22.351Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 43.426292ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 43.426292ms"}}
+[debug] [2025-11-04T20:53:22.351Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: IDLE"}}
+[debug] [2025-11-04T20:53:22.352Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T20:53:22.352Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T20:53:22.352Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T20:56:05.500Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T20:56:06.514Z] Validating nodejs source
+[debug] [2025-11-04T20:56:07.865Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T20:56:07.865Z] Building nodejs source
+[debug] [2025-11-04T20:56:07.865Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T20:56:07.872Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T20:56:07.873Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8785
+
+[debug] [2025-11-04T20:56:08.250Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T20:56:12.263Z] [worker-pool] Shutting down IDLE worker (us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-checkUserExists)"}}
+[debug] [2025-11-04T20:56:12.263Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: FINISHING"}}
+[debug] [2025-11-04T20:56:12.270Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: exited"}}
+[debug] [2025-11-04T20:56:12.270Z] [worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-1ba1b997-e03a-43dc-a4dc-f983712418c4]: FINISHED"}}
+[debug] [2025-11-04T20:56:12.405Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T20:56:13.407Z] Validating nodejs source
+[debug] [2025-11-04T20:56:14.100Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T20:56:14.101Z] Building nodejs source
+[debug] [2025-11-04T20:56:14.101Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T20:56:14.101Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T20:56:14.102Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8692
+
+[debug] [2025-11-04T20:56:14.433Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T20:58:09.481Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T20:58:10.484Z] Validating nodejs source
+[debug] [2025-11-04T20:58:11.570Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T20:58:11.570Z] Building nodejs source
+[debug] [2025-11-04T20:58:11.570Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T20:58:11.571Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T20:58:11.573Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8296
+
+[debug] [2025-11-04T20:58:11.925Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}

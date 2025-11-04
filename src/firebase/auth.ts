@@ -1,6 +1,5 @@
 import {
   confirmPasswordReset,
-  getAuth,
   onAuthStateChanged,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
@@ -10,11 +9,9 @@ import {
 
 import { getStorage } from 'firebase/storage'
 import { FirebaseCRUD } from './crud'
-import { app, db } from './main'
+import { app, auth, db } from './main'
 import catchError from '@/libs/catchError'
 
-export const auth = getAuth(app)
-auth.languageCode = 'es'
 export const storage = getStorage(app)
 
 // CREATE A MAIN INSTANCE FOR USERS

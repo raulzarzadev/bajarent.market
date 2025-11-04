@@ -27,9 +27,6 @@ export default function Login() {
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
             Bienvenido a BajaRent
           </h1>
-          <p className="text-gray-600 text-sm">
-            Ingresa tu número de teléfono para continuar
-          </p>
         </div>
 
         {/* Formulario */}
@@ -48,11 +45,17 @@ export default function Login() {
               Privacidad
             </a>
             <span>•</span>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a
+              href="#terminos"
+              className="hover:text-blue-600 transition-colors"
+            >
               Términos
             </a>
             <span>•</span>
-            <a href="#" className="hover:text-blue-600 transition-colors">
+            <a
+              href="#soporte"
+              className="hover:text-blue-600 transition-colors"
+            >
               Soporte
             </a>
           </div>
