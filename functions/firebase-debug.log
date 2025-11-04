@@ -585,3 +585,1366 @@ INFO: channel closed
 
 [debug] [2025-11-04T20:58:11.925Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
 [info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:04:38.309Z] Nov 04, 2025 2:04:38 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+Nov 04, 2025 2:04:38 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:04:38 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\nNov 04, 2025 2:04:38 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-11-04T21:04:39.534Z] Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:04:39.607Z] Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:04:39.623Z] Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:04:39.696Z] Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:04:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:04:49.541Z] Nov 04, 2025 2:04:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:04:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:04:59.563Z] Nov 04, 2025 2:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:04:59 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:09.602Z] Nov 04, 2025 2:05:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:19.631Z] Nov 04, 2025 2:05:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:29.656Z] Nov 04, 2025 2:05:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:39.673Z] Nov 04, 2025 2:05:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:39.728Z] Nov 04, 2025 2:05:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:49.690Z] Nov 04, 2025 2:05:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:52.568Z] Nov 04, 2025 2:05:52 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:52 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:05:52.568Z] Nov 04, 2025 2:05:52 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:05:52 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:06:39.770Z] Nov 04, 2025 2:06:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:06:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:07:39.799Z] Nov 04, 2025 2:07:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:07:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:08:39.826Z] Nov 04, 2025 2:08:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:08:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:09:39.856Z] Nov 04, 2025 2:09:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:09:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:10:39.877Z] Nov 04, 2025 2:10:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:10:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:11:39.931Z] Nov 04, 2025 2:11:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:11:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:12:39.963Z] Nov 04, 2025 2:12:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:12:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:13:39.986Z] Nov 04, 2025 2:13:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:13:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:14:40.024Z] Nov 04, 2025 2:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:15:15.217Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:15:16.223Z] Validating nodejs source
+[debug] [2025-11-04T21:15:17.398Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:15:17.398Z] Building nodejs source
+[debug] [2025-11-04T21:15:17.398Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:15:17.403Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:15:17.404Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:15:17.408Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8610
+
+[debug] [2025-11-04T21:15:17.780Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-11-04T21:15:18.405Z] Validating nodejs source
+[debug] [2025-11-04T21:15:18.973Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:15:18.973Z] Building nodejs source
+[debug] [2025-11-04T21:15:18.973Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:15:18.973Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:15:18.974Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8186
+
+[debug] [2025-11-04T21:15:19.148Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:15:34.525Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:15:35.529Z] Validating nodejs source
+[debug] [2025-11-04T21:15:36.360Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:15:36.361Z] Building nodejs source
+[debug] [2025-11-04T21:15:36.361Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:15:36.362Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:15:36.364Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8867
+
+[debug] [2025-11-04T21:15:36.718Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-11-04T21:15:40.054Z] Nov 04, 2025 2:15:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:15:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:15:53.132Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/createUser.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/createUser.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:15:54.136Z] Validating nodejs source
+[debug] [2025-11-04T21:15:55.126Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:15:55.126Z] Building nodejs source
+[debug] [2025-11-04T21:15:55.127Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:15:55.128Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:15:55.129Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8116
+
+[debug] [2025-11-04T21:15:55.531Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:16:23.223Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:16:24.225Z] Validating nodejs source
+[debug] [2025-11-04T21:16:25.017Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:16:25.017Z] Building nodejs source
+[debug] [2025-11-04T21:16:25.018Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:16:25.019Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:16:25.020Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8554
+
+[debug] [2025-11-04T21:16:25.324Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:16:31.934Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/utils/cleanPhone.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/utils/cleanPhone.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:16:32.936Z] Validating nodejs source
+[debug] [2025-11-04T21:16:33.666Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:16:33.667Z] Building nodejs source
+[debug] [2025-11-04T21:16:33.667Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:16:33.667Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:16:33.668Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8318
+
+[debug] [2025-11-04T21:16:33.964Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:16:40.100Z] Nov 04, 2025 2:16:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:16:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:17:09.710Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:17:10.713Z] Validating nodejs source
+[debug] [2025-11-04T21:17:11.506Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:17:11.506Z] Building nodejs source
+[debug] [2025-11-04T21:17:11.506Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:17:11.509Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:17:11.510Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8332
+
+[debug] [2025-11-04T21:17:11.863Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:17:23.446Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:17:24.447Z] Validating nodejs source
+[debug] [2025-11-04T21:17:25.273Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:17:25.273Z] Building nodejs source
+[debug] [2025-11-04T21:17:25.273Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:17:25.274Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:17:25.274Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8466
+
+[debug] [2025-11-04T21:17:25.437Z] Nov 04, 2025 2:17:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:17:25 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:17:25.610Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:17:55.685Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:17:56.689Z] Validating nodejs source
+[debug] [2025-11-04T21:17:57.455Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:17:57.455Z] Building nodejs source
+[debug] [2025-11-04T21:17:57.455Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:17:57.456Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:17:57.458Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8463
+
+[debug] [2025-11-04T21:17:57.787Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:18:04.864Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:05.867Z] Validating nodejs source
+[debug] [2025-11-04T21:18:06.574Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:06.574Z] Building nodejs source
+[debug] [2025-11-04T21:18:06.574Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:06.575Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:06.576Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8661
+
+[debug] [2025-11-04T21:18:06.893Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-11-04T21:18:08.491Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:09.493Z] Validating nodejs source
+[debug] [2025-11-04T21:18:10.055Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:10.055Z] Building nodejs source
+[debug] [2025-11-04T21:18:10.055Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:10.056Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:10.056Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8997
+
+[debug] [2025-11-04T21:18:10.237Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:18:15.638Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:16.640Z] Validating nodejs source
+[debug] [2025-11-04T21:18:17.257Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:17.257Z] Building nodejs source
+[debug] [2025-11-04T21:18:17.257Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:17.258Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:17.259Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8226
+
+[debug] [2025-11-04T21:18:17.442Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:18:22.070Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:23.072Z] Validating nodejs source
+[debug] [2025-11-04T21:18:23.675Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:23.675Z] Building nodejs source
+[debug] [2025-11-04T21:18:23.675Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:23.675Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:23.676Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8159
+
+[debug] [2025-11-04T21:18:23.882Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-11-04T21:18:23.983Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:24.984Z] Validating nodejs source
+[debug] [2025-11-04T21:18:25.561Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:25.561Z] Building nodejs source
+[debug] [2025-11-04T21:18:25.561Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:25.562Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:25.563Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8023
+
+[debug] [2025-11-04T21:18:25.834Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:18:32.755Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/checkIfUserExists.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:33.757Z] Validating nodejs source
+[debug] [2025-11-04T21:18:34.317Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:34.317Z] Building nodejs source
+[debug] [2025-11-04T21:18:34.317Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:34.318Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:34.319Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8191
+
+[debug] [2025-11-04T21:18:34.499Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:18:41.287Z] Nov 04, 2025 2:18:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:18:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:18:43.287Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:44.290Z] Validating nodejs source
+[debug] [2025-11-04T21:18:45.049Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:45.049Z] Building nodejs source
+[debug] [2025-11-04T21:18:45.049Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:45.052Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:45.052Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8747
+
+[debug] [2025-11-04T21:18:45.415Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:18:56.087Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:18:57.090Z] Validating nodejs source
+[debug] [2025-11-04T21:18:57.861Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:18:57.861Z] Building nodejs source
+[debug] [2025-11-04T21:18:57.861Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:18:57.866Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:18:57.867Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8911
+
+[debug] [2025-11-04T21:18:58.174Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:19:20.206Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/getUserPublicData.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/getUserPublicData.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:19:21.210Z] Validating nodejs source
+[debug] [2025-11-04T21:19:21.903Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:19:21.904Z] Building nodejs source
+[debug] [2025-11-04T21:19:21.904Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:19:21.905Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:19:21.906Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8835
+
+[debug] [2025-11-04T21:19:22.206Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:19:29.598Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:19:30.604Z] Validating nodejs source
+[debug] [2025-11-04T21:19:31.411Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:19:31.411Z] Building nodejs source
+[debug] [2025-11-04T21:19:31.411Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:19:31.413Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:19:31.414Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8589
+
+[debug] [2025-11-04T21:19:31.742Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-11-04T21:19:35.088Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/index.ts changed, reloading triggers"}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:19:36.100Z] Validating nodejs source
+[debug] [2025-11-04T21:19:36.808Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:19:36.808Z] Building nodejs source
+[debug] [2025-11-04T21:19:36.808Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:19:36.809Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:19:36.810Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8678
+
+[debug] [2025-11-04T21:19:37.067Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:19:41.320Z] Nov 04, 2025 2:19:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:19:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:20:02.713Z] File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/createUser.ts changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/src/createUser.ts changed, reloading triggers"}}
+[debug] [2025-11-04T21:20:03.716Z] Validating nodejs source
+[debug] [2025-11-04T21:20:04.396Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions,firestore,auth",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "22"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^12.6.0",
+    "firebase-functions": "^6.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "firebase-functions-test": "^3.1.0"
+  },
+  "private": true
+}
+[debug] [2025-11-04T21:20:04.396Z] Building nodejs source
+[debug] [2025-11-04T21:20:04.396Z] Failed to find version of module node: reached end of search path /Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules
+[info] ✔  functions: Using node@22 from host. 
+[debug] [2025-11-04T21:20:04.397Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-11-04T21:20:04.398Z] Found firebase-functions binary at '/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/.bin/firebase-functions'
+[info] Serving at port 8331
+
+[debug] [2025-11-04T21:20:04.701Z] Got response from /__/functions.yaml {"endpoints":{"checkUserExists":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"checkUserExists"},"getUserPublicData":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"callableTrigger":{},"entryPoint":"getUserPublicData"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: checkUserExists, getUserPublicData. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: checkUserExists, getUserPublicData."}}
+[debug] [2025-11-04T21:20:41.368Z] Nov 04, 2025 2:20:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:20:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:21:29.693Z] Nov 04, 2025 2:21:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Nov 04, 2025 2:21:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Nov 04, 2025 2:21:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:21:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nNov 04, 2025 2:21:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nNov 04, 2025 2:21:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:21:41.402Z] Nov 04, 2025 2:21:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:21:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:22:41.449Z] Nov 04, 2025 2:22:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:22:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:23:57.284Z] Nov 04, 2025 2:23:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:23:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:24:57.194Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T21:24:57.194Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T21:24:57.195Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T21:24:57.194Z"],"workRunningCount":1}
+[debug] [2025-11-04T21:24:57.195Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T21:24:57.227Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T21:24:57.229Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T21:24:57.230Z] [worker-pool] Cleaned up workers for us-central1-checkUserExists: 1 --> 0 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Cleaned up workers for us-central1-checkUserExists: 1 --> 0"}}
+[debug] [2025-11-04T21:24:57.243Z] [worker-pool] addWorker(us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-checkUserExists)"}}
+[debug] [2025-11-04T21:24:57.245Z] [worker-pool] Adding worker with key us-central1-checkUserExists, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-checkUserExists, total=1"}}
+[debug] [2025-11-04T21:24:57.311Z] Nov 04, 2025 2:24:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:24:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:24:57.942Z] [runtime-status] [10779] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-11-04T21:24:57.943Z] [runtime-status] [10779] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T21:24:57.943Z] [runtime-status] [10779] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2025-11-04T21:24:57.943Z] [runtime-status] [10779] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T21:24:58.153Z] [runtime-status] [10779] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Checked functions.config() {\"config\":{}}"}}
+[debug] [2025-11-04T21:24:58.153Z] [runtime-status] [10779] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}}"}}
+[debug] [2025-11-04T21:24:58.153Z] [runtime-status] [10779] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T21:24:58.155Z] [runtime-status] [10779] Resolved module firebase-admin {"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2025-11-04T21:24:58.157Z] [runtime-status] [10779] Resolved module firebase-functions {"declared":true,"installed":true,"version":"6.6.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"6.6.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-functions/lib/v2/index.js\"}"}}
+[debug] [2025-11-04T21:24:58.157Z] [runtime-status] [10779] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"12.7.0","resolution":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"12.7.0\",\"resolution\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2025-11-04T21:24:58.162Z] [runtime-status] [10779] Functions runtime initialized. {"cwd":"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions","node_version":"22.18.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Functions runtime initialized. {\"cwd\":\"/Users/zarza/Documents/projects/BAJA-RENT/bajarent.market/functions\",\"node_version\":\"22.18.0\"}"}}
+[debug] [2025-11-04T21:24:58.163Z] [runtime-status] [10779] Listening to port: /var/folders/g1/71x7ytjx3c7dzmjrq419_d800000gn/T/fire_emu_442d0ddccf572a90.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[runtime-status] [10779] Listening to port: /var/folders/g1/71x7ytjx3c7dzmjrq419_d800000gn/T/fire_emu_442d0ddccf572a90.sock"}}
+[debug] [2025-11-04T21:24:58.266Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE"}}
+[debug] [2025-11-04T21:24:58.266Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T21:24:58.266Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY"}}
+[debug] [2025-11-04T21:24:58.269Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 2.67675ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 2.67675ms"}}
+[debug] [2025-11-04T21:24:58.269Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE"}}
+[debug] [2025-11-04T21:24:58.269Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T21:24:58.269Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T21:24:58.269Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T21:24:58.270Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T21:24:58.270Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T21:24:58.270Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T21:24:58.270Z"],"workRunningCount":1}
+[debug] [2025-11-04T21:24:58.270Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T21:24:58.270Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T21:24:58.270Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T21:24:58.270Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T21:24:58.271Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374021 {"user":"🔍 Buscando usuario con teléfono: +525543374021","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374021"}}
+[debug] [2025-11-04T21:24:58.474Z] Nov 04, 2025 2:24:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:24:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:24:58.495Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 224.809084ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 224.809084ms"}}
+[debug] [2025-11-04T21:24:58.496Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE"}}
+[debug] [2025-11-04T21:24:58.496Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T21:24:58.496Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T21:24:58.496Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T21:25:07.950Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/createUser-2025-11-04T21:25:07.950Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T21:25:07.951Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/createUser-2025-11-04T21:25:07.950Z"],"workRunningCount":1}
+[debug] [2025-11-04T21:25:07.953Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[info] i  To verify the phone number +525543374021, use the code 762032. {"metadata":{"emulator":{"name":"auth"},"message":"To verify the phone number +525543374021, use the code 762032."}}
+[debug] [2025-11-04T21:25:34.161Z] >>> [apiv2][query] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast [none]
+[debug] [2025-11-04T21:25:34.162Z] >>> [apiv2][body] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast {"eventId":"91d47608-e26d-4213-aa77-a27488537d74","eventType":"providers/firebase.auth/eventTypes/user.create","resource":{"name":"projects/bajarent-app","service":"firebaseauth.googleapis.com"},"params":{},"timestamp":"2025-11-04T21:25:34.160Z","data":{"uid":"xyPDUcjUqAwX1vnlOGEiBoyYuF46","phoneNumber":"+525543374021","metadata":{"creationTime":"2025-11-04T21:25:34.158Z","lastSignInTime":"2025-11-04T21:25:34.158Z"},"customClaims":{},"providerData":[{"rawId":"+525543374021","providerId":"phone","phoneNumber":"+525543374021"}]}}
+[debug] [2025-11-04T21:25:34.172Z] <<< [apiv2][status] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast 200
+[debug] [2025-11-04T21:25:34.172Z] <<< [apiv2][body] POST http://127.0.0.1:5001/functions/projects/bajarent-app/trigger_multicast {"status":"multicast_acknowledged"}
+[debug] [2025-11-04T21:25:34.208Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.253Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.305Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.306Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.355Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.395Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.450Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.468Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.520Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:34.545Z] Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:36.012Z] Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:36.027Z] Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:36.042Z] Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:36.056Z] Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:36.076Z] Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:39.831Z] Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nNov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nNov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:39.843Z] Nov 04, 2025 2:25:39 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-11-04T21:25:39.844Z] Nov 04, 2025 2:25:39 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-11-04T21:25:39.857Z] Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:39.859Z] Nov 04, 2025 2:25:39 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-11-04T21:25:39.868Z] Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:39.878Z] Nov 04, 2025 2:25:39 PM io.netty.channel.DefaultChannelPipeline onUnhandledInboundException
+WARNING: An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)
+	at java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM io.netty.channel.DefaultChannelPipeline onUnhandledInboundException\nWARNING: An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.\njava.net.SocketException: Connection reset\n\tat java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:403)\n\tat java.base/sun.nio.ch.SocketChannelImpl.implRead(SocketChannelImpl.java:435)\n\tat java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:493)\n\tat io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:255)\n\tat io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)\n\tat io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:356)\n\tat io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)\n\tat io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)\n\tat io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)\n\tat io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994)\n\tat io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)\n\tat io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)\n\tat java.base/java.lang.Thread.run(Thread.java:1570)\n\n"}}
+[debug] [2025-11-04T21:25:39.882Z] Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:39.890Z] Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:42.503Z] Nov 04, 2025 2:25:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:42.504Z] Nov 04, 2025 2:25:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:48.445Z] Nov 04, 2025 2:25:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:25:58.440Z] Nov 04, 2025 2:25:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:25:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:08.455Z] Nov 04, 2025 2:26:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:18.477Z] Nov 04, 2025 2:26:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:19.934Z] Nov 04, 2025 2:26:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:28.494Z] Nov 04, 2025 2:26:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:36.100Z] Nov 04, 2025 2:26:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:36.278Z] Nov 04, 2025 2:26:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:36.286Z] Nov 04, 2025 2:26:36 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:36 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-11-04T21:26:38.512Z] Nov 04, 2025 2:26:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:42.521Z] Nov 04, 2025 2:26:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:48.523Z] Nov 04, 2025 2:26:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:26:58.537Z] Nov 04, 2025 2:26:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:26:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:27:08.552Z] Nov 04, 2025 2:27:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:27:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:27:18.563Z] Nov 04, 2025 2:27:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:27:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:27:28.580Z] Nov 04, 2025 2:27:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:27:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:27:38.607Z] Nov 04, 2025 2:27:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:27:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:27:42.540Z] Nov 04, 2025 2:27:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:27:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:27:48.626Z] Nov 04, 2025 2:27:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:27:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:27:58.636Z] Nov 04, 2025 2:27:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:27:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:08.648Z] Nov 04, 2025 2:28:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:18.661Z] Nov 04, 2025 2:28:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:28.678Z] Nov 04, 2025 2:28:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:38.693Z] Nov 04, 2025 2:28:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:42.550Z] Nov 04, 2025 2:28:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:48.718Z] Nov 04, 2025 2:28:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:50.190Z] Nov 04, 2025 2:28:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:28:58.731Z] Nov 04, 2025 2:28:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:28:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:29:00.203Z] Nov 04, 2025 2:29:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:29:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:29:08.746Z] Nov 04, 2025 2:29:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:29:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:29:10.217Z] Nov 04, 2025 2:29:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:29:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:29:18.760Z] Nov 04, 2025 2:29:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:29:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:29:20.227Z] Nov 04, 2025 2:29:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:29:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:29:42.568Z] Nov 04, 2025 2:29:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:29:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:30:28.276Z] Nov 04, 2025 2:30:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:30:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:31:28.297Z] Nov 04, 2025 2:31:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:31:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:32:28.351Z] Nov 04, 2025 2:32:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:32:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:33:28.389Z] Nov 04, 2025 2:33:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:33:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:34:28.505Z] Nov 04, 2025 2:34:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:34:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:35:28.543Z] Nov 04, 2025 2:35:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:35:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:36:44.373Z] Nov 04, 2025 2:36:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:36:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:37:44.442Z] Nov 04, 2025 2:37:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:37:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:38:44.501Z] Nov 04, 2025 2:38:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:38:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:39:44.559Z] Nov 04, 2025 2:39:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:39:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:40:44.620Z] Nov 04, 2025 2:40:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:40:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:41:44.707Z] Nov 04, 2025 2:41:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:41:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:42:44.766Z] Nov 04, 2025 2:42:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:42:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:43:44.802Z] Nov 04, 2025 2:43:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:43:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:45:00.404Z] Nov 04, 2025 2:45:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:45:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:46:00.456Z] Nov 04, 2025 2:46:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:46:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:47:00.486Z] Nov 04, 2025 2:47:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:47:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:48:00.531Z] Nov 04, 2025 2:48:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:48:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:49:00.622Z] Nov 04, 2025 2:49:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:49:00 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:49:46.437Z] Nov 04, 2025 2:49:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:49:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:50:46.504Z] Nov 04, 2025 2:50:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:50:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:51:46.561Z] Nov 04, 2025 2:51:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:51:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:52:46.615Z] Nov 04, 2025 2:52:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:52:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:53:46.688Z] Nov 04, 2025 2:53:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:53:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:54:46.714Z] Nov 04, 2025 2:54:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:54:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:55:46.762Z] Nov 04, 2025 2:55:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:55:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:56:46.833Z] Nov 04, 2025 2:56:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:56:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:57:46.884Z] Nov 04, 2025 2:57:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:57:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:58:46.953Z] Nov 04, 2025 2:58:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:58:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T21:59:47.001Z] Nov 04, 2025 2:59:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 2:59:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:00:47.065Z] Nov 04, 2025 3:00:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:00:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:01:47.123Z] Nov 04, 2025 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:01:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:02:47.191Z] Nov 04, 2025 3:02:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:02:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:03:47.245Z] Nov 04, 2025 3:03:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:03:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:04:47.297Z] Nov 04, 2025 3:04:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:04:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:05:47.350Z] Nov 04, 2025 3:05:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:05:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:06:47.389Z] Nov 04, 2025 3:06:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:06:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:07:47.433Z] Nov 04, 2025 3:07:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:07:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:08:47.497Z] Nov 04, 2025 3:08:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:08:47 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:10:03.362Z] Nov 04, 2025 3:10:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:10:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:11:03.401Z] Nov 04, 2025 3:11:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:11:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:12:03.452Z] Nov 04, 2025 3:12:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:12:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:13:03.494Z] Nov 04, 2025 3:13:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:13:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:14:03.530Z] Nov 04, 2025 3:14:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:14:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:15:03.570Z] Nov 04, 2025 3:15:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:15:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:16:03.626Z] Nov 04, 2025 3:16:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:16:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:17:03.663Z] Nov 04, 2025 3:17:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:17:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:18:03.698Z] Nov 04, 2025 3:18:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:18:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:19:03.740Z] Nov 04, 2025 3:19:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:19:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:02.460Z] Nov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Nov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+Nov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nNov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nNov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:02.475Z] Nov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:04.513Z] Nov 04, 2025 3:20:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:29.009Z] Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:29.047Z] Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:29.059Z] Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:29.075Z] Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:29.174Z] Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:33.765Z] Nov 04, 2025 3:20:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:33.783Z] Nov 04, 2025 3:20:33 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:33 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2025-11-04T22:20:41.514Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T22:20:41.514Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T22:20:41.514Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T22:20:41.514Z"],"workRunningCount":1}
+[debug] [2025-11-04T22:20:41.514Z] Accepted request OPTIONS /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T22:20:41.529Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T22:20:41.529Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T22:20:41.529Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T22:20:41.530Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY"}}
+[debug] [2025-11-04T22:20:41.539Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 9.029208ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 9.029208ms"}}
+[debug] [2025-11-04T22:20:41.540Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE"}}
+[debug] [2025-11-04T22:20:41.540Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T22:20:41.540Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T22:20:41.540Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T22:20:41.540Z] [work-queue] {"queuedWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T22:20:41.540Z"],"queueLength":1,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T22:20:41.540Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":["/bajarent-app/us-central1/checkUserExists-2025-11-04T22:20:41.540Z"],"workRunningCount":1}
+[debug] [2025-11-04T22:20:41.540Z] Accepted request POST /bajarent-app/us-central1/checkUserExists --> us-central1-checkUserExists
+[debug] [2025-11-04T22:20:41.541Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2025-11-04T22:20:41.541Z] [functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/ {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/bajarent-app/us-central1/checkUserExists, mapping to path=/"}}
+[debug] [2025-11-04T22:20:41.541Z] [worker-pool] submitRequest(triggerId=us-central1-checkUserExists) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitRequest(triggerId=us-central1-checkUserExists)"}}
+[info] i  functions: Beginning execution of "us-central1-checkUserExists" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Beginning execution of \"us-central1-checkUserExists\""}}
+[debug] [2025-11-04T22:20:41.542Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: BUSY"}}
+[info] >  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"} {"user":{"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"},"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m {\"verifications\":{\"app\":\"MISSING\",\"auth\":\"MISSING\"},\"logging.googleapis.com/labels\":{\"firebase-log-type\":\"callable-request-verification\"},\"severity\":\"DEBUG\",\"message\":\"Callable request verification passed\"}"}}
+[info] >  🔍 Buscando usuario con teléfono: +525543374016 {"user":"🔍 Buscando usuario con teléfono: +525543374016","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"\u001b[90m> \u001b[39m 🔍 Buscando usuario con teléfono: +525543374016"}}
+[debug] [2025-11-04T22:20:41.562Z] Nov 04, 2025 3:20:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:20:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:20:41.589Z] Finishing up request with event=pause {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=pause"}}
+[info] i  functions: Finished "us-central1-checkUserExists" in 47.984333ms {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finished \"us-central1-checkUserExists\" in 47.984333ms"}}
+[debug] [2025-11-04T22:20:41.590Z] [worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"[worker-us-central1-checkUserExists-374ab71c-70ae-4e8b-b97e-fbe2c172771a]: IDLE"}}
+[debug] [2025-11-04T22:20:41.590Z] Finishing up request with event=finish {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=finish"}}
+[debug] [2025-11-04T22:20:41.590Z] Finishing up request with event=close {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-checkUserExists"},"extension":{},"message":"Finishing up request with event=close"}}
+[debug] [2025-11-04T22:20:41.590Z] [work-queue] {"queuedWork":[],"queueLength":0,"runningWork":[],"workRunningCount":0}
+[debug] [2025-11-04T22:21:04.596Z] Nov 04, 2025 3:21:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:21:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:22:04.646Z] Nov 04, 2025 3:22:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:22:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:23:04.678Z] Nov 04, 2025 3:23:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:23:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:24:04.711Z] Nov 04, 2025 3:24:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:24:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:25:02.398Z] Nov 04, 2025 3:25:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed
+INFO: Websocket client disconnected
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:25:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler channelClosed\nINFO: Websocket client disconnected\n"}}
+[debug] [2025-11-04T22:25:02.399Z] Nov 04, 2025 3:25:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:25:02 PM com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2025-11-04T22:25:04.734Z] Nov 04, 2025 3:25:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:25:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2025-11-04T22:26:04.768Z] Nov 04, 2025 3:26:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Nov 04, 2025 3:26:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
