@@ -60,6 +60,7 @@ export async function sendSignInPhone({
     // @ts-expect-error
     const appVerifier = window.recaptchaVerifier
     // console.log({ appVerifier })
+
     const [error, data] = await catchError(
       signInWithPhoneNumber(auth, phone, appVerifier)
     )
@@ -72,6 +73,7 @@ export async function sendSignInPhone({
     // @ts-expect-error
     window.confirmationResult = data
     console.log({ confirmationResult: data })
+
     return Promise.resolve(data)
     // return signInWithPhoneNumber(auth, phone, appVerifier)
     //   .then((confirmationResult) => {
@@ -144,7 +146,6 @@ export async function authStateChanged(cb: CallableFunction) {
       const newUser = {
         name: user.displayName || '',
         email: user.email || '',
-        // rol: 'CLIENT',
         image: user.photoURL || '',
         phone: user.phoneNumber || '',
         canCreateStore: true
@@ -157,4 +158,8 @@ export async function authStateChanged(cb: CallableFunction) {
       cb(null)
     }
   })
+}
+
+export const createUser = async (userId: string, userData: any) => {
+  return await usersCRUD.setItem(userId, userData)
 }

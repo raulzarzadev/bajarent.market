@@ -4,7 +4,7 @@ import { Formik } from 'formik'
 import { useEffect, useState } from 'react'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { useAuth } from '@/context/authContext'
-import { onSendCode, sendSignInPhone } from '@/firebase/auth'
+import { createUser, onSendCode, sendSignInPhone } from '@/firebase/auth'
 import Button from './Button'
 import FormCode from './FormCode'
 import FormikInputPhone from './FormikInputPhone'
@@ -69,26 +69,13 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
 
     // Llamar a la función
     const [error, result] = await catchError(checkUserExistsFunction({ phone }))
-
     if (error) {
       console.error('❌ Error en Cloud Function:', error)
       return {
         exists: false
       }
     }
-    const data = result?.data
-    const userExists = data?.exists || false
-    const userName = data?.name
-    if (userExists) {
-      return {
-        exists: userExists,
-        name: userName
-      }
-    }
-
-    return {
-      exists: false
-    }
+    return result.data
   }
 
   // Función para manejar la verificación inicial del teléfono
@@ -146,13 +133,18 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
     }
   }
 
-  const handlePhoneSubmit = async (values: { name: string; phone: string }) => {
+  const handleCreateUserAndSendCode = async (values: {
+    name: string
+    phone: string
+  }) => {
     setIsLoading(true)
     setError(null)
     setSuccess(null)
 
     try {
-      await sendSignInPhone({ phone: values.phone, name: values.name })
+      const res = await sendSignInPhone({ phone: values.phone })
+
+      console.log({ res })
       setSuccess(`Código enviado a ${values.phone}`)
 
       setTimeout(() => {
@@ -289,7 +281,10 @@ const FormSignIn = ({ name, phone }: { name: string; phone: string }) => {
               // Combinamos nombre y apellido para mantener compatibilidad
               const fullName =
                 `${values.firstName.trim()} ${values.lastName.trim()}`.trim()
-              handlePhoneSubmit({ name: fullName, phone: values.phone })
+              handleCreateUserAndSendCode({
+                name: fullName,
+                phone: values.phone
+              })
             }}
           >
             {({ values, handleSubmit }) => (
