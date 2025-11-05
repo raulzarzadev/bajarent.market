@@ -36,7 +36,7 @@ const MenuProfile = () => {
             label: 'Salir',
             href: '/logout',
             visible: !!user,
-            icon: 'profile',
+            icon: 'logout',
             onClick: () => {
               logout()
             }

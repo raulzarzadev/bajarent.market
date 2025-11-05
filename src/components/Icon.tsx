@@ -31,7 +31,8 @@ import {
   MdOutlineStorefront,
   MdSave,
   MdSettings,
-  MdEmail
+  MdEmail,
+  MdLogout
 } from 'react-icons/md'
 import { PiUserList } from 'react-icons/pi'
 import { TbMapSearch } from 'react-icons/tb'
@@ -105,7 +106,8 @@ const icons = {
   rowLeft: MdChevronLeft,
   rowRight: MdChevronRight,
   settings: MdSettings,
-  download: MdDownload
+  download: MdDownload,
+  logout: MdLogout
 } as const
 
 export type IconName = keyof typeof icons
