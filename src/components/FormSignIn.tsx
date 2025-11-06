@@ -87,7 +87,6 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
     try {
       // Primero verificamos si el usuario existe
       const result = await checkUserExists(values.phone)
-      console.log({ result })
       const { exists: userExists, name: userName } = result
 
       if (userExists) {
@@ -185,7 +184,10 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
     }
   }
 
+  const [submittingCode, setSubmittingCode] = useState(false)
+
   const handleCodeSubmit = (code: string | null) => {
+    setSubmittingCode(true)
     setError(null)
     setSuccess(null)
 
@@ -202,6 +204,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
       } catch (err: any) {
         console.error('Error verifying code:', err)
         setError('Código incorrecto. Verifica e inténtalo de nuevo.')
+      } finally {
       }
     } else {
       setCurrentFlow('phone-check')
@@ -372,11 +375,12 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
             </p>
           </div>
 
-          <FormCode onSubmit={handleCodeSubmit} />
+          <FormCode onSubmit={handleCodeSubmit} disabled={submittingCode} />
 
           <div className="text-center mt-6">
             <button
               type="button"
+              disabled={submittingCode}
               onClick={() => {
                 setCurrentFlow('phone-check')
                 setError(null)
