@@ -65,7 +65,7 @@ export const createUser = onCall(
       }
 
       throw new HttpsError('internal', 'Error interno del servidor', {
-        originalError: error.message
+        originalError: error instanceof Error ? error.message : 'Unknown error'
       })
     }
   }

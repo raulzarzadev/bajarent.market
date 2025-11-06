@@ -22,7 +22,7 @@ const MenuProfile = () => {
           },
           {
             label: 'Mis ordenes',
-            href: '/my-rents',
+            href: '/orders',
             visible: !!user,
             icon: 'list'
           },

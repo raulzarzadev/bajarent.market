@@ -1,30 +1,31 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from '@/components/Navbar'
-import { AuthProvider } from '@/context/authContext'
+import Providers from './providers'
+import './globals.css'
 
 export const metadata: Metadata = {
   title: 'bajarent',
   description:
     'Renta lo que sea. Renta de herramientas y equipo en línea. Lavadoras, Bicicletas, Herramientas, Motos, Autos, y más.',
-  icons: [{ rel: 'icon', url: '/favicon.ico' }],
+  icons: [{ rel: 'icon', url: '/favicon.ico' }]
 }
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
     <html lang="en">
-      <body className={'inter.className'}>
-        <Analytics />
-        <AuthProvider>
+      <Providers>
+        <body className={'inter.className'}>
+          <Analytics />
           <Navbar />
+
           <main className="container mx-auto">{children}</main>
-        </AuthProvider>
-      </body>
+        </body>
+      </Providers>
     </html>
   )
 }

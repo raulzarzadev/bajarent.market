@@ -1,14 +1,14 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { useAuth } from '@/context/authContext'
+import { useOrders } from '@/context/ordersContext'
 import PrivatePage from '@/hocs/PrivatePage'
 import dictionary from '@/libs/dictionary'
 import { dateFormat } from '@/libs/utils-date'
 import SpanPrice from './SpanPrice'
 
 const MyRents = () => {
-  const { userRents } = useAuth()
+  const { userRents } = useOrders()
   const router = useRouter()
   return (
     <div>
