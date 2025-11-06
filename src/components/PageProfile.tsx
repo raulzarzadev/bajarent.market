@@ -10,6 +10,7 @@ import FormikInputPhone from './FormikInputPhone'
 import ModalUpdateProfile from './ModalUpdateProfile'
 import { Formik } from 'formik'
 import { usersCRUD } from '@/firebase/auth'
+import Avatar from './Avatar'
 
 const PageProfile = () => {
   const { user, refreshUser } = useAuth()
@@ -111,15 +112,6 @@ const PageProfile = () => {
     }
   }
 
-  const getInitials = (name: string) => {
-    return name
-      .split(' ')
-      .map((word) => word.charAt(0))
-      .join('')
-      .toUpperCase()
-      .slice(0, 2)
-  }
-
   const getFullName = (user: any) => {
     if (!user) return 'Usuario'
     const firstName = user.firstName || ''
@@ -141,7 +133,7 @@ const PageProfile = () => {
         {/* Header */}
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           {/* Cover */}
-          <div className="h-32 bg-gradient-to-r from-blue-500 to-purple-600"></div>
+          <div className="h-32 bg-linear-to-r from-blue-100 to-purple-300"></div>
 
           {/* Profile Content */}
           <div className="px-6 pb-6">
@@ -149,19 +141,7 @@ const PageProfile = () => {
             <div className="flex items-start justify-between -mt-16 mb-6">
               <div className="flex items-end space-x-4">
                 {/* Avatar */}
-                <div className="w-24 h-24 bg-white rounded-full border-4 border-white shadow-lg flex items-center justify-center">
-                  {user.image ? (
-                    <img
-                      src={user.image}
-                      alt={getFullName(user)}
-                      className="w-full h-full rounded-full object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full rounded-full bg-blue-500 flex items-center justify-center text-white text-xl font-semibold">
-                      {getInitials(getFullName(user))}
-                    </div>
-                  )}
-                </div>
+                <Avatar src={user.image} label={getFullName(user)} size="lg" />
 
                 {/* Name & Status */}
                 <div className="mt-4">
