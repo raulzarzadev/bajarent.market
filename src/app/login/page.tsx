@@ -25,7 +25,7 @@ export default function Login() {
             />
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Bienvenido a BajaRent
+            Bienvenido a BajaRentApp
           </h1>
         </div>
 
