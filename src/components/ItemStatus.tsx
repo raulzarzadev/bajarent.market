@@ -1,11 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-import { useAuth } from '@/context/authContext'
 import type ItemType from '@/types/ItemType'
+import { useOrders } from '@/context/ordersContext'
 
 const ItemStatus = ({ item }: { item: ItemType }) => {
-  const { userRents } = useAuth()
+  const { userRents } = useOrders()
   const rentExist = userRents?.find((rent) => rent.categoryId === item.id)
   return (
     <div>

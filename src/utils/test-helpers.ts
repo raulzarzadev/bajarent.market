@@ -8,7 +8,6 @@ export const setupTestEnvironment = () => {
   // Deshabilitar verificación de app para pruebas
   // @ts-expect-error - Firebase testing API
   auth.settings = auth.settings || {}
-  // @ts-expect-error - Firebase testing API
   auth.settings.appVerificationDisabledForTesting = true
 
   return auth
@@ -33,9 +32,7 @@ export const createMockRecaptcha = () => {
 // Limpiar el entorno de pruebas
 export const cleanupTestEnvironment = () => {
   if (typeof window !== 'undefined') {
-    // @ts-expect-error
     window.recaptchaVerifier = undefined
-    // @ts-expect-error
     window.confirmationResult = undefined
   }
 }

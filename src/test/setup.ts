@@ -1,6 +1,14 @@
 import '@testing-library/jest-dom'
 import { afterEach, beforeEach, vi } from 'vitest'
 
+// Extend Window interface for custom properties
+declare global {
+  interface Window {
+    recaptchaVerifier?: any
+    confirmationResult?: any
+  }
+}
+
 // Mock Firebase Auth
 vi.mock('firebase/auth', async () => {
   const actual = await vi.importActual('firebase/auth')

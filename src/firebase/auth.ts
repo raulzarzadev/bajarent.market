@@ -21,12 +21,21 @@ export const passwordReset = async (email: string) => {
   return await sendPasswordResetEmail(auth, email)
 }
 
-export const confirmThePasswordReset = async (oobCode: string, newPassword: string) => {
+export const confirmThePasswordReset = async (
+  oobCode: string,
+  newPassword: string
+) => {
   if (!oobCode && !newPassword) return
   return await confirmPasswordReset(auth, oobCode, newPassword)
 }
 
-export async function signInWithPassword({ email, password }: { email: string; password: string }) {
+export async function signInWithPassword({
+  email,
+  password
+}: {
+  email: string
+  password: string
+}) {
   return signInWithEmailAndPassword(auth, email, password)
 }
 
@@ -45,47 +54,24 @@ export async function sendSignInPhone({
   phone: string
   //appVerifier: any
 }) {
-  // @ts-expect-error
   if (window?.recaptchaVerifier) {
     console.log('recaptchaVerifier exists')
-    // @ts-expect-error
     const appVerifier = window.recaptchaVerifier
     // console.log({ appVerifier })
 
-    const [error, data] = await catchError(signInWithPhoneNumber(auth, phone, appVerifier))
+    const [error, data] = await catchError(
+      signInWithPhoneNumber(auth, phone, appVerifier)
+    )
     if (error) {
       console.error({ error })
       return Promise.reject(error)
     }
     // SMS sent. Prompt user to type the code from the message, then sign the
     // user in with confirmationResult.confirm(code).
-    // @ts-expect-error
     window.confirmationResult = data
     console.log({ confirmationResult: data })
 
     return Promise.resolve(data)
-    // return signInWithPhoneNumber(auth, phone, appVerifier)
-    //   .then((confirmationResult) => {
-    //     // SMS sent. Prompt user to type the code from the message, then sign the
-    //     // user in with confirmationResult.confirm(code).
-    //     // @ts-expect-error
-    //     window.confirmationResult = confirmationResult
-    //     // setMsmSent(true)
-    //     console.log({ confirmationResult })
-
-    //     // * ... redirect to ConfirmCode
-    //   })
-    //   .catch((error) => {
-    //     console.error({ error })
-    //     // Error; SMS not sent
-    //     // ...
-    //     // setError(
-    //     //   `¡Ups! Algo no salio bien. Codigo:  ${fbErrorToCode(error).code}`
-    //     // )
-    //   })
-    //   .finally(() => {
-    //     // setSending(false)
-    //   })
   } else {
     console.log('recaptchaVerifier does not exist')
     return
@@ -99,10 +85,8 @@ export const onSendCode = ({
   code: string
   //confirmationResult: any
 }) => {
-  // @ts-expect-error
   if (window?.confirmationResult) {
     console.log('window.confirmationResult exists')
-    // @ts-expect-error
     window.confirmationResult
       .confirm(code)
       .then((result: any) => {
@@ -113,11 +97,6 @@ export const onSendCode = ({
       })
       .catch((error: any) => {
         console.error({ error })
-        // setError(
-        //   `¡Ups! Algo no salio bien. Codigo:  ${fbErrorToCode(error).code}`
-        // )
-        // User couldn't sign in (bad verification code?)
-        // ...
       })
       .finally(() => {
         // setSending(false)

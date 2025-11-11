@@ -9,13 +9,8 @@ const nextConfig = {
       }
     ]
   },
-  webpack: (config) => {
-    // Excluir `undici` del transpilado
-    config.externals = config.externals || []
-    config.externals.push('undici')
-
-    return config
-  },
+  // Configuración para Turbopack (Next.js 16+)
+  turbopack: {},
   async headers() {
     return [
       {

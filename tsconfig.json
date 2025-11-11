@@ -24,12 +24,15 @@
   },
   "include": [
     "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/rent-now/[...shop]",
-    "src/components/Icons",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next/**/*", "functions/**/*"]
+  "exclude": [
+    "node_modules",
+    ".next/**/*",
+    "functions/**/*",
+    "vitest.config.ts"
+  ]
 }
