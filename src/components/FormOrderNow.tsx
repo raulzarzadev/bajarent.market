@@ -8,7 +8,10 @@ import { isValidPhoneNumber } from 'react-phone-number-input'
 import type { Shop } from '@/app/[shop]/page'
 import type { CustomerType } from '@/app/api/custmers/types'
 import { useAuth } from '@/context/authContext'
-import { getFavoriteCustomerPhone, writeMessage } from '@/features/Customers/lib'
+import {
+  getFavoriteCustomerPhone,
+  writeMessage
+} from '@/features/Customers/lib'
 import { ServiceCustomers } from '@/firebase/ServiceCustomers'
 import type OrderType from '@/types/OrderType'
 import { order_status, order_type } from '@/types/OrderType'
@@ -23,6 +26,7 @@ import FormSignIn from './FormSignIn'
 import type { Item } from './ItemLabel'
 import ItemPrices from './ItemPrices'
 import Modal from './Modal'
+import { useOrders } from '@/context/ordersContext'
 
 export type OrderNowProps = Pick<
   OrderType,
@@ -49,11 +53,15 @@ export default function FormOrderNow({
   const [orderCreated, setOrderCreated] = useState<OrderType | null>(null)
   const [customer, setCustomer] = useState<Partial<CustomerType> | null>()
 
-  const { user, fetchOrders } = useAuth()
+  const { user } = useAuth()
+  const { fetchOrders } = useOrders()
 
   useEffect(() => {
     if (user?.id && shop?.id) {
-      ServiceCustomers.findOne([where('userId', '==', user?.id), where('storeId', '==', shop?.id)])
+      ServiceCustomers.findOne([
+        where('userId', '==', user?.id),
+        where('storeId', '==', shop?.id)
+      ])
         .then((res) => {
           setCustomer(res)
         })
@@ -65,7 +73,8 @@ export default function FormOrderNow({
     }
   }, [shop?.id, user?.id])
 
-  if (user === undefined && customer === undefined) return <div>Espere un momento</div>
+  if (user === undefined && customer === undefined)
+    return <div>Espere un momento</div>
 
   type InitialValues = OrderNowProps & { isInLaPaz?: boolean }
   const initialValues: InitialValues = {
@@ -77,7 +86,7 @@ export default function FormOrderNow({
     phone: user?.phone || '',
     priceSelected: '',
     scheduledAt: new Date(),
-    fullName: customer?.name || user?.fullName || user?.name || '',
+    fullName: customer?.name || user?.firstName || '',
     userId: user?.id || '',
     customerId: customer?.id,
     isInLaPaz: customer?.address?.city === 'La Paz'
@@ -249,7 +258,8 @@ export default function FormOrderNow({
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-center my-2"> 1. Selecciona tu ciudad.</h2>
               <p className="text-xs ">
-                * Actualmente solo contamos con servicio en las siguientes ciudades
+                * Actualmente solo contamos con servicio en las siguientes
+                ciudades
               </p>
               <div className="my-4">
                 <FormikCheckbox name="isInLaPaz" label="La Paz, BCS" />
@@ -339,7 +349,10 @@ export default function FormOrderNow({
                   />
                 )}
                 {!!marketForm?.failDescription && (
-                  <FormikInputTextarea name="failDescription" label="Describe la falla" />
+                  <FormikInputTextarea
+                    name="failDescription"
+                    label="Describe la falla"
+                  />
                 )}
               </>
             )}
@@ -356,7 +369,9 @@ export default function FormOrderNow({
                 !values.priceSelected
               }
             >
-              {!user && <FormSignIn name={values.fullName} phone={values.phone} />}
+              {!user && (
+                <FormSignIn name={values.fullName} phone={values.phone} />
+              )}
               {user && (
                 <div>
                   <p>Nombre: {values.fullName}</p>
@@ -366,10 +381,18 @@ export default function FormOrderNow({
                   {/* <p>Referencias: {values.references}</p> */}
                   {orderCreated && (
                     <>
-                      <p className="text-center mt-4">Su orden a sido creada con éxito</p>
-                      <p className="font-normal text-xs text-center mt-2">Orden numero: </p>{' '}
-                      <p className="text-center font-bold text-xl">{orderCreated?.folio}</p>
-                      <p className="text-[8px] text-center italic ">{orderCreated?.id}</p>
+                      <p className="text-center mt-4">
+                        Su orden a sido creada con éxito
+                      </p>
+                      <p className="font-normal text-xs text-center mt-2">
+                        Orden numero:{' '}
+                      </p>{' '}
+                      <p className="text-center font-bold text-xl">
+                        {orderCreated?.folio}
+                      </p>
+                      <p className="text-[8px] text-center italic ">
+                        {orderCreated?.id}
+                      </p>
                       <div className="flex w-full justify-around mt-4">
                         <Button
                           label={`Cancelar orden`}
@@ -423,7 +446,9 @@ export default function FormOrderNow({
                 </p>
               )}
               {!values.fullName && (
-                <p className="text-helper text-error ">*Es necesario un nombre.</p>
+                <p className="text-helper text-error ">
+                  *Es necesario un nombre.
+                </p>
               )}
             </div>
           </form>

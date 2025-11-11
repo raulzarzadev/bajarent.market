@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react'
 import OrderDetails from '@/components/OrderDetails'
 import { useAuth } from '@/context/authContext'
 import type OrderType from '@/types/OrderType'
+import { useOrders } from '@/context/ordersContext'
 
 const Orders = ({ params }: { params: { orderId: string } }) => {
-  const { userRents, user } = useAuth()
+  const { user } = useAuth()
+  const { userRents } = useOrders()
   //const order = userRents?.find((rent) => rent.id === params.orderId)
   const [order, setOrder] = useState<OrderType | null>()
   useEffect(() => {
