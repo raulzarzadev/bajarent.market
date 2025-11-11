@@ -1,10 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { connectAuthEmulator, getAuth } from 'firebase/auth'
-import {
-  connectFirestoreEmulator,
-  initializeFirestore,
-  memoryLocalCache
-} from 'firebase/firestore'
+import { connectFirestoreEmulator, initializeFirestore, memoryLocalCache } from 'firebase/firestore'
 import { connectFunctionsEmulator, getFunctions } from 'firebase/functions'
 
 const firebaseConfig = process.env.NEXT_PUBLIC_FIREBASE_CONFIG || ''
@@ -34,7 +30,7 @@ if (
       console.log('🔧 Conectado al emulador de Firestore en localhost:9000')
     }
   } catch (error) {
-    console.log('ℹ️ Firestore emulator ya conectado')
+    console.error('ℹ️ Firestore emulator ya conectado', { error })
   }
 
   try {
@@ -45,7 +41,7 @@ if (
       console.log('🔧 Conectado al emulador de Functions en localhost:5001')
     }
   } catch (error) {
-    console.log('ℹ️ Functions emulator ya conectado')
+    console.error('ℹ️ Functions emulator ya conectado', { error })
   }
 
   try {
@@ -58,6 +54,6 @@ if (
       console.log('🔧 Conectado al emulador de Auth en localhost:9099')
     }
   } catch (error) {
-    console.log('ℹ️ Auth emulator ya conectado')
+    console.error('ℹ️ Auth emulator ya conectado', { error })
   }
 }

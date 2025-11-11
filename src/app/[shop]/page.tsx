@@ -32,6 +32,6 @@ export enum store_bot_configs {
   sendPickedUp = 'Orden recogida',
   sendRenewed = 'Orden renovada',
   sendNewWebOrder = 'Nueva orden web',
-  sendNewStoreOrder = 'Nueva orden de tienda',
+  sendNewStoreOrder = 'Nueva orden de tienda'
 }
 export type ChatBotConfigs = keyof typeof store_bot_configs

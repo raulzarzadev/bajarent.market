@@ -1,17 +1,15 @@
 'use client'
+import { Formik } from 'formik'
 import { useEffect, useState } from 'react'
 import { useAuth } from '@/context/authContext'
-import { logout } from '@/firebase/auth'
+import { logout, usersCRUD } from '@/firebase/auth'
 import PrivatePage from '@/hocs/PrivatePage'
-import Button from './Button'
-import Icon from './Icon'
-import FormikInputText from './FormikInputText'
-import FormikInputPhone from './FormikInputPhone'
-import ModalUpdateProfile from './ModalUpdateProfile'
-import { Formik } from 'formik'
-import { usersCRUD } from '@/firebase/auth'
 import Avatar from './Avatar'
-import { fi } from 'date-fns/locale'
+import Button from './Button'
+import FormikInputPhone from './FormikInputPhone'
+import FormikInputText from './FormikInputText'
+import Icon from './Icon'
+import ModalUpdateProfile from './ModalUpdateProfile'
 
 const PageProfile = () => {
   const { user, refreshUser } = useAuth()
@@ -150,9 +148,7 @@ const PageProfile = () => {
 
                 {/* Name & Status */}
                 <div className="mt-4">
-                  <h1 className="text-2xl font-bold text-gray-900">
-                    {getFullName(user)}
-                  </h1>
+                  <h1 className="text-2xl font-bold text-gray-900">{getFullName(user)}</h1>
                   <div className="flex items-center space-x-2 mt-1">
                     <div className="w-2 h-2 bg-green-400 rounded-full"></div>
                     <span className="text-sm text-gray-600">Cuenta activa</span>
@@ -233,11 +229,7 @@ const PageProfile = () => {
                 {({ handleSubmit }) => (
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <FormikInputText
-                        name="firstName"
-                        label="Nombre"
-                        placeholder="Tu nombre"
-                      />
+                      <FormikInputText name="firstName" label="Nombre" placeholder="Tu nombre" />
                       <FormikInputText
                         name="lastName"
                         label="Apellidos"
@@ -286,30 +278,16 @@ const PageProfile = () => {
                         Correo electrónico
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Icon
-                          icon="message"
-                          size={16}
-                          className="text-gray-400"
-                        />
-                        <span className="text-gray-900">
-                          {user.email || 'No proporcionado'}
-                        </span>
+                        <Icon icon="message" size={16} className="text-gray-400" />
+                        <span className="text-gray-900">{user.email || 'No proporcionado'}</span>
                       </div>
                     </div>
 
                     <div>
-                      <div className="block text-sm font-medium text-gray-700 mb-1">
-                        Teléfono
-                      </div>
+                      <div className="block text-sm font-medium text-gray-700 mb-1">Teléfono</div>
                       <div className="flex items-center space-x-2">
-                        <Icon
-                          icon="phone"
-                          size={16}
-                          className="text-gray-400"
-                        />
-                        <span className="text-gray-900">
-                          {user.phone || 'No proporcionado'}
-                        </span>
+                        <Icon icon="phone" size={16} className="text-gray-400" />
+                        <span className="text-gray-900">{user.phone || 'No proporcionado'}</span>
                       </div>
                     </div>
                   </div>
@@ -320,21 +298,14 @@ const PageProfile = () => {
                         Miembro desde
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Icon
-                          icon="calendar"
-                          size={16}
-                          className="text-gray-400"
-                        />
+                        <Icon icon="calendar" size={16} className="text-gray-400" />
                         <span className="text-gray-900">
                           {user.createdAt
-                            ? new Date(user.createdAt).toLocaleDateString(
-                                'es-ES',
-                                {
-                                  year: 'numeric',
-                                  month: 'long',
-                                  day: 'numeric'
-                                }
-                              )
+                            ? new Date(user.createdAt).toLocaleDateString('es-ES', {
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric'
+                              })
                             : 'Fecha no disponible'}
                         </span>
                       </div>
@@ -345,15 +316,9 @@ const PageProfile = () => {
                         Tipo de cuenta
                       </div>
                       <div className="flex items-center space-x-2">
-                        <Icon
-                          icon="profile"
-                          size={16}
-                          className="text-gray-400"
-                        />
+                        <Icon icon="profile" size={16} className="text-gray-400" />
                         <span className="text-gray-900">
-                          {user.canCreateStore
-                            ? 'Usuario Premium'
-                            : 'Usuario Básico'}
+                          {user.canCreateStore ? 'Usuario Premium' : 'Usuario Básico'}
                         </span>
                       </div>
                     </div>
@@ -366,9 +331,7 @@ const PageProfile = () => {
 
         {/* Actions Panel */}
         <div className="mt-6 bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Acciones de cuenta
-          </h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">Acciones de cuenta</h2>
 
           <div className="space-y-3">
             <Button

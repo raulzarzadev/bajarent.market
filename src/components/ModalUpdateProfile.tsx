@@ -1,10 +1,10 @@
 'use client'
 import { Dialog, Transition } from '@headlessui/react'
-import { Fragment, useRef } from 'react'
 import { Formik } from 'formik'
+import { Fragment, useRef } from 'react'
 import Button from './Button'
-import FormikInputText from './FormikInputText'
 import FormikInputPhone from './FormikInputPhone'
+import FormikInputText from './FormikInputText'
 import Icon from './Icon'
 
 interface ModalUpdateProfileProps {
@@ -31,12 +31,7 @@ export default function ModalUpdateProfile({
 
   return (
     <Transition.Root show={open} as={Fragment}>
-      <Dialog
-        as="div"
-        className="relative z-10"
-        initialFocus={cancelButtonRef}
-        onClose={onClose}
-      >
+      <Dialog as="div" className="relative z-10" initialFocus={cancelButtonRef} onClose={onClose}>
         <Transition.Child
           as={Fragment}
           enter="ease-out duration-300"
@@ -63,10 +58,7 @@ export default function ModalUpdateProfile({
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
                 <div className="bg-white px-6 pb-4 pt-5">
                   <div className="flex items-center justify-between mb-4">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg font-semibold leading-6 text-gray-900"
-                    >
+                    <Dialog.Title as="h3" className="text-lg font-semibold leading-6 text-gray-900">
                       Completar perfil
                     </Dialog.Title>
                     <button
@@ -80,16 +72,12 @@ export default function ModalUpdateProfile({
 
                   <div className="mb-4">
                     <p className="text-sm text-gray-600">
-                      Se encontraron datos temporales. ¿Quieres actualizar tu
-                      perfil con esta información?
+                      Se encontraron datos temporales. ¿Quieres actualizar tu perfil con esta
+                      información?
                     </p>
                   </div>
 
-                  <Formik
-                    initialValues={initialValues}
-                    onSubmit={onSave}
-                    enableReinitialize
-                  >
+                  <Formik initialValues={initialValues} onSubmit={onSave} enableReinitialize>
                     {({ handleSubmit }) => (
                       <div className="space-y-4">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

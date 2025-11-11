@@ -5,7 +5,7 @@ import type { PriceType } from '@/types/PriceType'
 const ItemPrices = ({
   prices = [],
   onPrice,
-  selectedPrice,
+  selectedPrice
 }: {
   itemId: string
   prices: PriceType[]
@@ -15,7 +15,7 @@ const ItemPrices = ({
   const [selected, setSelected] = useState(selectedPrice)
   const formatter = new Intl.NumberFormat('es-Mx', {
     style: 'currency',
-    currency: 'mxn', // Reemplaza 'EUR' con el código de tu moneda
+    currency: 'mxn' // Reemplaza 'EUR' con el código de tu moneda
   })
 
   useEffect(() => {

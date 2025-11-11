@@ -1,12 +1,6 @@
 'use client'
 
-import {
-  createContext,
-  type ReactNode,
-  useContext,
-  useEffect,
-  useState
-} from 'react'
+import { createContext, type ReactNode, useContext, useState } from 'react'
 import { ServiceOrders } from '@/firebase/ServiceOrders'
 import type OrderType from '@/types/OrderType'
 import { useAuth } from './authContext'

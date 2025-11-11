@@ -9,7 +9,7 @@ export const weekDays = {
   3: 'Miércoles',
   4: 'Jueves',
   5: 'Viernes',
-  6: 'Sabado',
+  6: 'Sabado'
 }
 
 export const dateMx = (date?: Date | Timestamp | null) => {
@@ -22,7 +22,7 @@ export const dateFormat = (date?: number | Date | Timestamp | null, strFormat?: 
   if (!date) return 'n/d' //* not a date
   const value = date instanceof Timestamp ? date.toDate() : date
   const res = fnsFormat(value, strFormat || 'dd/MMM/yy', {
-    locale: es,
+    locale: es
   })
   return res
 }
@@ -32,7 +32,7 @@ const shortUnitSymbol = {
   xHours: 'h',
   xDays: 'd',
   xWeeks: 'S',
-  xMonths: 'M',
+  xMonths: 'M'
 } as const
 type UnitsType = keyof typeof shortUnitSymbol
 
@@ -53,7 +53,7 @@ const customLocale = {
         ? `hace ${count} ${unit}`
         : `en ${count} ${unit}`
       : count + unit
-  },
+  }
 }
 
 export const fromNow = (date?: number | Date | Timestamp | null) => {
@@ -62,7 +62,7 @@ export const fromNow = (date?: number | Date | Timestamp | null) => {
   const res = formatDistanceToNowStrict(validDate, {
     locale: customLocale,
     addSuffix: true,
-    roundingMethod: 'round',
+    roundingMethod: 'round'
   })
   return res
 }

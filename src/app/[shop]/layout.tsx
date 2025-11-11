@@ -10,14 +10,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const id = params.shop
 
   return {
-    title: id,
+    title: id
     // openGraph: {
     //   images: ['/some-specific-page-image.jpg', ...previousImages]
     // }
   }
 }
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode
 }>) {

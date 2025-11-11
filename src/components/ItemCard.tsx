@@ -8,7 +8,7 @@ export default function ItemCard({
   item,
   showDescription,
   showPrices,
-  prices,
+  prices
 }: {
   fullWidth?: boolean
   item: Item

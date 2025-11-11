@@ -1,18 +1,19 @@
 'use client'
 import { RecaptchaVerifier } from 'firebase/auth'
+import { httpsCallable } from 'firebase/functions'
 import { Formik } from 'formik'
 import { useEffect, useState } from 'react'
 import { isValidPhoneNumber } from 'react-phone-number-input'
 import { useAuth } from '@/context/authContext'
 import { onSendCode, sendSignInPhone } from '@/firebase/auth'
+import { auth, functions } from '@/firebase/main'
+import catchError from '@/libs/catchError'
 import Button from './Button'
 import FormCode from './FormCode'
 import FormikInputPhone from './FormikInputPhone'
 import FormikInputText from './FormikInputText'
 import Icon from './Icon'
-import { httpsCallable } from 'firebase/functions'
-import { auth, functions } from '@/firebase/main'
-import catchError from '@/libs/catchError'
+
 type UserFlow = 'phone-check' | 'new-user' | 'code-verification'
 
 const FormSignIn = ({ phone }: { name: string; phone: string }) => {
@@ -28,19 +29,15 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
       // @ts-expect-error
       if (!window.recaptchaVerifier) {
         // @ts-expect-error
-        window.recaptchaVerifier = new RecaptchaVerifier(
-          auth,
-          'sign-in-button',
-          {
-            size: 'invisible',
-            callback: (response: any) => {
-              console.log('reCAPTCHA solved:', response)
-            },
-            'expired-callback': () => {
-              setError('reCAPTCHA expiró. Por favor, inténtalo de nuevo.')
-            }
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'sign-in-button', {
+          size: 'invisible',
+          callback: (response: any) => {
+            console.log('reCAPTCHA solved:', response)
+          },
+          'expired-callback': () => {
+            setError('reCAPTCHA expiró. Por favor, inténtalo de nuevo.')
           }
-        )
+        })
       }
     } catch (error) {
       console.error('Error initializing reCAPTCHA:', error)
@@ -91,9 +88,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
 
       if (userExists) {
         setSuccess(
-          `Este numero, ${values.phone} esta registrado a nombre de ${
-            userName || 'Sin nombre'
-          }`
+          `Este numero, ${values.phone} esta registrado a nombre de ${userName || 'Sin nombre'}`
         )
         setCurrentFlow('code-verification')
         // Usuario existe: enviar código directamente
@@ -102,9 +97,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
       } else {
         // Usuario no existe: mostrar formulario de registro
         setCurrentFlow('new-user')
-        setSuccess(
-          `Número nuevo: ${values.phone}. Completa tus datos para crear la cuenta.`
-        )
+        setSuccess(`Número nuevo: ${values.phone}. Completa tus datos para crear la cuenta.`)
       }
 
       setIsLoading(false)
@@ -115,9 +108,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
       // Manejo de errores de Firebase
       switch (err.code) {
         case 'auth/too-many-requests':
-          setError(
-            'Demasiados intentos. Espera un momento antes de volver a intentar.'
-          )
+          setError('Demasiados intentos. Espera un momento antes de volver a intentar.')
           break
         case 'auth/invalid-app-credential':
           setError('Error de configuración. Por favor, contacta soporte.')
@@ -132,10 +123,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
     }
   }
 
-  const handleCreateUserAndSendCode = async (values: {
-    name: string
-    phone: string
-  }) => {
+  const handleCreateUserAndSendCode = async (values: { name: string; phone: string }) => {
     setIsLoading(true)
     setError(null)
     setSuccess(null)
@@ -171,9 +159,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
           setError('Número de teléfono inválido. Verifica el formato.')
           break
         case 'auth/too-many-requests':
-          setError(
-            'Demasiados intentos. Espera un momento antes de volver a intentar.'
-          )
+          setError('Demasiados intentos. Espera un momento antes de volver a intentar.')
           break
         case 'auth/invalid-app-credential':
           setError('Error de configuración. Por favor, contacta soporte.')
@@ -225,11 +211,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
 
       {success && (
         <div className="bg-green-50 border border-green-200 rounded-lg p-4 flex items-center space-x-3">
-          <Icon
-            icon="checkCircle"
-            size={20}
-            className="text-green-500 flex-shrink-0"
-          />
+          <Icon icon="checkCircle" size={20} className="text-green-500 flex-shrink-0" />
           <p className="text-green-700 text-sm">{success}</p>
         </div>
       )}
@@ -242,9 +224,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
               <div className="space-y-6">
                 <div className="space-y-4">
                   <div className="text-center mb-6">
-                    <h3 className="text-lg font-medium text-gray-900 mb-2">
-                      Inicia sesión
-                    </h3>
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">Inicia sesión</h3>
                     <p className="text-gray-600 text-sm">
                       Ingresa tu número para verificar si ya estás registrado
                     </p>
@@ -261,9 +241,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
                   type="submit"
                   label={isLoading ? 'Verificando...' : 'Verificar número'}
                   variant="solid"
-                  disabled={
-                    !isValidPhoneNumber(values?.phone || '') || isLoading
-                  }
+                  disabled={!isValidPhoneNumber(values?.phone || '') || isLoading}
                   onClick={() => handleSubmit()}
                 />
               </div>
@@ -293,8 +271,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
             initialValues={{ firstName: '', lastName: '', phone: userPhone }}
             onSubmit={(values) => {
               // Combinamos nombre y apellido para mantener compatibilidad
-              const fullName =
-                `${values.firstName.trim()} ${values.lastName.trim()}`.trim()
+              const fullName = `${values.firstName.trim()} ${values.lastName.trim()}`.trim()
               handleCreateUserAndSendCode({
                 name: fullName,
                 phone: values.phone
@@ -304,17 +281,9 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
             {({ values, handleSubmit }) => (
               <div className="space-y-6">
                 <div className="space-y-4">
-                  <FormikInputText
-                    name="firstName"
-                    label="Nombre"
-                    placeholder="Tu nombre"
-                  />
+                  <FormikInputText name="firstName" label="Nombre" placeholder="Tu nombre" />
 
-                  <FormikInputText
-                    name="lastName"
-                    label="Apellido"
-                    placeholder="Tu apellido"
-                  />
+                  <FormikInputText name="lastName" label="Apellido" placeholder="Tu apellido" />
 
                   <FormikInputPhone
                     name="phone"
@@ -327,11 +296,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
                 <div className="space-y-3">
                   <Button
                     type="submit"
-                    label={
-                      isLoading
-                        ? 'Creando cuenta...'
-                        : 'Crear cuenta y enviar código'
-                    }
+                    label={isLoading ? 'Creando cuenta...' : 'Crear cuenta y enviar código'}
                     variant="solid"
                     disabled={
                       !values.firstName.trim() ||
@@ -367,9 +332,7 @@ const FormSignIn = ({ phone }: { name: string; phone: string }) => {
             <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
               <Icon icon="message" size={32} className="text-blue-600" />
             </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              Verifica tu número
-            </h3>
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">Verifica tu número</h3>
             <p className="text-sm text-gray-600">
               Ingresa el código de 6 dígitos que enviamos por SMS
             </p>

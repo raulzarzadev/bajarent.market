@@ -7,7 +7,7 @@ interface SpanPriceProps {
 const SpanPrice: React.FC<SpanPriceProps> = ({ amount }: { amount?: number | undefined }) => {
   const formattedAmount = new Intl.NumberFormat('es-MX', {
     style: 'currency',
-    currency: 'MXN',
+    currency: 'MXN'
   }).format(Number(amount) || 0)
 
   return <span>{formattedAmount}</span>

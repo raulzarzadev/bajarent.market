@@ -7,9 +7,9 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-import { setGlobalOptions } from 'firebase-functions'
 import { initializeApp } from 'firebase-admin/app'
 import { getFirestore } from 'firebase-admin/firestore'
+import { setGlobalOptions } from 'firebase-functions'
 
 // Inicializar Firebase Admin
 initializeApp()
@@ -18,9 +18,10 @@ export const db = getFirestore()
 // 🎯 Cloud Function para verificar si un usuario existe
 // 🔐 Función adicional para obtener datos públicos del usuario
 
-export { createUser } from './createUser'
 export { checkUserExists } from './checkIfUserExists'
+export { createUser } from './createUser'
 export { getUserPublicData } from './getUserPublicData'
+
 // ✅ Agregar esta función al archivo existente
 
 // Start writing functions

@@ -4,11 +4,7 @@ import { FaRegWindowRestore } from 'react-icons/fa6'
 import { GrFormSubtract } from 'react-icons/gr'
 import { HiDotsVertical } from 'react-icons/hi'
 import { IoMdAdd, IoMdCalendar, IoMdSwap } from 'react-icons/io'
-import {
-  IoPersonAddOutline,
-  IoPersonOutline,
-  IoPersonSharp
-} from 'react-icons/io5'
+import { IoPersonAddOutline, IoPersonOutline, IoPersonSharp } from 'react-icons/io5'
 import { LiaBroomSolid } from 'react-icons/lia'
 import { LuComponent } from 'react-icons/lu'
 import {
@@ -20,19 +16,19 @@ import {
   MdDeleteOutline,
   MdDownload,
   MdEdit,
+  MdEmail,
   MdError,
   MdFilterList,
   MdListAlt,
   MdLocationOff,
   MdLocationPin,
+  MdLogout,
   MdMessage,
   MdOutlineDone,
   MdOutlineSearch,
   MdOutlineStorefront,
   MdSave,
-  MdSettings,
-  MdEmail,
-  MdLogout
+  MdSettings
 } from 'react-icons/md'
 import { PiUserList } from 'react-icons/pi'
 import { TbMapSearch } from 'react-icons/tb'

@@ -8,7 +8,7 @@ const InputPhone = ({
   value,
   setValue,
   label = 'Phone number',
-  helperText,
+  helperText
 }: {
   value: E164Number | undefined
   setValue: (value: E164Number | undefined) => void

@@ -1,6 +1,6 @@
 import { HttpsError, onCall } from 'firebase-functions/https'
-import { cleanPhone } from './utils/cleanPhone'
 import { db } from '.'
+import { cleanPhone } from './utils/cleanPhone'
 
 export const getUserPublicData = onCall(async (request) => {
   try {
@@ -12,10 +12,7 @@ export const getUserPublicData = onCall(async (request) => {
     const cleanedPhone = cleanPhone(phone)
 
     const usersRef = db.collection('users')
-    const querySnapshot = await usersRef
-      .where('phone', '==', cleanedPhone)
-      .limit(1)
-      .get()
+    const querySnapshot = await usersRef.where('phone', '==', cleanedPhone).limit(1).get()
 
     if (querySnapshot.empty) {
       throw new HttpsError('not-found', 'Usuario no encontrado')
@@ -37,8 +34,6 @@ export const getUserPublicData = onCall(async (request) => {
     }
   } catch (error) {
     console.error('❌ Error en getUserPublicData:', error)
-    throw error instanceof HttpsError
-      ? error
-      : new HttpsError('internal', 'Error interno')
+    throw error instanceof HttpsError ? error : new HttpsError('internal', 'Error interno')
   }
 })

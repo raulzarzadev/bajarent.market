@@ -1,6 +1,6 @@
 import { HttpsError, onCall } from 'firebase-functions/https'
-import { cleanPhone } from './utils/cleanPhone'
 import { db } from '.'
+import { cleanPhone } from './utils/cleanPhone'
 
 export const createUser = onCall(
   {
@@ -13,10 +13,7 @@ export const createUser = onCall(
       console.log('📱 Request data:', request.data)
 
       if (!request.data?.phone || !request.data?.name) {
-        throw new HttpsError(
-          'invalid-argument',
-          'El nombre y teléfono son requeridos'
-        )
+        throw new HttpsError('invalid-argument', 'El nombre y teléfono son requeridos')
       }
 
       const { phone, name, email } = request.data
@@ -26,16 +23,10 @@ export const createUser = onCall(
 
       // Verificar que el usuario no exista ya
       const usersRef = db.collection('users')
-      const existingUser = await usersRef
-        .where('phone', '==', cleanedPhone)
-        .limit(1)
-        .get()
+      const existingUser = await usersRef.where('phone', '==', cleanedPhone).limit(1).get()
 
       if (!existingUser.empty) {
-        throw new HttpsError(
-          'already-exists',
-          'Ya existe un usuario con este teléfono'
-        )
+        throw new HttpsError('already-exists', 'Ya existe un usuario con este teléfono')
       }
 
       // Crear el usuario

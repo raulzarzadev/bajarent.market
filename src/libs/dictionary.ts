@@ -22,5 +22,5 @@ const words: Record<DictionaryWords, string> = {
   RENEWED: 'Renovado',
   REPAIRING: 'En reparación',
   REPAIRED: 'Reparado',
-  REPAIR_DELIVERED: 'Reparación entregada',
+  REPAIR_DELIVERED: 'Reparación entregada'
 }

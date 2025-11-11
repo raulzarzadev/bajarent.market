@@ -1,15 +1,12 @@
 import { HttpsError, onCall } from 'firebase-functions/https'
-import { cleanPhone } from './utils/cleanPhone'
 import { db } from '.'
+import { cleanPhone } from './utils/cleanPhone'
 
 export const checkUserExists = onCall(async (request) => {
   try {
     // Validar que se envió el teléfono
     if (!request.data?.phone) {
-      throw new HttpsError(
-        'invalid-argument',
-        'El número de teléfono es requerido'
-      )
+      throw new HttpsError('invalid-argument', 'El número de teléfono es requerido')
     }
 
     const { phone } = request.data
@@ -19,10 +16,7 @@ export const checkUserExists = onCall(async (request) => {
 
     // Consultar en Firestore con permisos de administrador
     const usersRef = db.collection('users')
-    const querySnapshot = await usersRef
-      .where('phone', '==', cleanedPhone)
-      .limit(1)
-      .get()
+    const querySnapshot = await usersRef.where('phone', '==', cleanedPhone).limit(1).get()
 
     if (querySnapshot.empty) {
       // Usuario no existe

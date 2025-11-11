@@ -1,8 +1,8 @@
-import { describe, it, expect, beforeEach } from 'vitest'
+import { beforeEach, describe, expect, it } from 'vitest'
 import {
+  cleanupTestEnvironment,
   setupTestEnvironment,
-  TEST_PHONE_NUMBERS,
-  cleanupTestEnvironment
+  TEST_PHONE_NUMBERS
 } from '@/utils/test-helpers'
 
 /**

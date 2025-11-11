@@ -108,7 +108,7 @@ export enum order_status {
   RENEWED = 'RENEWED',
   REPAIRING = 'REPAIRING',
   REPAIRED = 'REPAIRED',
-  REPAIR_DELIVERED = 'REPAIR_DELIVERED',
+  REPAIR_DELIVERED = 'REPAIR_DELIVERED'
 }
 
 export enum order_type {
@@ -122,7 +122,7 @@ export enum order_type {
   /**
    * @deprecated use RENT instead
    */
-  DELIVERY_RENT = 'DELIVERY_RENT',
+  DELIVERY_RENT = 'DELIVERY_RENT'
 }
 export type OrderTypes = keyof typeof order_type
 export type TypeOfOrderType = order_type
@@ -136,7 +136,7 @@ export const ORDER_STATUS_SOLVED = [
   order_status.REPAIR_DELIVERED,
   order_status.DELIVERED,
   order_status.PICKUP,
-  order_status.RENEWED,
+  order_status.RENEWED
 ]
 
 export const ORDER_STATUS_UNSOLVED = Object.keys(order_status).filter(

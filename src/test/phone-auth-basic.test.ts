@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import { TEST_PHONE_NUMBERS } from '@/utils/test-helpers'
 
 /**
@@ -58,15 +58,11 @@ describe('🔐 Phone Authentication Tests', () => {
     expect(mockSMSResponse.verificationId).toContain('mock-verification-id')
     expect(mockSMSResponse.isTestNumber).toBe(true)
 
-    console.log(
-      '✅ SMS sending simulation successful:',
-      mockSMSResponse.message
-    )
+    console.log('✅ SMS sending simulation successful:', mockSMSResponse.message)
   })
 
   it('✅ should simulate code verification process', () => {
     const phoneNumber = TEST_PHONE_NUMBERS.VALID
-    const code = TEST_PHONE_NUMBERS.VERIFICATION_CODE
 
     // Simular respuesta de Firebase cuando se verifica el código
     const mockVerificationResponse = {

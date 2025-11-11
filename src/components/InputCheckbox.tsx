@@ -16,7 +16,7 @@ const InputCheckbox = ({
   checked,
   onChange,
   helperText,
-  errorText,
+  errorText
 }: InputCheckboxProps) => {
   return (
     <div className="flex items-center">

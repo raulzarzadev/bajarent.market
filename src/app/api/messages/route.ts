@@ -20,19 +20,19 @@ export async function POST(request: Request) {
     const data = {
       messages: {
         content: message,
-        mediaUrl,
+        mediaUrl
       },
       number,
-      checkIfExists: true,
+      checkIfExists: true
     }
 
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-builderbot': apiKey,
+        'x-api-builderbot': apiKey
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(data)
     })
       .then((res) => res.json())
       .then((res) => {
@@ -50,13 +50,13 @@ export async function POST(request: Request) {
 
     return new Response(JSON.stringify(res), {
       headers: { 'content-type': 'application/json' },
-      status: 200,
+      status: 200
     })
   } catch (error) {
     console.error(error)
     return new Response(JSON.stringify({ error }), {
       headers: { 'content-type': 'application/json' },
-      status: 500,
+      status: 500
     })
   }
 }

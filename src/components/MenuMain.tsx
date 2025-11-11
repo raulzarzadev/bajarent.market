@@ -5,7 +5,7 @@ import Icon, { type IconName } from './Icon'
 
 export default function MenuMain({
   options = [],
-  children,
+  children
 }: {
   icon: IconName
   label: string

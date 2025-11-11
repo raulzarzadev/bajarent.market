@@ -43,7 +43,7 @@ export const getShopItems = async (id: string) => {
     shopId: shop.id,
     shopName: shop.name,
     shopImg: shop?.img,
-    shopLink: shop?.link,
+    shopLink: shop?.link
   }))
 }
 
@@ -57,7 +57,7 @@ export const getShopItem = async (shopId: string, itemId: string) => {
     shopId: shop?.id,
     shopName: shop?.name,
     shopImg: shop?.img,
-    shopLink: shop?.link,
+    shopLink: shop?.link
   }
   return { item: itemData, shop, prices }
 }
@@ -72,7 +72,7 @@ export const postOrder = async (order: OrderType) => {
     // FIRST update store
     await ServiceStores.update(order.storeId, {
       // @ts-expect-error
-      currentFolio: increment(1),
+      currentFolio: increment(1)
     })
     // SECOND create order
     const currentFolio = (await ServiceStores.get(order.storeId)).currentFolio

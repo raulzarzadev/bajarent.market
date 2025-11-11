@@ -38,7 +38,7 @@ class ErrorBoundary extends Component<Props, State> {
       stack: error.stack,
       componentStack: errorInfo.componentStack,
       timestamp: new Date().toISOString(),
-      componentName: this.props.componentName,
+      componentName: this.props.componentName
     }
 
     console.log('Sending error report:', errorReport)

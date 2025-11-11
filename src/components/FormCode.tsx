@@ -1,7 +1,7 @@
 import { Formik } from 'formik'
+import { useEffect, useState } from 'react'
 import Button from './Button'
 import FormikInputCode from './FormikInputCode'
-import { useEffect, useState } from 'react'
 
 const FormCode = ({
   disabled,
@@ -69,11 +69,7 @@ const FormCode = ({
               <div className="flex justify-between gap-2 ">
                 <Button
                   type="submit"
-                  label={
-                    canResend
-                      ? 'Enviar de nuevo'
-                      : `Reenviar en ${formatTime(countdown)}`
-                  }
+                  label={canResend ? 'Enviar de nuevo' : `Reenviar en ${formatTime(countdown)}`}
                   variant="ghost"
                   onClick={handleResend}
                   disabled={!canResend}

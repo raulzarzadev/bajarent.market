@@ -20,7 +20,7 @@ export const writeMessage = (
     customerName,
     orderFolio,
     orderType,
-    shopName,
+    shopName
   }: {
     customerName: string
     orderFolio: string
@@ -36,7 +36,7 @@ export const writeMessage = (
   \nTipo: ${dictionary(orderType)}
   \nPronto un asesor se pondrá en contacto para confirmar la fecha de entrega.*
   \n${shopName} agradece su preferencia 🙏🏼
-  `,
+  `
   }
 
   return messages[type]

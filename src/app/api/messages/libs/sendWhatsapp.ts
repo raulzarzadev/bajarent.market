@@ -4,7 +4,7 @@ const sendMessage = async ({
   phone,
   message = 'hola',
   botId,
-  apiKey,
+  apiKey
 }: {
   phone: string
   message: string
@@ -14,38 +14,38 @@ const sendMessage = async ({
   const endpoint = `https://app.builderbot.cloud/api/v2/${botId}/messages`
   if (!phone) {
     return {
-      error: 'Phone is required',
+      error: 'Phone is required'
     }
   }
   if (!botId)
     return {
-      error: 'Bot Id is required',
+      error: 'Bot Id is required'
     }
   if (!apiKey)
     return {
-      error: 'Api Key is required',
+      error: 'Api Key is required'
     }
   if (phone.length < 10) {
     return {
-      error: 'Phone is invalid',
+      error: 'Phone is invalid'
     }
   }
   const number = formatMxWhatsappPhone(phone)
 
   const data = {
     messages: {
-      content: message,
+      content: message
     },
     number: number,
-    checkIfExists: true,
+    checkIfExists: true
   }
   return await fetch(endpoint, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'x-api-builderbot': apiKey,
+      'x-api-builderbot': apiKey
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   })
     .then((res) => res.json())
     .then((res) => {

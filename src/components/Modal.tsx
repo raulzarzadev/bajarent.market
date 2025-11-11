@@ -12,7 +12,7 @@ export default function Modal({
   openDisabled = false,
   text,
   handleConfirm,
-  children,
+  children
 }: {
   title: string
   openLabel?: string

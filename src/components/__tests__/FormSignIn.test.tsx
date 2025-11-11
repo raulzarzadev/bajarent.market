@@ -1,12 +1,8 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import FormSignIn from '@/components/FormSignIn'
-import {
-  setupTestEnvironment,
-  TEST_PHONE_NUMBERS,
-  createMockRecaptcha
-} from '@/utils/test-helpers'
+import { createMockRecaptcha, setupTestEnvironment, TEST_PHONE_NUMBERS } from '@/utils/test-helpers'
 
 // Mock del contexto de autenticación
 vi.mock('@/context/authContext', () => ({

@@ -1,5 +1,4 @@
 import getInitials from '@/utils/getInitials'
-import Image from 'next/image'
 
 const Avatar = ({
   src,
@@ -54,29 +53,6 @@ const Avatar = ({
       ) : (
         <div className="w-full h-full rounded-full bg-blue-500 flex items-center justify-center text-white font-semibold">
           {getInitials(label || '')}
-        </div>
-      )}
-    </div>
-  )
-  return (
-    <div className={`${className} grow-0 shrink-0`}>
-      {src ? (
-        <Image
-          src={src || '/avatar.png'}
-          alt={`avatar-${label}`}
-          width={sizes[size]}
-          height={sizes[size]}
-          className="rounded-full shadow-md shadow-slate-600 "
-        />
-      ) : (
-        <div
-          style={{
-            widows: sizes[size],
-            height: sizes[size]
-          }}
-          className="bg-gray-300 rounded-full flex justify-center items-center font-bold text-lg uppercase shadow-md shadow-slate-600 aspect-square"
-        >
-          {label?.substring(0, 2)}
         </div>
       )}
     </div>

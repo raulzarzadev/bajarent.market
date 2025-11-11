@@ -8,9 +8,9 @@ import {
 } from 'firebase/auth'
 
 import { getStorage } from 'firebase/storage'
+import catchError from '@/libs/catchError'
 import { FirebaseCRUD } from './crud'
 import { app, auth, db } from './main'
-import catchError from '@/libs/catchError'
 
 export const storage = getStorage(app)
 
@@ -21,21 +21,12 @@ export const passwordReset = async (email: string) => {
   return await sendPasswordResetEmail(auth, email)
 }
 
-export const confirmThePasswordReset = async (
-  oobCode: string,
-  newPassword: string
-) => {
+export const confirmThePasswordReset = async (oobCode: string, newPassword: string) => {
   if (!oobCode && !newPassword) return
   return await confirmPasswordReset(auth, oobCode, newPassword)
 }
 
-export async function signInWithPassword({
-  email,
-  password
-}: {
-  email: string
-  password: string
-}) {
+export async function signInWithPassword({ email, password }: { email: string; password: string }) {
   return signInWithEmailAndPassword(auth, email, password)
 }
 
@@ -61,9 +52,7 @@ export async function sendSignInPhone({
     const appVerifier = window.recaptchaVerifier
     // console.log({ appVerifier })
 
-    const [error, data] = await catchError(
-      signInWithPhoneNumber(auth, phone, appVerifier)
-    )
+    const [error, data] = await catchError(signInWithPhoneNumber(auth, phone, appVerifier))
     if (error) {
       console.error({ error })
       return Promise.reject(error)

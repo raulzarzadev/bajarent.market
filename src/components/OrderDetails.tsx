@@ -4,7 +4,7 @@ import type OrderType from '@/types/OrderType'
 const OrderDetails = ({ order }: { order: Partial<OrderType> }) => {
   const formatter = new Intl.DateTimeFormat('es-ES', {
     dateStyle: 'short',
-    timeStyle: 'short',
+    timeStyle: 'short'
   })
   return (
     <div>

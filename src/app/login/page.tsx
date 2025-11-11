@@ -4,8 +4,7 @@ import FormSignIn from '@/components/FormSignIn'
 
 export const metadata: Metadata = {
   title: 'Iniciar Sesión - BajaRent',
-  description:
-    'Accede a tu cuenta de BajaRent para gestionar tus reservas y alquileres.'
+  description: 'Accede a tu cuenta de BajaRent para gestionar tus reservas y alquileres.'
 }
 
 export default function Login() {
@@ -24,9 +23,7 @@ export default function Login() {
               priority
             />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Bienvenido a BajaRentApp
-          </h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Bienvenido a BajaRent</h1>
         </div>
 
         {/* Formulario */}
@@ -38,24 +35,15 @@ export default function Login() {
         <div className="text-center mt-8 text-xs text-gray-500">
           <p>Al continuar, aceptas nuestros términos y condiciones</p>
           <div className="mt-2 space-x-4">
-            <a
-              href="/privacidad"
-              className="hover:text-blue-600 transition-colors"
-            >
+            <a href="/privacidad" className="hover:text-blue-600 transition-colors">
               Privacidad
             </a>
             <span>•</span>
-            <a
-              href="#terminos"
-              className="hover:text-blue-600 transition-colors"
-            >
+            <a href="#terminos" className="hover:text-blue-600 transition-colors">
               Términos
             </a>
             <span>•</span>
-            <a
-              href="#soporte"
-              className="hover:text-blue-600 transition-colors"
-            >
+            <a href="#soporte" className="hover:text-blue-600 transition-colors">
               Soporte
             </a>
           </div>

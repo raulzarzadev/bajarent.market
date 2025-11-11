@@ -1,7 +1,7 @@
 import { where } from 'firebase/firestore'
-import { FirebaseGenericService } from './service'
 import { cleanPhone } from '@/libs/clear-phone'
 import type UserType from '@/types/UserType'
+import { FirebaseGenericService } from './service'
 
 // ? FIXME: StoreType?? this should be UserType
 class ServiceUsersClass extends FirebaseGenericService<UserType> {

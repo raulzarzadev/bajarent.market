@@ -1,13 +1,9 @@
-import { describe, it, expect, vi, beforeEach } from 'vitest'
+import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
 import {
-  getAuth,
-  signInWithPhoneNumber,
-  RecaptchaVerifier
-} from 'firebase/auth'
-import {
+  cleanupTestEnvironment,
   setupTestEnvironment,
-  TEST_PHONE_NUMBERS,
-  cleanupTestEnvironment
+  TEST_PHONE_NUMBERS
 } from '@/utils/test-helpers'
 
 describe('Phone Authentication Integration Tests', () => {
@@ -65,9 +61,7 @@ describe('Phone Authentication Integration Tests', () => {
     expect(confirmationResult.verificationId).toBe('mock-verification-id')
 
     // Test code verification
-    const userCredential = await confirmationResult.confirm(
-      TEST_PHONE_NUMBERS.VERIFICATION_CODE
-    )
+    const userCredential = await confirmationResult.confirm(TEST_PHONE_NUMBERS.VERIFICATION_CODE)
 
     expect(userCredential.user.phoneNumber).toBe(TEST_PHONE_NUMBERS.VALID)
     expect(userCredential.user.uid).toBe('test-uid')
@@ -97,16 +91,14 @@ describe('Phone Authentication Integration Tests', () => {
     )
 
     // Test with invalid code
-    await expect(confirmationResult.confirm('000000')).rejects.toThrow(
-      'Invalid verification code'
-    )
+    await expect(confirmationResult.confirm('000000')).rejects.toThrow('Invalid verification code')
   })
 
   it('should handle reCAPTCHA verification', async () => {
     // Test reCAPTCHA initialization
     const mockRecaptchaVerifier = vi.mocked(RecaptchaVerifier)
 
-    const verifier = new mockRecaptchaVerifier(auth, 'test-container', {
+    new mockRecaptchaVerifier(auth, 'test-container', {
       size: 'invisible'
     })
 

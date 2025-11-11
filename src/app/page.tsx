@@ -23,7 +23,7 @@ export default async function Home() {
         shop,
         shopLink: `${shop?.link}`,
         img: item.img,
-        shopImg: shop?.img,
+        shopImg: shop?.img
       }
     })
     .filter((item: Item) => item?.shopVisible)

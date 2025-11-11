@@ -1,18 +1,18 @@
 'use client'
+import { useRouter } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { useAuth } from '@/context/authContext'
 import { useOrders } from '@/context/ordersContext'
-import { useRouter } from 'next/navigation'
+import dictionary from '@/libs/dictionary'
+import { dateFormat } from '@/libs/utils-date'
 import type OrderType from '@/types/OrderType'
 import { order_status, order_type } from '@/types/OrderType'
 import Icon from './Icon'
 import SpanPrice from './SpanPrice'
-import dictionary from '@/libs/dictionary'
-import { dateFormat } from '@/libs/utils-date'
 
 const OrdersList = () => {
   const { user } = useAuth()
-  const { userRents, isLoading, error, fetchOrders } = useOrders()
+  const { userRents, fetchOrders } = useOrders()
 
   useEffect(() => {
     fetchOrders()
@@ -26,9 +26,7 @@ const OrdersList = () => {
     return (
       <div className="flex items-center justify-center py-12">
         <div className="text-center">
-          <div className="animate-pulse text-gray-500 mb-4">
-            Cargando órdenes...
-          </div>
+          <div className="animate-pulse text-gray-500 mb-4">Cargando órdenes...</div>
         </div>
       </div>
     )
@@ -38,14 +36,8 @@ const OrdersList = () => {
     return (
       <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
         <div className="text-center">
-          <Icon
-            icon="orders"
-            size={48}
-            className="mx-auto text-gray-400 mb-4"
-          />
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">
-            No tienes órdenes aún
-          </h3>
+          <Icon icon="orders" size={48} className="mx-auto text-gray-400 mb-4" />
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">No tienes órdenes aún</h3>
           <p className="text-gray-600 mb-6">
             Cuando realices una renta, compra o reparación, aparecerán aquí
           </p>
@@ -63,8 +55,7 @@ const OrdersList = () => {
 
   // Filtrar órdenes
   const filteredOrders = userRents.filter((order) => {
-    const statusMatch =
-      selectedStatus === 'all' || order.status === selectedStatus
+    const statusMatch = selectedStatus === 'all' || order.status === selectedStatus
     const typeMatch = selectedType === 'all' || order.type === selectedType
     return statusMatch && typeMatch
   })
@@ -123,9 +114,7 @@ const OrdersList = () => {
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Filtros</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <div className="block text-sm font-medium text-gray-700 mb-2">
-              Estado
-            </div>
+            <div className="block text-sm font-medium text-gray-700 mb-2">Estado</div>
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
@@ -141,9 +130,7 @@ const OrdersList = () => {
           </div>
 
           <div>
-            <div className="block text-sm font-medium text-gray-700 mb-2">
-              Tipo de servicio
-            </div>
+            <div className="block text-sm font-medium text-gray-700 mb-2">Tipo de servicio</div>
             <select
               value={selectedType}
               onChange={(e) => setSelectedType(e.target.value)}
@@ -175,19 +162,14 @@ const OrdersList = () => {
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center space-x-3">
                   <div className="flex-shrink-0">
-                    <Icon
-                      icon={getTypeIcon(order.type)}
-                      size={24}
-                      className="text-gray-600"
-                    />
+                    <Icon icon={getTypeIcon(order.type)} size={24} className="text-gray-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">
                       {order.item?.categoryName || 'Servicio'}
                     </h3>
                     <p className="text-sm text-gray-600">
-                      Folio: #{order.folio} •{' '}
-                      {dateFormat(order.createdAt, 'dd/MM/yyyy HH:mm')}
+                      Folio: #{order.folio} • {dateFormat(order.createdAt, 'dd/MM/yyyy HH:mm')}
                     </p>
                   </div>
                 </div>
@@ -203,27 +185,19 @@ const OrdersList = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
                 <div>
-                  <div className="text-sm font-medium text-gray-700 mb-1">
-                    Tipo de servicio
-                  </div>
-                  <div className="text-sm text-gray-900">
-                    {dictionary(order.type)}
-                  </div>
+                  <div className="text-sm font-medium text-gray-700 mb-1">Tipo de servicio</div>
+                  <div className="text-sm text-gray-900">{dictionary(order.type)}</div>
                 </div>
 
                 <div>
-                  <div className="text-sm font-medium text-gray-700 mb-1">
-                    Opción seleccionada
-                  </div>
+                  <div className="text-sm font-medium text-gray-700 mb-1">Opción seleccionada</div>
                   <div className="text-sm text-gray-900">
                     {order.item?.priceSelected?.title || 'No especificada'}
                   </div>
                 </div>
 
                 <div>
-                  <div className="text-sm font-medium text-gray-700 mb-1">
-                    Precio
-                  </div>
+                  <div className="text-sm font-medium text-gray-700 mb-1">Precio</div>
                   <SpanPrice amount={order.item?.priceSelected?.amount ?? 0} />
                 </div>
               </div>
@@ -233,9 +207,7 @@ const OrdersList = () => {
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-sm font-medium text-blue-900 mb-1">
-                        Fecha de retorno
-                      </div>
+                      <div className="text-sm font-medium text-blue-900 mb-1">Fecha de retorno</div>
                       <div className="text-sm text-blue-800">
                         {dateFormat(order.expireAt, 'dd/MM/yyyy HH:mm')}
                       </div>
@@ -246,16 +218,16 @@ const OrdersList = () => {
                           daysUntilReturn < 0
                             ? 'text-red-600'
                             : daysUntilReturn <= 3
-                            ? 'text-orange-600'
-                            : 'text-green-600'
+                              ? 'text-orange-600'
+                              : 'text-green-600'
                         }`}
                       >
                         <div className="text-xs font-medium">
                           {daysUntilReturn < 0
                             ? `Vencido hace ${Math.abs(daysUntilReturn)} días`
                             : daysUntilReturn === 0
-                            ? 'Vence hoy'
-                            : `${daysUntilReturn} días restantes`}
+                              ? 'Vence hoy'
+                              : `${daysUntilReturn} días restantes`}
                         </div>
                       </div>
                     )}
@@ -267,9 +239,7 @@ const OrdersList = () => {
                 <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-4">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <div className="text-sm font-medium text-orange-900 mb-1">
-                        Descripción
-                      </div>
+                      <div className="text-sm font-medium text-orange-900 mb-1">Descripción</div>
                       <div className="text-sm text-orange-800">
                         {order.description || 'No especificada'}
                       </div>
@@ -315,17 +285,9 @@ const OrdersList = () => {
       {filteredOrders.length === 0 && (
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
           <div className="text-center">
-            <Icon
-              icon="search"
-              size={48}
-              className="mx-auto text-gray-400 mb-4"
-            />
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              No se encontraron órdenes
-            </h3>
-            <p className="text-gray-600">
-              Prueba ajustando los filtros para ver más resultados
-            </p>
+            <Icon icon="search" size={48} className="mx-auto text-gray-400 mb-4" />
+            <h3 className="text-lg font-semibold text-gray-900 mb-2">No se encontraron órdenes</h3>
+            <p className="text-gray-600">Prueba ajustando los filtros para ver más resultados</p>
           </div>
         </div>
       )}

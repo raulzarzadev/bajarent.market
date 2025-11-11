@@ -25,7 +25,7 @@ export default function ItemLabel({
   item,
   showDescription,
   showPrices,
-  prices,
+  prices
 }: {
   item: Item
   showDescription?: boolean

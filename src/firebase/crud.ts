@@ -13,7 +13,7 @@ import {
   setDoc,
   Timestamp,
   updateDoc,
-  writeBatch,
+  writeBatch
 } from 'firebase/firestore'
 import { deleteObject, getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage'
 import { v4 as uidGenerator } from 'uuid'
@@ -132,26 +132,26 @@ export class FirebaseCRUD {
   createItemMetadata() {
     return {
       createdBy: '',
-      createdAt: new Date(),
+      createdAt: new Date()
     }
   }
 
   updateItemMetadata() {
     return {
       updatedAt: new Date(),
-      updatedBy: '',
+      updatedBy: ''
     }
   }
 
   async createItem(item: object) {
     const newItem = {
       ...item,
-      ...this.createItemMetadata(),
+      ...this.createItemMetadata()
     }
 
     return await addDoc(collection(this.db, this.collectionName), newItem).then((res) =>
       this.formatResponse(true, `${this.collectionName}_CREATED`, {
-        id: res.id,
+        id: res.id
       })
     )
   }
@@ -159,12 +159,12 @@ export class FirebaseCRUD {
   async updateItem(itemId: string, item: object) {
     const newItem = {
       ...item,
-      ...this.updateItemMetadata(),
+      ...this.updateItemMetadata()
     }
     return await updateDoc(doc(this.db, this.collectionName, itemId), newItem)
       .then(() =>
         this.formatResponse(true, `${this.collectionName}_UPDATED`, {
-          id: itemId,
+          id: itemId
         })
       )
       .catch((err) => console.error(err))
@@ -174,13 +174,13 @@ export class FirebaseCRUD {
     const item = {
       id: itemId,
       ...this.createItemMetadata(),
-      ...newItem,
+      ...newItem
     }
 
     return await setDoc(doc(this.db, this.collectionName, itemId), item)
       .then(() =>
         this.formatResponse(true, `${this.collectionName}_CREATED`, {
-          item,
+          item
         })
       )
       .catch((err) => console.error(err))
@@ -344,7 +344,7 @@ export class FirebaseCRUD {
     }
     if (!Array.isArray(filters)) {
       console.error('filter is not an array', {
-        collectionName,
+        collectionName
       })
       return null
     }
@@ -355,7 +355,7 @@ export class FirebaseCRUD {
       if (!(filter instanceof QueryConstraint))
         console.error('invalid filter', {
           filter,
-          collectionName,
+          collectionName
         })
     })
 

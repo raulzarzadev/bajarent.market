@@ -1,12 +1,6 @@
 'use client'
 
-import {
-  createContext,
-  type ReactNode,
-  useContext,
-  useEffect,
-  useState
-} from 'react'
+import { createContext, type ReactNode, useContext, useEffect, useState } from 'react'
 import { authStateChanged, usersCRUD } from '@/firebase/auth'
 import type UserType from '@/types/UserType'
 
@@ -37,11 +31,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   }
 
-  return (
-    <authContext.Provider value={{ user, refreshUser }}>
-      {children}
-    </authContext.Provider>
-  )
+  return <authContext.Provider value={{ user, refreshUser }}>{children}</authContext.Provider>
 }
 
 export const useAuth = () => {

@@ -43,9 +43,7 @@ const MenuProfile = () => {
           }
         ]}
       >
-        {user === undefined && (
-          <div className="w-8  aspect-square rounded-full bg-gray-500"></div>
-        )}
+        {user === undefined && <div className="w-8  aspect-square rounded-full bg-gray-500"></div>}
         {user === null && (
           <div className="w-8  aspect-square rounded-full justify-center items-center flex">
             <Icon icon="profileAdd" />
@@ -54,10 +52,7 @@ const MenuProfile = () => {
         {user?.image && <Avatar src={user.image} size="sm" />}
         {user && !user.image && (
           <Avatar
-            label={
-              `${user.firstName || ''} ${user.lastName || ''}`.trim() ||
-              'Usuario'
-            }
+            label={`${user.firstName || ''} ${user.lastName || ''}`.trim() || 'Usuario'}
             size="sm"
           />
         )}

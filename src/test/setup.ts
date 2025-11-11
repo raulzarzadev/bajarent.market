@@ -1,5 +1,5 @@
 import '@testing-library/jest-dom'
-import { beforeEach, vi, afterEach } from 'vitest'
+import { afterEach, beforeEach, vi } from 'vitest'
 
 // Mock Firebase Auth
 vi.mock('firebase/auth', async () => {
