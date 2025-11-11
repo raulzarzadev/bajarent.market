@@ -1,5 +1,5 @@
 import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth'
-import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import {
   cleanupTestEnvironment,
   setupTestEnvironment,
@@ -27,13 +27,12 @@ describe('Phone Authentication Integration Tests', () => {
 
   it('should authenticate with test phone number', async () => {
     // Create a mock reCAPTCHA verifier
-    const mockVerifier = {
-      render: vi.fn(() => Promise.resolve('mock-widget-id')),
-      verify: vi.fn(() => Promise.resolve('mock-response')),
+    const mockVerifier: ApplicationVerifier = {
+      type: 'recaptcha',
+      render: vi.fn().mockResolvedValue('mock-widget-id'),
+      verify: vi.fn().mockResolvedValue('mock-token'),
       clear: vi.fn()
     }
-
-    // @ts-expect-error
     window.recaptchaVerifier = mockVerifier
 
     // Mock signInWithPhoneNumber to return a confirmation result
@@ -61,20 +60,22 @@ describe('Phone Authentication Integration Tests', () => {
     expect(confirmationResult.verificationId).toBe('mock-verification-id')
 
     // Test code verification
-    const userCredential = await confirmationResult.confirm(TEST_PHONE_NUMBERS.VERIFICATION_CODE)
+    const userCredential = await confirmationResult.confirm(
+      TEST_PHONE_NUMBERS.VERIFICATION_CODE
+    )
 
     expect(userCredential.user.phoneNumber).toBe(TEST_PHONE_NUMBERS.VALID)
     expect(userCredential.user.uid).toBe('test-uid')
   })
 
   it('should handle invalid verification code', async () => {
-    const mockVerifier = {
-      render: vi.fn(() => Promise.resolve('mock-widget-id')),
-      verify: vi.fn(() => Promise.resolve('mock-response')),
+    const mockVerifier: ApplicationVerifier = {
+      type: 'recaptcha',
+      render: vi.fn().mockResolvedValue('mock-widget-id'),
+      verify: vi.fn().mockResolvedValue('mock-token'),
       clear: vi.fn()
     }
 
-    // @ts-expect-error
     window.recaptchaVerifier = mockVerifier
 
     const mockConfirmationResult = {
@@ -91,7 +92,9 @@ describe('Phone Authentication Integration Tests', () => {
     )
 
     // Test with invalid code
-    await expect(confirmationResult.confirm('000000')).rejects.toThrow('Invalid verification code')
+    await expect(confirmationResult.confirm('000000')).rejects.toThrow(
+      'Invalid verification code'
+    )
   })
 
   it('should handle reCAPTCHA verification', async () => {
@@ -138,3 +141,10 @@ describe('Phone Authentication Integration Tests', () => {
     expect(typeof unsubscribe).toBe('function')
   })
 })
+
+interface ApplicationVerifier {
+  type: string
+  verify(): Promise<string>
+  render?(): Promise<string>
+  clear?(): void
+}

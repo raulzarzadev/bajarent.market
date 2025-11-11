@@ -2,7 +2,11 @@ import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import FormSignIn from '@/components/FormSignIn'
-import { createMockRecaptcha, setupTestEnvironment, TEST_PHONE_NUMBERS } from '@/utils/test-helpers'
+import {
+  createMockRecaptcha,
+  setupTestEnvironment,
+  TEST_PHONE_NUMBERS
+} from '@/utils/test-helpers'
 
 // Mock del contexto de autenticación
 vi.mock('@/context/authContext', () => ({
@@ -33,7 +37,6 @@ describe('FormSignIn - Phone Authentication Tests', () => {
     setupTestEnvironment()
 
     // Mock reCAPTCHA
-    // @ts-expect-error
     window.recaptchaVerifier = createMockRecaptcha()
   })
 
@@ -116,7 +119,6 @@ describe('FormSignIn - Phone Authentication Tests', () => {
       })
     }
 
-    // @ts-expect-error
     window.confirmationResult = mockConfirmationResult
 
     // Mock successful SMS sending first
