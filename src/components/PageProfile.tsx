@@ -11,6 +11,7 @@ import ModalUpdateProfile from './ModalUpdateProfile'
 import { Formik } from 'formik'
 import { usersCRUD } from '@/firebase/auth'
 import Avatar from './Avatar'
+import { fi } from 'date-fns/locale'
 
 const PageProfile = () => {
   const { user, refreshUser } = useAuth()
@@ -32,6 +33,10 @@ const PageProfile = () => {
         console.error('Error parsing tempUserData:', error)
         localStorage.removeItem('tempUserData')
       }
+    }
+
+    if (!tempDataString && !user?.firstName) {
+      setIsEditing(true)
     }
   }, [user])
 
@@ -194,6 +199,35 @@ const PageProfile = () => {
                   email: user.email || '',
                   phone: user.phone || ''
                 }}
+                validate={(values) => {
+                  const errors: any = {}
+                  if (!values.firstName) {
+                    errors.firstName = 'El nombre es obligatorio'
+                  }
+                  if (!values.lastName) {
+                    errors.lastName = 'Los apellidos son obligatorios'
+                  }
+                  // if (!values.email) {
+                  //   errors.email = 'El correo electrónico es obligatorio'
+                  // } else if (
+                  //   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(
+                  //     values.email
+                  //   )
+                  // ) {
+                  //   errors.email = 'Correo electrónico inválido'
+                  // }
+
+                  // if (!values.phone) {
+                  //   errors.phone = 'El número de teléfono es obligatorio'
+                  // } else if (
+                  //   !/^\+\d{1,3}\s\d{1,14}(\s\d{1,13})?$/.test(values.phone)
+                  // ) {
+                  //   errors.phone = 'Número de teléfono inválido'
+                  // }
+                  console.log({ errors })
+
+                  return errors
+                }}
                 onSubmit={handleUpdateProfile}
               >
                 {({ handleSubmit }) => (
@@ -230,6 +264,7 @@ const PageProfile = () => {
                         variant="solid"
                         disabled={isLoading}
                         onClick={() => handleSubmit()}
+                        className={`${!isLoading && 'animate-bounce'}`}
                       />
                       <Button
                         type="button"

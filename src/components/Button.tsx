@@ -79,6 +79,8 @@ const Button = ({
         className={`
     ${variants[variant]}
     ${colors[color]}
+
+    cursor-pointer
     font-semibold
     py-2
     px-4
