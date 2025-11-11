@@ -49,7 +49,7 @@ describe('🔐 Phone Authentication Tests', () => {
     // Simular respuesta de Firebase cuando se envía SMS
     const mockSMSResponse = {
       success: true,
-      verificationId: 'mock-verification-id-' + Date.now(),
+      verificationId: `mock-verification-id-${Date.now()}`,
       message: `SMS sent to ${phoneNumber}`,
       isTestNumber: true
     }
@@ -68,7 +68,7 @@ describe('🔐 Phone Authentication Tests', () => {
     const mockVerificationResponse = {
       success: true,
       user: {
-        uid: 'test-user-' + Date.now(),
+        uid: `test-user-${Date.now()}`,
         phoneNumber: phoneNumber,
         isAnonymous: false,
         metadata: {
